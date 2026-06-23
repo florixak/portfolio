@@ -69,14 +69,12 @@
   --input: #f0f0f0;
   --input-background: #f0f0f0;
   --switch-background: #d4d4d4;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
   --ring: #3bebab;
   --chart-1: #3bebab;
-  --chart-2: oklch(0.55 0.12 184.704);
-  --chart-3: oklch(0.45 0.08 227.392);
-  --chart-4: oklch(0.65 0.16 84.429);
-  --chart-5: oklch(0.6 0.15 70.08);
+  --chart-2: #00877a;
+  --chart-3: #145e78;
+  --chart-4: #bc8400;
+  --chart-5: #b76c00;
   --radius: 0rem;
   --sidebar: #ffffff;
   --sidebar-foreground: #171717;
@@ -108,8 +106,6 @@
   --border: rgba(255, 255, 255, 0.08);
   --input: #252525;
   --ring: #3bebab;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
   --chart-1: #3bebab;
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
