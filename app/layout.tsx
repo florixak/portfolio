@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Header from "@/components/layout/header";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
-const geistMonoHeading = Geist_Mono({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-heading",
 });
@@ -26,15 +28,26 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         "h-full",
         "antialiased",
         "font-mono",
         jetbrainsMono.variable,
-        geistMonoHeading.variable,
+        geistMono.variable,
       )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="min-h-screen pt-14">{children}</main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
