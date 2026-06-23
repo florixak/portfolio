@@ -55,7 +55,7 @@ export const projects: Project[] = [
     featured: true,
     priority: 1,
     status: "completed",
-    year: 2025,
+    year: 2026,
     shortDescription: "AI-moderated pixel art community platform.",
     description:
       "PixelVerse is a modern AI-moderated community platform that allows pixel artists to share their work, connect with other artists, and explore the vibrant world of pixel art.",
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     featured: false,
     priority: 3,
     status: "completed",
-    year: 2025,
+    year: 2026,
     shortDescription: "UI-focused e-commerce app with admin dashboard.",
     description:
       "Semester project — UI-focused e-commerce application built with React and TypeScript. Features a product catalog with filters, shopping cart, multi-step checkout, and an admin dashboard with orders, products, and analytics.",
@@ -205,7 +205,7 @@ export const projects: Project[] = [
     featured: false,
     priority: 2,
     status: "completed",
-    year: 2025,
+    year: 2026,
     shortDescription: "Text conversion tool with AI transformations.",
     description:
       "Convert and format text with live previews. Authenticated users can unlock AI-powered transformations that structure, clean, and infer schemas from unstructured text.",
