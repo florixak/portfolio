@@ -10,6 +10,7 @@ import { NAV_ITEMS } from "@/constants";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const logo = "<OP>";
   return (
     <header>
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
@@ -18,7 +19,7 @@ const Header = () => {
             href="/"
             className="font-heading text-sm text-primary tracking-[0.2em] uppercase font-bold"
           >
-            OP
+            {logo}
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -50,6 +51,7 @@ const Header = () => {
               <Link
                 key={item.href}
                 href={item.href as Route}
+                onClick={() => setMenuOpen(false)}
                 className="text-sm tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-150"
               >
                 {item.label}
