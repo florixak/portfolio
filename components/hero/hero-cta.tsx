@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 const HeroCTA = () => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
       <Button asChild>
         <Link href="#projects">
           View Projects <ArrowUpRight className="size-4" />
