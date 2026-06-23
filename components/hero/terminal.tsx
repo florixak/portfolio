@@ -9,11 +9,12 @@ const Terminal = () => {
           bash
         </span>
       </div>
-      <div className="space-y-1.5 text-base leading-7">
+      <div className="space-y-1.5 text-sm leading-7">
         <p className="text-muted-foreground">
           <span className="text-primary">~</span> whoami
         </p>
-        <p className="text-foreground pl-4">fullstack_engineer</p>
+        <p className="text-foreground pl-4">Ondrej Ptak</p>
+        <p className="text-foreground pl-4">Fullstack Engineer</p>
         <p className="text-muted-foreground mt-3">
           <span className="text-primary">~</span> cat stack.txt
         </p>
