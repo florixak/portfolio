@@ -4,12 +4,14 @@ import Terminal from "./terminal";
 
 const Hero = () => {
   return (
-    <section className="h-screen flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 px-6">
-      <div className="max-w-2xl flex flex-col gap-10 items-start w-full">
+    <section className="mt-14 sm:mt-0 flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-10 lg:flex-row lg:gap-16 lg:py-16">
+      <div className="flex w-full max-w-2xl flex-col items-start gap-6 sm:gap-8 lg:gap-10">
         <span className="text-sm text-primary tracking-[0.2em] uppercase">
           {profile.role}
         </span>
-        <h1 className="text-7xl font-extrabold">{profile.name}</h1>
+        <h1 className="text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl">
+          {profile.name}
+        </h1>
         <div className="flex flex-col gap-4">
           {profile.description.map((line) => (
             <p className="text-base text-muted-foreground" key={line}>
