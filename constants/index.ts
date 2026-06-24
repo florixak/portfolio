@@ -4,3 +4,5 @@ export const NAV_ITEMS: { label: string; href: string }[] = [
   { label: "Focus", href: "#focus" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const COPYRIGHT_YEAR = new Date().getFullYear();
