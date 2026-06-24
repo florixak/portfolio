@@ -14,10 +14,12 @@ const ContactLink = ({ item }: ContactLinkProps) => {
     <li className="flex flex-1 bg-background">
       <Link
         href={item.href as Route}
-        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...(isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
         className="group flex flex-1 items-center justify-between px-6 py-6 transition-colors duration-200 hover:bg-card md:px-8 md:py-8"
       >
-        <span className="type-label text-muted-foreground underline-offset-4 transition-colors duration-200 group-hover:text-foreground group-hover:underline">
+        <span className="type-label text-muted-foreground transition-colors duration-200 group-hover:text-primary">
           {item.label}
         </span>
         <ArrowUpRight
