@@ -132,3 +132,35 @@
     @apply font-mono;
   }
 }
+
+@layer components {
+  /* Section / list index — "01", "02" */
+  .type-index {
+    @apply text-sm text-muted-foreground/40 tracking-widest select-none;
+  }
+
+  /* Uppercase labels — nav, role, column headers, links */
+  .type-label {
+    @apply text-sm tracking-[0.2em] uppercase;
+  }
+
+  /* Uppercase micro labels — badges, tags, buttons */
+  .type-label-xs {
+    @apply text-xs tracking-[0.2em] uppercase;
+  }
+
+  /* Body copy */
+  .type-body {
+    @apply text-sm text-muted-foreground leading-relaxed;
+  }
+
+  /* Section titles */
+  .type-heading {
+    @apply font-heading text-2xl font-semibold tracking-tight;
+  }
+
+  /* Card / list item titles */
+  .type-title {
+    @apply font-heading text-xl font-semibold tracking-tight;
+  }
+}

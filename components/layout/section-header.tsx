@@ -10,18 +10,18 @@ const SectionHeader = ({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-baseline gap-4">
-        <span className="font-mono-label text-[11px] text-muted-foreground/40 tracking-widest select-none">
+        <span className="type-index">
           {num} —
         </span>
-        <h2 className="font-display text-2xl font-semibold tracking-tight">
+        <h2 className="type-heading">
           {title}
         </h2>
       </div>
-      {sub && (
-        <p className="text-sm text-muted-foreground max-w-lg leading-relaxed pl-10">
+      {sub ? (
+        <p className="type-body max-w-lg pl-10">
           {sub}
         </p>
-      )}
+      ) : null}
     </div>
   );
 };

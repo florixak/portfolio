@@ -13,10 +13,10 @@ const Header = () => {
   const logo = "<OP>";
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
-      <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
         <Link
           href="/"
-          className="font-heading text-sm text-primary tracking-[0.2em] uppercase font-bold"
+          className="type-label font-heading font-bold text-primary"
         >
           {logo}
         </Link>
@@ -26,7 +26,7 @@ const Header = () => {
             <Link
               key={item.href}
               href={item.href as Route}
-              className="text-sm tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-150"
+              className="type-label text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               {item.label}
             </Link>
@@ -51,7 +51,7 @@ const Header = () => {
               key={item.href}
               href={item.href as Route}
               onClick={() => setMenuOpen(false)}
-              className="text-sm tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-150"
+              className="type-label text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               {item.label}
             </Link>
