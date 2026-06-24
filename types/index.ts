@@ -45,3 +45,12 @@ export type Experience = {
   description: string;
   highlights: string[];
 };
+
+export type TechStackCategory = {
+  label: string;
+  items: TechStack[];
+};
+
+type TechStack = {
+  label: string;
+};
