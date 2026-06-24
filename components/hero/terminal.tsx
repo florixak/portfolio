@@ -1,6 +1,6 @@
 const Terminal = () => {
   return (
-    <div className="w-full max-w-lg shrink-0 border border-border bg-card p-5 font-mono-label sm:p-8">
+    <div className="hidden md:block w-full max-w-lg shrink-0 border border-border bg-card p-5 font-mono-label sm:p-8">
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border">
         <span className="size-3 rounded-full bg-[#ff5f57]" />
         <span className="size-3 rounded-full bg-[#febc2e]" />
