@@ -1,3 +1,5 @@
+import { FILTERS } from "@/constants";
+
 export type Project = {
   slug: string;
   title: string;
@@ -54,3 +56,5 @@ export type TechStackCategory = {
 type TechStack = {
   label: string;
 };
+
+export type Filter = (typeof FILTERS)[number];
