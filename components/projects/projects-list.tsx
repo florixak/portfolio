@@ -1,41 +1,26 @@
 "use client";
 
-import { projectsByPriority } from "@/data/projects";
 import { filterProjects } from "@/lib/product-utils";
-import { Filter } from "@/types";
+import { Filter, Project } from "@/types";
 import { useMemo, useState } from "react";
 import ProjectCard from "./project-card";
 import ProjectsFilter from "./projects-filter";
 
-const Projects = () => {
+type ProjectsListProps = {
+  projects: Project[];
+};
+
+const ProjectsList = ({ projects }: ProjectsListProps) => {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(
-    () => filterProjects(projectsByPriority, activeFilter, query),
-    [activeFilter, query],
+    () => filterProjects(projects, activeFilter, query),
+    [projects, activeFilter, query],
   );
 
   return (
     <>
-      <section className="max-w-7xl mx-auto px-6 pt-28 pb-16 border-b border-border">
-        <p className="type-label text-primary mb-6">Portfolio</p>
-        <h1 className="font-heading text-4xl font-semibold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl mb-8">
-          Projects
-        </h1>
-
-        <div className="grid grid-cols-1 gap-6 items-end lg:grid-cols-[1fr_auto]">
-          <p className="type-body max-w-2xl">
-            A collection of projects exploring full-stack development,
-            interactive interfaces and product-oriented thinking. Each project
-            reflects different challenges, technologies and approaches.
-          </p>
-          <p className="type-index text-right">
-            {projectsByPriority.length} projects total
-          </p>
-        </div>
-      </section>
-
       <ProjectsFilter
         activeFilter={activeFilter}
         setActiveFilter={setActiveFilter}
@@ -66,4 +51,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectsList;
