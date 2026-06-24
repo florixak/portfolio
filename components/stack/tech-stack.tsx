@@ -1,7 +1,6 @@
-import React from "react";
+import { techStack } from "@/data/stack";
 import SectionHeader from "../layout/section-header";
 import StackColumn from "./stack-column";
-import { techStack } from "@/data/stack";
 
 const TechStack = () => {
   return (
