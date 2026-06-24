@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import Footer from "@/components/layout/footer";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
         >
           <Header />
           <main className="min-h-screen">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
