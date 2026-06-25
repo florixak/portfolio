@@ -1,4 +1,4 @@
-import ProjectsFooter from "@/components/projects/projects-footer";
+import PageFooter from "@/components/layout/page-footer";
 import ProjectsHeader from "@/components/projects/projects-header";
 import ProjectsList from "@/components/projects/projects-list";
 import { projectsByPriority } from "@/data/projects";
@@ -8,7 +8,17 @@ const ProjectsPage = () => {
     <>
       <ProjectsHeader count={projectsByPriority.length} />
       <ProjectsList projects={projectsByPriority} />
-      <ProjectsFooter />
+      <PageFooter
+        title={
+          <>
+            Interested in how I approach
+            <br />
+            <span className="text-primary">building products?</span>
+          </>
+        }
+        description="Then contact me to discuss your project or ideas."
+        ctaLabel="Contact Me"
+      />
     </>
   );
 };
