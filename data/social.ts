@@ -5,7 +5,7 @@ export const social = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/ptakondrej/",
+    href: "https://www.linkedin.com/in/ondrejptak/",
   },
   {
     label: "E-mail",

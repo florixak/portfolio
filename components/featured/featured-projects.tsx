@@ -25,7 +25,7 @@ const FeaturedProjects = () => {
 
       <div className="mt-8 flex justify-end">
         <Link
-          href="#projects"
+          href="/projects"
           className="type-label inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200"
         >
           View all projects <ArrowUpRight size={12} />
