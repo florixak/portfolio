@@ -18,8 +18,8 @@ const PageFooter = ({
   ctaHref,
 }: PageFooterProps) => {
   return (
-    <section className="border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center">
+    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center">
         <div>
           {label ? (
             <p className="type-label text-primary mb-5">{label}</p>
