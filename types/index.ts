@@ -23,13 +23,28 @@ export type Project = {
   };
 };
 
+export type AboutCurrentItem = {
+  label: string;
+  items: string[];
+};
+
+export type About = {
+  intro: string;
+  quote: string;
+  whoIAm: string[];
+  currently: AboutCurrentItem[];
+  outsideOfCode: string[];
+  interests: string[];
+};
+
 export type Profile = {
   name: string;
   role: string;
   tagline: string;
   description: string[];
-  location?: string;
-  university?: string;
+  location: string;
+  university: string;
+  degree: string;
   availableForWork: boolean;
   email: string;
 };

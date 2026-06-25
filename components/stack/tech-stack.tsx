@@ -1,19 +1,23 @@
 import { techStack } from "@/data/stack";
+import Column from "../layout/column";
 import SectionHeader from "../layout/section-header";
-import StackColumn from "./stack-column";
 
 const TechStack = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border">
       <SectionHeader
         num="01"
-        title="Core Stack"
-        sub="Technologies I work with most"
+        title="Tech Stack"
+        sub="What I build with in production projects"
       />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mt-12">
         {techStack.map(({ label, items }) => (
-          <StackColumn key={label} label={label} items={items} />
+          <Column
+            key={label}
+            label={label}
+            items={items.map((item) => item.label)}
+          />
         ))}
       </div>
     </section>

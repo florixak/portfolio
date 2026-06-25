@@ -106,13 +106,14 @@ export const projects: Project[] = [
     year: 2025,
     shortDescription: "Full-stack mini e-shop with Stripe payments.",
     description:
-      "Simple full-stack mini e-shop built with a Spring Boot backend, Stripe, and a Vite + React + TypeScript frontend. Containerized with Docker for local and production deployment.",
+      "Simple full-stack mini e-shop built with a Spring Boot backend, Supabase PostgreSQL, Stripe, and a Vite + React + TypeScript frontend. Containerized with Docker for local and production deployment.",
     stack: [
       "React",
       "TypeScript",
       "Vite",
       "Spring Boot",
       "PostgreSQL",
+      "Supabase",
       "Stripe",
       "Docker",
       "TanStack Router",
@@ -137,7 +138,7 @@ export const projects: Project[] = [
         "Packaging frontend and backend into a reproducible Docker setup",
       ],
       architecture: [
-        "Spring Boot REST API with PostgreSQL persistence",
+        "Spring Boot REST API with PostgreSQL on Supabase",
         "Vite + React SPA with TanStack Router",
         "Stripe for payment processing",
         "Docker Compose for local development",
