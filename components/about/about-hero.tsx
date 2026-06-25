@@ -1,4 +1,4 @@
-import { profile } from "@/data/profile";
+import { about } from "@/data/about";
 
 const AboutHero = () => {
   return (
@@ -7,7 +7,7 @@ const AboutHero = () => {
       <h1 className="font-heading text-4xl font-semibold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl mb-8">
         About
       </h1>
-      <p className="type-body max-w-2xl">{profile.about.intro}</p>
+      <p className="type-body max-w-2xl">{about.intro}</p>
     </section>
   );
 };
