@@ -13,7 +13,7 @@ const HeroCTA = () => {
         </Link>
       </Button>
       <Button variant="outline" asChild>
-        <Link href="#contact">
+        <Link href="/contact">
           Contact Me <ArrowUpRight className="size-4" />
         </Link>
       </Button>
