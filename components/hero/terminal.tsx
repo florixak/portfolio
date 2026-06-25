@@ -14,7 +14,7 @@ const Terminal = () => {
           <span className="text-primary">~</span> whoami
         </p>
         <p className="text-foreground pl-4">Ondrej Ptak</p>
-        <p className="text-foreground pl-4">Fullstack Engineer</p>
+        <p className="text-foreground pl-4">Full-Stack Engineer</p>
         <p className="text-muted-foreground mt-3">
           <span className="text-primary">~</span> cat stack.txt
         </p>
