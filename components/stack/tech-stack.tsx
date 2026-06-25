@@ -8,7 +8,7 @@ const TechStack = () => {
       <SectionHeader
         num="01"
         title="Tech Stack"
-        sub="Technologies I work with most"
+        sub="What I build with in production projects"
       />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mt-12">
