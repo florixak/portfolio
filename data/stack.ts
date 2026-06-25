@@ -6,9 +6,9 @@ export const techStack: TechStackCategory[] = [
     items: [
       { label: "React" },
       { label: "Next.js" },
+      { label: "TanStack Start" },
       { label: "TypeScript" },
       { label: "Tailwind CSS" },
-      { label: "GSAP" },
       { label: "React Native" },
     ],
   },
@@ -22,13 +22,7 @@ export const techStack: TechStackCategory[] = [
   },
   {
     label: "Database",
-    items: [
-      { label: "PostgreSQL" },
-      { label: "Neon" },
-      { label: "Supabase" },
-      { label: "Drizzle ORM" },
-      { label: "Prisma" },
-    ],
+    items: [{ label: "PostgreSQL" }, { label: "Neon" }, { label: "Supabase" }],
   },
   {
     label: "Tools",
@@ -36,9 +30,8 @@ export const techStack: TechStackCategory[] = [
       { label: "Docker" },
       { label: "Git" },
       { label: "Stripe" },
-      { label: "Sanity.io" },
-      { label: "Resend" },
       { label: "Vercel" },
+      { label: "OpenAI" },
     ],
   },
 ];
