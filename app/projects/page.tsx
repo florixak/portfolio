@@ -1,3 +1,4 @@
+import ProjectsFooter from "@/components/projects/projects-footer";
 import ProjectsHeader from "@/components/projects/projects-header";
 import ProjectsList from "@/components/projects/projects-list";
 import { projectsByPriority } from "@/data/projects";
@@ -7,6 +8,7 @@ const ProjectsPage = () => {
     <>
       <ProjectsHeader count={projectsByPriority.length} />
       <ProjectsList projects={projectsByPriority} />
+      <ProjectsFooter />
     </>
   );
 };
