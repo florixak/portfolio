@@ -83,7 +83,7 @@ const ProjectsFilter = ({
               setActiveFilter("All");
               setQuery("");
             }}
-            className="type-label-xs inline-flex items-center gap-1 text-muted-foreground/40 transition-colors duration-200 hover:text-primary"
+            className="type-label-xs inline-flex items-center gap-1 text-muted-foreground/40 transition-colors duration-200 hover:text-primary cursor-pointer"
           >
             <X size={9} /> Clear
           </button>
