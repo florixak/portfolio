@@ -31,6 +31,9 @@ const ProjectsFilter = ({
           {FILTERS.map((filter) => (
             <button
               key={filter}
+              type="button"
+              role="tab"
+              aria-selected={activeFilter === filter}
               onClick={() => setActiveFilter(filter)}
               className={cn(
                 "type-label-xs px-4 py-2.5 transition-colors duration-200 cursor-pointer",
@@ -54,7 +57,7 @@ const ProjectsFilter = ({
             placeholder="Search projects..."
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            className="type-body w-full border border-border bg-card py-2.5 pr-9 pl-9 text-foreground outline-none transition-colors duration-200 placeholder:text-muted-foreground/40 focus:border-primary/50 md:w-64"
+            className="type-body w-full border border-border bg-card py-2.5 pr-9 pl-9 text-foreground outline-none transition-colors duration-200 placeholder:text-muted-foreground/40 focus:border-primary/50 md:w-64 [&::-webkit-search-cancel-button]:hidden"
           />
           {query ? (
             <button
