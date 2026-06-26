@@ -9,7 +9,7 @@ export const heroTerminalSections: TerminalSection[] = [
   },
   {
     label: "cat stack.txt",
-    lines: ["React · Next.js · TypeScript", "Spring Boot · PostgreSQL"],
+    lines: ["React · Next.js · TypeScript", "Java · Spring Boot · PostgreSQL"],
   },
   {
     label: "echo $LOCATION",
