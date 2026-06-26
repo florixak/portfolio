@@ -2,7 +2,7 @@ import { profile } from "@/data/profile";
 import { social } from "@/data/social";
 import ContactLink from "./contact-link";
 
-const Contact = () => {
+const ContactFooter = () => {
   return (
     <section
       id="contact"
@@ -37,4 +37,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactFooter;
