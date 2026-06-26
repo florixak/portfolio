@@ -1,11 +1,11 @@
-import { projectsByPriority } from "@/data/projects";
+import { getFeaturedProjects } from "@/lib/project-utils";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import SectionHeader from "../layout/section-header";
 import FeaturedProjectCard from "./featured-project-card";
 
 const FeaturedProjects = () => {
-  const projects = projectsByPriority.slice(0, 3);
+  const projects = getFeaturedProjects();
   return (
     <section
       id="projects"

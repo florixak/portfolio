@@ -7,6 +7,7 @@ export const about: About = {
   quote:
     "I enjoy building projects that combine clean interfaces, thoughtful engineering and practical value.",
   whoIAm: [
+    "I'm a software engineering student focused on building interactive products and modern web experiences.",
     "Most of my work revolves around React, Next.js and Spring Boot, while continuously expanding into architecture, backend systems and developer tooling.",
   ],
   currently: [
@@ -18,6 +19,7 @@ export const about: About = {
       label: "Building with",
       items: [
         "React & Next.js",
+        "TanStack Ecosystem",
         "Spring Boot",
         "Drizzle ORM",
         "PostgreSQL",

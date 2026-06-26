@@ -1,15 +1,25 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
-import { Button } from "../ui/button";
+import { NAV_ITEMS } from "@/constants";
+import { cn, isNavActive } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Route } from "next";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import ThemeToggle from "../theme/theme-toggle";
-import { NAV_ITEMS } from "@/constants";
+import { Button } from "../ui/button";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
+
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMenuOpen(false);
+  }
+
   const logo = "<OP>";
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
@@ -22,15 +32,21 @@ const Header = () => {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href as Route}
-              className="type-label text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const isActive = isNavActive(pathname, item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href as Route}
+                className={cn(
+                  "type-label text-muted-foreground hover:text-foreground transition-colors duration-200",
+                  isActive && "text-primary",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <Button
@@ -46,16 +62,22 @@ const Header = () => {
 
       {menuOpen && (
         <nav className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href as Route}
-              onClick={() => setMenuOpen(false)}
-              className="type-label text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const isActive = isNavActive(pathname, item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href as Route}
+                onClick={() => setMenuOpen(false)}
+                className={cn(
+                  "type-label text-muted-foreground hover:text-foreground transition-colors duration-200",
+                  isActive && "text-primary",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       )}
     </header>

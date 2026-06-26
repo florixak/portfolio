@@ -73,3 +73,8 @@ type TechStack = {
 };
 
 export type Filter = (typeof FILTERS)[number];
+
+export type TerminalSection = {
+  label: string;
+  lines: string[];
+};

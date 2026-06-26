@@ -29,6 +29,7 @@ export const techStack: TechStackCategory[] = [
     items: [
       { label: "Git" },
       { label: "Docker" },
+      { label: "Vitest" },
       { label: "Stripe" },
       { label: "Vercel" },
       { label: "OpenAI" },
