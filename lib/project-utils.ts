@@ -1,4 +1,11 @@
+import { projects, projectsByPriority } from "@/data/projects";
 import { Filter, Project } from "@/types";
+
+export const getProjectBySlug = (slug: string) =>
+  projects.find((project) => project.slug === slug);
+
+export const getFeaturedProjects = () =>
+  projectsByPriority.filter((project) => project.featured).slice(0, 3);
 
 export const filterProjects = (
   projects: Project[],
