@@ -7,6 +7,30 @@ export const getProjectBySlug = (slug: string) =>
 export const getFeaturedProjects = () =>
   projectsByPriority.filter((project) => project.featured).slice(0, 3);
 
+export const getProjectPreviewImages = (project: Project) => {
+  const screenshots = project.screenshots?.filter(Boolean) ?? [];
+  const preview = screenshots[0] ?? project.thumbnail;
+  const gallery = screenshots.length > 1 ? screenshots.slice(1) : [];
+
+  return { preview, gallery };
+};
+
+export const getNextProject = (slug: string): Project | undefined => {
+  if (projectsByPriority.length <= 1) {
+    return undefined;
+  }
+
+  const index = projectsByPriority.findIndex((project) => project.slug === slug);
+
+  if (index === -1) {
+    return undefined;
+  }
+
+  const nextProject = projectsByPriority[index + 1] ?? projectsByPriority[0];
+
+  return nextProject.slug === slug ? undefined : nextProject;
+};
+
 export const filterProjects = (
   projects: Project[],
   filter: Filter,

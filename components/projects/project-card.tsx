@@ -2,6 +2,7 @@ import { Project } from "@/types";
 import { ArrowUpRight } from "lucide-react";
 import { Route } from "next";
 import Link from "next/link";
+import ProjectStatusBadge from "./project-status-badge";
 
 type ProjectCardProps = {
   index: number;
@@ -10,7 +11,10 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ index, project }: ProjectCardProps) => {
   return (
-    <article className="group flex h-full flex-col bg-background p-8 transition-colors duration-200 hover:bg-card">
+    <Link
+      href={`/projects/${project.slug}` as Route}
+      className="group flex h-full flex-col bg-background p-8 transition-colors duration-200 hover:bg-card"
+    >
       <div className="mb-4 flex items-start justify-between gap-4">
         <span className="type-index">{String(index + 1).padStart(2, "0")}</span>
         <span className="type-body text-muted-foreground/40">
@@ -22,15 +26,7 @@ const ProjectCard = ({ index, project }: ProjectCardProps) => {
         <h2 className="type-title transition-colors duration-200 group-hover:text-primary">
           {project.title}
         </h2>
-        <span
-          className={`type-label-xs border px-2 py-1 ${
-            project.status === "active"
-              ? "border-primary/25 text-primary"
-              : "border-yellow-400/25 text-yellow-400"
-          }`}
-        >
-          {project.status}
-        </span>
+        <ProjectStatusBadge status={project.status} />
       </div>
 
       <p className="type-body mb-5 flex-1">{project.shortDescription}</p>
@@ -46,17 +42,14 @@ const ProjectCard = ({ index, project }: ProjectCardProps) => {
         ))}
       </div>
 
-      <Link
-        href={`/projects/${project.slug}` as Route}
-        className="type-label inline-flex items-center gap-2 border-t border-border pt-5 text-muted-foreground transition-colors duration-200 group-hover:text-primary"
-      >
+      <span className="type-label inline-flex items-center gap-2 border-t border-border pt-5 text-muted-foreground transition-colors duration-200 group-hover:text-primary">
         View Project
         <ArrowUpRight
           size={12}
           className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
         />
-      </Link>
-    </article>
+      </span>
+    </Link>
   );
 };
 

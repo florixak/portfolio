@@ -1,3 +1,4 @@
+import ProjectStatusBadge from "@/components/projects/project-status-badge";
 import { Project } from "@/types";
 import { ArrowUpRight } from "lucide-react";
 import { Route } from "next";
@@ -22,15 +23,7 @@ const FeaturedProjectCard = ({ index, project }: FeaturedProjectCardProps) => {
         <div>
           <div className="flex items-center gap-3 mb-3">
             <h3 className="type-title">{project.title}</h3>
-            <span
-              className={`type-label-xs px-2 py-1 border ${
-                project.status === "active"
-                  ? "text-primary border-primary/25"
-                  : "text-yellow-400 border-yellow-400/25"
-              }`}
-            >
-              {project.status}
-            </span>
+            <ProjectStatusBadge status={project.status} />
           </div>
           <p className="type-body mb-5 max-w-xl">{project.description}</p>
           <div className="flex flex-wrap gap-2">
