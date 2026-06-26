@@ -1,6 +1,6 @@
 "use client";
 
-import { filterProjects } from "@/lib/product-utils";
+import { filterProjects } from "@/lib/project-utils";
 import { Filter, Project } from "@/types";
 import { useMemo, useState } from "react";
 import ProjectCard from "./project-card";
