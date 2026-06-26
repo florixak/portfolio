@@ -5,10 +5,10 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
 import { Route } from "next";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "../theme/theme-toggle";
 import { NAV_ITEMS } from "@/constants";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn, isNavActive } from "@/lib/utils";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +27,7 @@ const Header = () => {
 
         <nav className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = isNavActive(pathname, item.href);
             return (
               <Link
                 key={item.href}
@@ -57,7 +57,7 @@ const Header = () => {
       {menuOpen && (
         <nav className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4">
           {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = isNavActive(pathname, item.href);
             return (
               <Link
                 key={item.href}
