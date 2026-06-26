@@ -5,6 +5,7 @@ type TerminalProps = {
   sections: TerminalSection[];
   shell?: string;
   showCursor?: boolean;
+  showHeader?: boolean;
   className?: string;
 };
 
@@ -12,25 +13,29 @@ const Terminal = ({
   sections,
   shell = "bash",
   showCursor = true,
+  showHeader = true,
   className,
 }: TerminalProps) => {
   return (
     <div
       className={cn(
-        "w-full max-w-lg shrink-0 border border-border bg-card p-5 sm:p-8",
+        "w-full max-w-lg shrink-0",
+        showHeader && "border border-border bg-card p-5 sm:p-8",
         className,
       )}
     >
-      <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border">
-        <span className="size-3 rounded-full bg-[#ff5f57]" />
-        <span className="size-3 rounded-full bg-[#febc2e]" />
-        <span className="size-3 rounded-full bg-[#28c840]" />
-        <span className="type-label-xs ml-auto text-muted-foreground/40">
-          {shell}
-        </span>
-      </div>
+      {showHeader ? (
+        <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border">
+          <span className="size-3 rounded-full bg-[#ff5f57]" />
+          <span className="size-3 rounded-full bg-[#febc2e]" />
+          <span className="size-3 rounded-full bg-[#28c840]" />
+          <span className="type-label-xs ml-auto text-muted-foreground/40">
+            {shell}
+          </span>
+        </div>
+      ) : null}
 
-      <div className="space-y-1.5 text-sm leading-relaxed">
+      <div className="space-y-1.5 type-body leading-relaxed">
         {sections.map((section, index) => (
           <div key={section.label} className={cn(index > 0 && "mt-3")}>
             <p className="text-muted-foreground">
