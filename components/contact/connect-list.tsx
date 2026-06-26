@@ -52,7 +52,7 @@ const rowClassName =
 
 type EmailConnectRowProps = {
   item: Social;
-  onCopy: () => void;
+  onCopy: (href: string) => void;
   copied: boolean;
 };
 
@@ -76,7 +76,7 @@ const EmailConnectRow = ({ item, onCopy, copied }: EmailConnectRowProps) => {
 
       <button
         type="button"
-        onClick={onCopy}
+        onClick={() => onCopy(item.href)}
         aria-label={copied ? "Email copied" : "Copy email"}
         className="type-label-xs shrink-0 text-muted-foreground transition-colors duration-200 hover:text-primary"
       >
@@ -130,18 +130,13 @@ const LinkConnectRow = ({ item }: LinkConnectRowProps) => {
 };
 
 const ConnectList = () => {
-  const [copied, setCopied] = useState(false);
-  const email = social.find((item) => item.label === "E-mail");
+  const [copiedHref, setCopiedHref] = useState<string | null>(null);
 
-  const copyEmail = async () => {
-    if (!email) {
-      return;
-    }
-
+  const copyEmail = async (href: string) => {
     try {
-      await navigator.clipboard.writeText(getDisplayValue(email.href));
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(getDisplayValue(href));
+      setCopiedHref(href);
+      window.setTimeout(() => setCopiedHref(null), 2000);
     } catch (error) {
       console.error(error);
     }
@@ -155,7 +150,7 @@ const ConnectList = () => {
             key={item.label}
             item={item}
             onCopy={copyEmail}
-            copied={copied}
+            copied={copiedHref === item.href}
           />
         ) : (
           <LinkConnectRow key={item.label} item={item} />
