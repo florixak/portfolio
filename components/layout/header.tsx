@@ -1,18 +1,24 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
-import { Button } from "../ui/button";
-import { Menu, X } from "lucide-react";
-import { Route } from "next";
-import { usePathname } from "next/navigation";
-import ThemeToggle from "../theme/theme-toggle";
 import { NAV_ITEMS } from "@/constants";
 import { cn, isNavActive } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
+import { Route } from "next";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import ThemeToggle from "../theme/theme-toggle";
+import { Button } from "../ui/button";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
+
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMenuOpen(false);
+  }
 
   const logo = "<OP>";
   return (
