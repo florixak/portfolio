@@ -2,6 +2,7 @@ import { Project } from "@/types";
 import { ArrowUpRight } from "lucide-react";
 import { Route } from "next";
 import Link from "next/link";
+import ProjectStatusBadge from "./project-status-badge";
 
 type ProjectCardProps = {
   index: number;
@@ -25,15 +26,7 @@ const ProjectCard = ({ index, project }: ProjectCardProps) => {
         <h2 className="type-title transition-colors duration-200 group-hover:text-primary">
           {project.title}
         </h2>
-        <span
-          className={`type-label-xs border px-2 py-1 ${
-            project.status === "active"
-              ? "border-primary/25 text-primary"
-              : "border-yellow-400/25 text-yellow-400"
-          }`}
-        >
-          {project.status}
-        </span>
+        <ProjectStatusBadge status={project.status} />
       </div>
 
       <p className="type-body mb-5 flex-1">{project.shortDescription}</p>
