@@ -1,5 +1,4 @@
-import { Filter } from "@/types";
-import { Project } from "@/types";
+import { Filter, Project } from "@/types";
 
 export const filterProjects = (
   projects: Project[],
