@@ -18,6 +18,7 @@ export const projects: Project[] = [
       "Drizzle ORM",
       "Neon Postgres",
       "Better Auth",
+      "Vitest",
       "React Context",
     ],
     highlights: [
@@ -25,6 +26,7 @@ export const projects: Project[] = [
       "User authentication",
       "Game state management",
       "OMORI-themed word bank",
+      "Vitest test coverage",
     ],
     thumbnail: "/projects/omori-wordle.webp",
     github: "https://github.com/florixak/omori-wordle",
@@ -42,10 +44,12 @@ export const projects: Project[] = [
         "Next.js App Router frontend with React Context for game state",
         "Drizzle ORM with Neon Postgres for users and stats",
         "Better Auth for session management",
+        "Vitest for unit and integration tests",
       ],
       lessons: [
         "React Context works well for self-contained game state but needs careful boundaries",
         "Daily puzzle logic is simpler when word selection is deterministic per date",
+        "Vitest makes it easier to test game logic and auth flows in isolation",
       ],
     },
   },
@@ -156,9 +160,10 @@ export const projects: Project[] = [
     priority: 3,
     status: "completed",
     year: 2026,
-    shortDescription: "UI-focused e-commerce app with admin dashboard.",
+    shortDescription:
+      "Semester e-commerce project built in collaboration with RTSoft.",
     description:
-      "Semester project — UI-focused e-commerce application built with React and TypeScript. Features a product catalog with filters, shopping cart, multi-step checkout, and an admin dashboard with orders, products, and analytics.",
+      "Semester project built in collaboration with RTSoft — a UI-focused e-commerce application for a clothing brand concept. Features a product catalog with filters, shopping cart, multi-step checkout, and an admin dashboard with orders, products, and analytics.",
     stack: [
       "React",
       "TypeScript",
@@ -182,7 +187,7 @@ export const projects: Project[] = [
     screenshots: ["/projects/rtsoft-clothing-eshop/1.webp"],
     caseStudy: {
       motivation:
-        "Deliver a polished semester project demonstrating end-to-end e-commerce UX, from browsing to checkout and admin management.",
+        "Partner with RTSoft on a semester project to deliver a polished e-commerce experience — from browsing and checkout to admin management — against a real organization brief.",
       challenges: [
         "Designing a multi-step checkout that stays usable on mobile",
         "Building admin tables with sorting, filtering, and order management",
@@ -209,13 +214,14 @@ export const projects: Project[] = [
     year: 2026,
     shortDescription: "Text conversion tool with AI transformations.",
     description:
-      "Convert and format text with live previews. Authenticated users can unlock AI-powered transformations that structure, clean, and infer schemas from unstructured text.",
+      "Convert and format text with live previews. Authenticated users can unlock AI-powered transformations that structure, clean, and infer schemas from unstructured text, with premium access handled through Stripe.",
     stack: [
       "TanStack Start",
       "TypeScript",
       "Drizzle ORM",
       "Neon Postgres",
       "Better Auth",
+      "Stripe",
       "shadcn/ui",
       "Resend",
       "TanStack Query",
@@ -224,7 +230,7 @@ export const projects: Project[] = [
       "Live text previews",
       "AI-powered formatting",
       "Schema inference",
-      "Authenticated feature gating",
+      "Stripe payments for premium features",
     ],
     thumbnail: "/projects/text-forge.webp",
     github: "https://github.com/florixak/text-forge",
@@ -236,12 +242,14 @@ export const projects: Project[] = [
       challenges: [
         "Rendering live previews without lag on large text inputs",
         "Gating AI features securely for authenticated users only",
+        "Handling Stripe checkout and access control for premium tiers",
         "Designing prompts that return structured, predictable output",
       ],
       architecture: [
         "TanStack Start full-stack framework with server functions",
         "Drizzle ORM on Neon Postgres for user data",
         "Better Auth with Resend for email flows",
+        "Stripe for premium feature payments",
         "shadcn/ui for a responsive editor interface",
       ],
       lessons: [
@@ -293,7 +301,7 @@ export const projects: Project[] = [
   {
     slug: "school-buffet-reservation-system",
     title: "Reservation System for School Buffet",
-    featured: true,
+    featured: false,
     priority: 3,
     status: "completed",
     year: 2025,
