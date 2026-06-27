@@ -19,3 +19,6 @@ export const isNavActive = (pathname: string, href: string) => {
 
 export const yearToDate = (year: number) =>
   new Date(`${year}-01-01T00:00:00.000Z`);
+
+export const truncate = (text: string, maxLength: number) =>
+  text.length <= maxLength ? text : `${text.slice(0, maxLength - 1)}…`;
