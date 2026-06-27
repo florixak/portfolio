@@ -37,17 +37,21 @@ const ProjectPreview = ({ project }: ProjectPreviewProps) => {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-16 border-b border-border">
-      <p className="type-label text-primary mb-6">Project Preview</p>
+      <h2 className="type-label text-primary mb-6">Project Preview</h2>
 
-      <PreviewImage src={preview} alt={`${project.title} preview`} priority />
+      <PreviewImage
+        src={preview}
+        alt={`${project.title} — full-stack project preview screenshot`}
+        priority
+      />
 
       {gallery.length > 0 ? (
         <div className="mt-px grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
-          {gallery.map((src) => (
+          {gallery.map((src, index) => (
             <PreviewImage
               key={src}
               src={src}
-              alt={`${project.title} screenshot`}
+              alt={`${project.title} — project screenshot ${index + 1}`}
             />
           ))}
         </div>
