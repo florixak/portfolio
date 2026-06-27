@@ -11,10 +11,10 @@ export type Project = {
   description: string;
   stack: string[];
   highlights: string[];
-  thumbnail: string;
+  thumbnail: `/projects/${string}/${string}.webp`;
   github?: string;
   demo?: string;
-  screenshots?: string[];
+  screenshots?: `/projects/${string}/${string}.webp`[];
   caseStudy?: {
     motivation: string;
     challenges: string[];
