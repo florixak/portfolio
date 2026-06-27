@@ -2,12 +2,11 @@ import AboutContent from "@/components/about/about-content";
 import AboutHero from "@/components/about/about-hero";
 import PageFooter from "@/components/layout/page-footer";
 import { about } from "@/data/about";
-import { profile } from "@/data/profile";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "About",
-  description: `${profile.name} - ${about.intro}`,
+  description: about.intro,
   path: "/about",
 });
 
