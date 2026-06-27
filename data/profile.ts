@@ -3,10 +3,11 @@ import { Profile } from "@/types";
 export const profile: Profile = {
   name: "Ondřej Pták",
   role: "Full-Stack Engineer",
-  tagline: "Building scalable full-stack applications",
+  tagline:
+    "Full-stack engineer building scalable web apps with Next.js, React, and Spring Boot.",
   description: [
-    "Software Engineering student from the Czech Republic focused on building interactive products and modern web experiences.",
-    "Focused on creating scalable applications, polished user interfaces and turning ideas into real products.",
+    "Software Engineering student from Pilsen, Czech Republic, focused on building interactive products and modern web experiences.",
+    "I design and ship scalable full-stack applications, polished user interfaces, and side projects that turn ideas into real products.",
   ],
   location: "Pilsen, Czech Republic",
   university: "University of West Bohemia",
