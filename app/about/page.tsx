@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "About",
-  description: `${profile.name} is a ${profile.role.toLowerCase()} and Software Engineering student at ${profile.university}. ${about.intro}`,
+  description: `${profile.name} - ${about.intro}`,
   path: "/about",
 });
 
