@@ -318,7 +318,16 @@ export const projects: Project[] = [
       "I created the entire frontend for the meal reservation system in the school buffet.",
     description:
       "I created the entire frontend for the school buffet meal reservation system. The project was created as part of the graduation project at the SPŠE and VOŠ in Pilsen 2024/2025. It allows users to browse the menu, add items to the cart, and place orders. Administrators can manage the menu, orders. I created the frontend in React with TailwindCSS. The backend was written in PHP by my classmate. The application communicates with the backend via REST API.",
-    stack: [],
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Zustand",
+      "WebSocket",
+      "TanStack Query",
+      "Zod",
+      "Axios",
+    ],
     highlights: [
       "Student interface",
       "Admin interface",
