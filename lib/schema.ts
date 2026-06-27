@@ -8,12 +8,7 @@ export const personSchema = {
   name: profile.name,
   jobTitle: profile.role,
   url: siteUrl,
-  email: profile.email,
   sameAs,
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: profile.university,
-  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Pilsen",
