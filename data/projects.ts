@@ -31,7 +31,7 @@ export const projects: Project[] = [
     thumbnail: "/projects/omori-wordle/omori-wordle.webp",
     github: "https://github.com/florixak/omori-wordle",
     demo: "https://omori-wordle.vercel.app",
-    screenshots: ["/projects/omori-wordle/1.webp"],
+    screenshots: ["/projects/omori-wordle/omori-wordle.webp"],
     caseStudy: {
       motivation:
         "Combine a love of OMORI with the daily puzzle format of Wordle, while practicing a full-stack Next.js setup with auth and a database.",
