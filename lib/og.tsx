@@ -129,7 +129,7 @@ export const createProjectOgImage = async (project: Project) => {
             color: colors.primary,
           }}
         >
-          {project.year} · Case study
+          {project.year}
         </div>
         <div
           style={{
