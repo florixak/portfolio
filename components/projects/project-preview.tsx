@@ -41,17 +41,16 @@ const ProjectPreview = ({ project }: ProjectPreviewProps) => {
 
       <PreviewImage
         src={preview}
-        alt={`${project.title} — full-stack project preview screenshot`}
+        alt={`${project.title} — project preview screenshot`}
         priority
       />
-
       {gallery.length > 0 ? (
         <div className="mt-px grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
           {gallery.map((src, index) => (
             <PreviewImage
               key={src}
               src={src}
-              alt={`${project.title} — project screenshot ${index + 1}`}
+              alt={`${project.title} — project screenshot ${index + 2}`}
             />
           ))}
         </div>
