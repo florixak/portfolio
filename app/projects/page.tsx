@@ -2,6 +2,14 @@ import PageFooter from "@/components/layout/page-footer";
 import ProjectsHeader from "@/components/projects/projects-header";
 import ProjectsList from "@/components/projects/projects-list";
 import { projectsByPriority } from "@/data/projects";
+import { profile } from "@/data/profile";
+import { createMetadata } from "@/lib/seo";
+
+export const metadata = createMetadata({
+  title: "Projects",
+  description: `Explore full-stack projects by ${profile.name}, including Next.js apps, Spring Boot backends, AI-powered tools, and interactive web experiences.`,
+  path: "/projects",
+});
 
 const ProjectsPage = () => {
   return (
