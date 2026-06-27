@@ -20,7 +20,9 @@ export const getNextProject = (slug: string): Project | undefined => {
     return undefined;
   }
 
-  const index = projectsByPriority.findIndex((project) => project.slug === slug);
+  const index = projectsByPriority.findIndex(
+    (project) => project.slug === slug,
+  );
 
   if (index === -1) {
     return undefined;
