@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, JetBrains_Mono } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import JsonLd from "@/components/seo/json-ld";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { profile } from "@/data/profile";
+import { personSchema, websiteSchema } from "@/lib/schema";
+import { rootMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 const geistMono = Geist_Mono({
@@ -18,12 +20,13 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: `${profile.name} | ${profile.role}`,
-    template: `%s | ${profile.name}`,
-  },
-  description: profile.tagline,
+export const metadata: Metadata = rootMetadata;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#171717" },
+  ],
 };
 
 const HeaderFallback = () => (
@@ -48,6 +51,7 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
+        <JsonLd data={[personSchema, websiteSchema]} />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -10,9 +10,12 @@ type CaseStudyBlockProps = {
   children: ReactNode;
 };
 
-const CaseStudyBlock = ({ label, children }: CaseStudyBlockProps) => (
+const CaseStudyBlock = ({
+  label,
+  children,
+}: CaseStudyBlockProps & { label: string }) => (
   <div className="max-w-3xl">
-    <p className="type-label text-primary mb-4">{label}</p>
+    <h2 className="type-label text-primary mb-4">{label}</h2>
     {children}
   </div>
 );

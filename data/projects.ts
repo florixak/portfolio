@@ -8,7 +8,8 @@ export const projects: Project[] = [
     priority: 3,
     status: "active",
     year: 2026,
-    shortDescription: "Wordle-inspired game with OMORI-themed words.",
+    shortDescription:
+      "Daily Wordle-style puzzle game with OMORI themes, user accounts, and progress tracking.",
     description:
       "A Wordle-inspired game based on OMORI, where players guess words related to characters, locations, and themes from the game. Includes user accounts, progress tracking, and a daily puzzle.",
     stack: [
@@ -60,7 +61,8 @@ export const projects: Project[] = [
     priority: 2,
     status: "completed",
     year: 2026,
-    shortDescription: "AI-moderated pixel art community platform.",
+    shortDescription:
+      "AI-moderated pixel art community platform with artist profiles, feeds, and Sanity CMS.",
     description:
       "PixelVerse is a modern AI-moderated community platform that allows pixel artists to share their work, connect with other artists, and explore the vibrant world of pixel art.",
     stack: [
@@ -109,7 +111,8 @@ export const projects: Project[] = [
     priority: 4,
     status: "completed",
     year: 2025,
-    shortDescription: "Full-stack mini e-shop with Stripe payments.",
+    shortDescription:
+      "Full-stack e-commerce demo with Spring Boot, Stripe payments, and Docker deployment.",
     description:
       "Simple full-stack mini e-shop built with a Spring Boot backend, Supabase PostgreSQL, Stripe, and a Vite + React + TypeScript frontend. Containerized with Docker for local and production deployment.",
     stack: [
@@ -163,7 +166,7 @@ export const projects: Project[] = [
     status: "completed",
     year: 2026,
     shortDescription:
-      "Semester e-commerce project built in collaboration with RTSoft.",
+      "UI-focused clothing e-shop with catalog filters, checkout, and admin dashboard — built with RTSoft.",
     description:
       "Semester project built in collaboration with RTSoft — a UI-focused e-commerce application for a clothing brand concept. Features a product catalog with filters, shopping cart, multi-step checkout, and an admin dashboard with orders, products, and analytics.",
     stack: [
@@ -215,7 +218,8 @@ export const projects: Project[] = [
     priority: 1,
     status: "completed",
     year: 2026,
-    shortDescription: "Text conversion tool with AI transformations.",
+    shortDescription:
+      "Live text conversion tool with AI-powered formatting, schema inference, and Stripe premium access.",
     description:
       "Convert and format text with live previews. Authenticated users can unlock AI-powered transformations that structure, clean, and infer schemas from unstructured text, with premium access handled through Stripe.",
     stack: [
@@ -269,7 +273,8 @@ export const projects: Project[] = [
     priority: 6,
     status: "completed",
     year: 2026,
-    shortDescription: "Interactive OMORI fan site with rich animations.",
+    shortDescription:
+      "Interactive OMORI fan site with scroll-driven GSAP animations and polished front-end craft.",
     description:
       "A stunning interactive fan website celebrating the indie psychological horror RPG OMORI, built as a portfolio demonstration of modern web development techniques and animation capabilities.",
     stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "GSAP"],
@@ -309,19 +314,50 @@ export const projects: Project[] = [
     priority: 7,
     status: "completed",
     year: 2025,
-    shortDescription: "Reservation system for school buffet.",
-    description: "",
-    stack: [],
-    highlights: [],
+    shortDescription:
+      "I created the entire frontend for the meal reservation system in the school buffet.",
+    description:
+      "I created the entire frontend for the school buffet meal reservation system. The project was created as part of the graduation project at the SPŠE and VOŠ in Pilsen 2024/2025. It allows users to browse the menu, add items to the cart, and place orders. Administrators can manage the menu, orders. I created the frontend in React with TailwindCSS. The backend was written in PHP by my classmate. The application communicates with the backend via REST API.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Zustand",
+      "WebSocket",
+      "TanStack Query",
+      "Zod",
+      "Axios",
+    ],
+    highlights: [
+      "Student interface",
+      "Admin interface",
+      "WebSocket KDS integration",
+      "REST API",
+    ],
     thumbnail: "/projects/school-buffet/buffet.webp",
     github: "https://github.com/Web-Projekty/buffet-rezervace",
     demo: "https://buffet.vlastas.cc/",
     screenshots: ["/projects/school-buffet/buffet.webp"],
     caseStudy: {
-      motivation: "",
-      challenges: [],
-      architecture: [],
-      lessons: [],
+      motivation:
+        "The cafeteria still ran on paper slips and shouted orders during the lunch rush. For our graduation project at SPŠE and VOŠ Plzeň, we wanted ordering to feel as quick as grabbing a tray — not another app students would ignore between classes.",
+      challenges: [
+        "Building a real-time Kitchen Display System (KDS) that keeps tickets synced instantly without server-side performance lag.",
+        "Decoupling the frontend development flow from a concurrently developed PHP backend.",
+        "Ensuring robust client-side validation and consistent global state (cart, auth, navigation) under high user traffic.",
+      ],
+      architecture: [
+        "React (Vite + TypeScript) structured as a modular SPA, styled rapidly with TailwindCSS and dynamic tailwind-merge components.",
+        "Global state powered by Zustand (CartStore) and react-auth-kit for lightweight, provider-less session and cart tracking.",
+        "Data layer split between TanStack Query (Axios-driven caching/fetching for menus/accounts) and a custom native WebSocket service with a heartbeat interval for real-time KDS synchronization.",
+        "Strict type-safe boundaries utilizing Zod schema validation for registration/inputs and static TypeScript interfaces across all data-fetching layers.",
+      ],
+      lessons: [
+        "A Kitchen Display System reframes 'done': third-party WebSocket libraries lacked vital keep-alive mechanics, forcing us to build a custom native ping-interval solution to prevent dropped kitchen connections.",
+        "Owning only the frontend forced disciplined API thinking; treating Axios and TanStack Query as the sole integration boundaries insulated the UI when backend behavior shifted late in the semester.",
+        "UX and reliability matter more than animation polish — leveraging structured components (framer-motion, react-hot-toast, ldrs) kept the UI intuitive for busy kitchen staff and rushing students alike.",
+        "Validating client-side edge cases with Zod and automating code health via ESLint/Prettier saved critical debugging time during integration testing.",
+      ],
     },
   },
 ];

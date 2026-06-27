@@ -16,3 +16,6 @@ export const isNavActive = (pathname: string, href: string) => {
 
   return pathname === href || pathname.startsWith(`${href}/`);
 };
+
+export const yearToDate = (year: number) =>
+  new Date(`${year}-01-01T00:00:00.000Z`);

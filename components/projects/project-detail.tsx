@@ -14,13 +14,13 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
   const nextProject = getNextProject(project.slug);
 
   return (
-    <>
+    <article>
       <ProjectDetailHero project={project} />
       <ProjectPreview project={project} />
       <ProjectCaseStudy caseStudy={project.caseStudy} />
       <ProjectFeatures highlights={project.highlights} />
       {nextProject ? <ProjectNext project={nextProject} /> : null}
-    </>
+    </article>
   );
 };
 

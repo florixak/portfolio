@@ -1,6 +1,8 @@
 import ProjectDetail from "@/components/projects/project-detail";
-import { profile } from "@/data/profile";
+import JsonLd from "@/components/seo/json-ld";
 import { projects } from "@/data/projects";
+import { createMetadata } from "@/lib/seo";
+import { projectBreadcrumbSchema, projectSchema } from "@/lib/schema";
 import { getProjectBySlug } from "@/lib/project-utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -22,10 +24,13 @@ export const generateMetadata = async ({
     return { title: "Project not found" };
   }
 
-  return {
-    title: `${project.title} | ${profile.name}`,
+  return createMetadata({
+    title: project.title,
     description: project.shortDescription,
-  };
+    path: `/projects/${slug}`,
+    ogType: "article",
+    publishedTime: `${project.year}-01-01`,
+  });
 };
 
 const ProjectPage = async ({ params }: ProjectPageProps) => {
@@ -36,7 +41,14 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
     notFound();
   }
 
-  return <ProjectDetail project={project} />;
+  return (
+    <>
+      <JsonLd
+        data={[projectSchema(project), projectBreadcrumbSchema(project)]}
+      />
+      <ProjectDetail project={project} />
+    </>
+  );
 };
 
 export default ProjectPage;
