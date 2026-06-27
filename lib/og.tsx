@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import type { Project } from "@/types";
+import { truncate } from "@/lib/utils";
 
 export const ogSize = {
   width: 1200,
@@ -14,9 +15,6 @@ const colors = {
   primary: "#3bebab",
   muted: "#a3a3a3",
 };
-
-const truncate = (text: string, maxLength: number) =>
-  text.length <= maxLength ? text : `${text.slice(0, maxLength - 1)}…`;
 
 const FONT_URLS = {
   regular:
