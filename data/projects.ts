@@ -132,7 +132,7 @@ export const projects: Project[] = [
     thumbnail: "/projects/minimal-eshop/minimal-eshop.webp",
     github: "https://github.com/florixak/minimal-eshop",
     demo: "https://minimal-minieshop.vercel.app",
-    screenshots: ["/projects/minimal-eshop/1.webp"],
+    screenshots: ["/projects/minimal-eshop/minimal-eshop.webp"],
     caseStudy: {
       motivation:
         "Practice a realistic full-stack e-commerce flow spanning a Java backend, React frontend, and payment processing.",
@@ -309,10 +309,10 @@ export const projects: Project[] = [
     description: "",
     stack: [],
     highlights: [],
-    thumbnail: "/projects/school-buffet/school-buffet.webp",
+    thumbnail: "/projects/school-buffet/buffet.webp",
     github: "https://github.com/Web-Projekty/buffet-rezervace",
     demo: "https://buffet.vlastas.cc/",
-    screenshots: ["/projects/school-buffet/school-buffet.webp"],
+    screenshots: ["/projects/school-buffet/buffet.webp"],
     caseStudy: {
       motivation: "",
       challenges: [],
