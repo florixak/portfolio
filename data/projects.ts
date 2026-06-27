@@ -98,6 +98,7 @@ export const projects: Project[] = [
       lessons: [
         "TanStack Query simplifies cache invalidation across feed and profile views",
         "Sanity schemas should be designed early — retrofitting content models is costly",
+        "AI moderation costs are significant, so it's important to optimize them for the best results",
       ],
     },
   },
@@ -148,6 +149,7 @@ export const projects: Project[] = [
         "Docker Compose for local development",
       ],
       lessons: [
+        "Docker is a powerful tool for local development and production deployment",
         "Clear API boundaries between frontend and backend reduce integration friction",
         "Stripe test mode and webhook forwarding are essential during development",
       ],
@@ -187,9 +189,9 @@ export const projects: Project[] = [
     screenshots: ["/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp"],
     caseStudy: {
       motivation:
-        "Partner with RTSoft on a semester project to deliver a polished e-commerce experience — from browsing and checkout to admin management — against a real organization brief.",
+        "Partner with RTSoft on a semester project to deliver a polished e-commerce experience, from browsing and checkout to admin management.",
       challenges: [
-        "Designing a multi-step checkout that stays usable on mobile",
+        "Designing a multi-step checkout",
         "Building admin tables with sorting, filtering, and order management",
         "Keeping cart and catalog state in sync across routes",
       ],
@@ -200,8 +202,9 @@ export const projects: Project[] = [
         "i18next for Czech/English localization",
       ],
       lessons: [
-        "Zustand keeps cart logic lightweight compared to lifting state through the tree",
+        "Communication with the client is crucial to delivering a project that meets their needs",
         "TanStack Table is worth the setup cost for admin dashboards with real data volume",
+        "Internationalization is a complex topic, but it's worth the effort for a real-world project",
       ],
     },
   },
@@ -255,6 +258,7 @@ export const projects: Project[] = [
       lessons: [
         "TanStack Start blurs the client/server boundary — good for tools, but requires clear data boundaries",
         "Debounced previews are non-negotiable for a smooth editing experience",
+        "AI tokens are expensive, so it's important to optimize them for the best results",
       ],
     },
   },
