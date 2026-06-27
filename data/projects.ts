@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "OMORI-themed word bank",
       "Vitest test coverage",
     ],
-    thumbnail: "/projects/omori-wordle.webp",
+    thumbnail: "/projects/omori-wordle/omori-wordle.webp",
     github: "https://github.com/florixak/omori-wordle",
     demo: "https://omori-wordle.vercel.app",
     screenshots: ["/projects/omori-wordle/1.webp"],
@@ -78,10 +78,10 @@ export const projects: Project[] = [
       "Headless CMS with Sanity",
       "Community discovery",
     ],
-    thumbnail: "/projects/pixelverse.webp",
+    thumbnail: "/projects/pixelverse/pixelverse.webp",
     github: "https://github.com/florixak/PixelVerse",
     demo: "https://pixel-verse-eta.vercel.app",
-    screenshots: ["/projects/pixelverse/1.webp"],
+    screenshots: ["/projects/pixelverse/pixelverse.webp"],
     caseStudy: {
       motivation:
         "Build a social platform for pixel artists that scales content moderation with AI instead of manual review alone.",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
       "Dockerized deployment",
       "Product catalog and cart",
     ],
-    thumbnail: "/projects/minimal-eshop.webp",
+    thumbnail: "/projects/minimal-eshop/minimal-eshop.webp",
     github: "https://github.com/florixak/minimal-eshop",
     demo: "https://minimal-minieshop.vercel.app",
     screenshots: ["/projects/minimal-eshop/1.webp"],
@@ -181,10 +181,10 @@ export const projects: Project[] = [
       "Admin dashboard",
       "Internationalization",
     ],
-    thumbnail: "/projects/rtsoft-clothing-eshop.webp",
+    thumbnail: "/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp",
     github: "https://github.com/florixak/rtsoft-clothing-eshop",
     demo: "https://rtsoft-clothing-eshop.vercel.app",
-    screenshots: ["/projects/rtsoft-clothing-eshop/1.webp"],
+    screenshots: ["/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp"],
     caseStudy: {
       motivation:
         "Partner with RTSoft on a semester project to deliver a polished e-commerce experience — from browsing and checkout to admin management — against a real organization brief.",
@@ -232,10 +232,10 @@ export const projects: Project[] = [
       "Schema inference",
       "Stripe payments for premium features",
     ],
-    thumbnail: "/projects/text-forge.webp",
+    thumbnail: "/projects/text-forge/text-forge.webp",
     github: "https://github.com/florixak/text-forge",
     demo: "https://text-forge-phi.vercel.app",
-    screenshots: ["/projects/text-forge/1.webp"],
+    screenshots: ["/projects/text-forge/text-forge.webp"],
     caseStudy: {
       motivation:
         "Explore TanStack Start while building a developer-friendly text utility with optional AI features behind authentication.",
@@ -275,10 +275,10 @@ export const projects: Project[] = [
       "OMORI-inspired visual design",
       "Portfolio-grade polish",
     ],
-    thumbnail: "/projects/omori-headspace.webp",
+    thumbnail: "/projects/omori-headspace/omori-headspace.webp",
     github: "https://github.com/florixak/omori-headspace",
     demo: "https://omori-headspace.vercel.app",
-    screenshots: ["/projects/omori-headspace/1.webp"],
+    screenshots: ["/projects/omori-headspace/omori-headspace.webp"],
     caseStudy: {
       motivation:
         "Showcase animation and front-end craft through a fan site for OMORI — a game with a distinct visual identity worth translating to the web.",
@@ -309,10 +309,10 @@ export const projects: Project[] = [
     description: "",
     stack: [],
     highlights: [],
-    thumbnail: "/projects/school-buffet-reservation-system.webp",
+    thumbnail: "/projects/school-buffet/school-buffet.webp",
     github: "https://github.com/Web-Projekty/buffet-rezervace",
     demo: "https://buffet.vlastas.cc/",
-    screenshots: [""],
+    screenshots: ["/projects/school-buffet/school-buffet.webp"],
     caseStudy: {
       motivation: "",
       challenges: [],
