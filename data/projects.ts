@@ -219,8 +219,8 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "text-forge",
-    title: "Text Forge",
+    slug: "textforge",
+    title: "TextForge",
     featured: true,
     priority: 1,
     status: "completed",
@@ -246,10 +246,10 @@ export const projects: Project[] = [
       "Schema inference",
       "Stripe payments for premium features",
     ],
-    thumbnail: "/projects/text-forge/text-forge.webp",
+    thumbnail: "/projects/textforge/textforge.webp",
     github: "https://github.com/florixak/text-forge",
     demo: "https://text-forge-phi.vercel.app",
-    screenshots: ["/projects/text-forge/text-forge.webp"],
+    screenshots: ["/projects/textforge/textforge.webp"],
     caseStudy: {
       motivation:
         "Explore TanStack Start while building a developer-friendly text utility with optional AI features behind authentication.",
