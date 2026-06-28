@@ -3,7 +3,7 @@ import { profile } from "./profile";
 
 export const about: About = {
   intro:
-    "Full-stack engineer and Software Engineering student focused on scalable web applications, polished interfaces, and turning ideas into real products.",
+    "Full-Stack Engineer and Software Engineering student focused on scalable web applications, polished interfaces, and turning ideas into real products.",
   quote:
     "I enjoy building projects that combine clean interfaces, thoughtful engineering and practical value.",
   whoIAm: [
