@@ -4,7 +4,7 @@ export const profile: Profile = {
   name: "Ondřej Pták",
   role: "Full-Stack Engineer",
   tagline:
-    "Full-stack engineer building scalable web apps with Next.js, React, and Spring Boot.",
+    "Full-Stack Engineer building scalable web apps with Next.js, React, and Spring Boot.",
   description: [
     "Software Engineering student from Pilsen, Czech Republic, focused on building interactive products and modern web experiences.",
     "I design and ship scalable full-stack applications, polished user interfaces, and side projects that turn ideas into real products.",
