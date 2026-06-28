@@ -4,29 +4,41 @@ import { cn } from "@/lib/utils";
 import { MOTION, withMotion } from "@/lib/animations/gsap";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef, type ReactNode } from "react";
+import {
+  useRef,
+  type ComponentPropsWithoutRef,
+  type ElementType,
+  type ReactNode,
+} from "react";
 
-type StaggerProps = {
+type StaggerOwnProps = {
   children: ReactNode;
   className?: string;
   stagger?: number;
   start?: string;
 };
 
-const Stagger = ({
+type StaggerProps<T extends ElementType = "div"> = StaggerOwnProps & {
+  as?: T;
+} & Omit<ComponentPropsWithoutRef<T>, keyof StaggerOwnProps | "as">;
+
+const Stagger = <T extends ElementType = "div">({
   children,
   className,
   stagger = MOTION.stagger,
   start = MOTION.scrollStart,
-}: StaggerProps) => {
-  const ref = useRef<HTMLDivElement>(null);
+  as,
+  ...rest
+}: StaggerProps<T>) => {
+  const Tag = (as ?? "div") as ElementType;
+  const ref = useRef<HTMLElement>(null);
 
   useGSAP(
     () => {
       const el = ref.current;
       if (!el) return;
 
-      const items = el.children;
+      const items = Array.from(el.children);
       if (!items.length) return;
 
       return withMotion(() => {
@@ -41,15 +53,15 @@ const Stagger = ({
             once: true,
           },
         });
-      }, el);
+      }, items);
     },
     { scope: ref },
   );
 
   return (
-    <div ref={ref} className={cn(className)}>
+    <Tag ref={ref} className={cn(className)} {...rest}>
       {children}
-    </div>
+    </Tag>
   );
 };
 
