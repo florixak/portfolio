@@ -28,7 +28,7 @@ const Hero = () => {
             <HeroCTA />
           </div>
         </div>
-        <div data-motion="terminal">
+        <div data-motion="terminal" className="hidden md:block">
           <Terminal />
         </div>
       </section>
