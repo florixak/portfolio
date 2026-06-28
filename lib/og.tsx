@@ -16,26 +16,21 @@ const colors = {
   muted: "#a3a3a3",
 };
 
-const FONT_URLS = {
-  regular:
-    "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPQ.ttf",
-  bold: "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8L6tjPQ.ttf",
-} as const;
+const FONT_DIR = join(process.cwd(), "assets/fonts");
 
-const fetchFont = async (url: string) => {
-  const response = await fetch(url);
+const readFont = async (filename: string) => {
+  const buffer = await readFile(join(FONT_DIR, filename));
 
-  if (!response.ok) {
-    throw new Error(`Failed to load OG font (${response.status}): ${url}`);
-  }
-
-  return response.arrayBuffer();
+  return buffer.buffer.slice(
+    buffer.byteOffset,
+    buffer.byteOffset + buffer.byteLength,
+  );
 };
 
 const loadFonts = async () => {
   const [regular, bold] = await Promise.all([
-    fetchFont(FONT_URLS.regular),
-    fetchFont(FONT_URLS.bold),
+    readFont("JetBrainsMono-Regular.ttf"),
+    readFont("JetBrainsMono-Bold.ttf"),
   ]);
 
   return [
