@@ -12,12 +12,14 @@ export const MOTION = {
   stagger: 0.08,
 } as const;
 
-export const withMotion = (animate: () => void, scope?: Element | null) => {
+export const withMotion = (
+  animate: () => void,
+  targets?: Element | Element[],
+) => {
   const mm = gsap.matchMedia();
 
   mm.add("(prefers-reduced-motion: reduce)", () => {
-    if (scope)
-      gsap.set(scope.querySelectorAll("[data-motion]"), { clearProps: "all" });
+    if (targets) gsap.set(targets, { clearProps: "all" });
   });
 
   mm.add("(prefers-reduced-motion: no-preference)", animate);

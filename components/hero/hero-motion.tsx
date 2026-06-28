@@ -17,6 +17,8 @@ const HeroMotion = ({ children }: HeroMotionProps) => {
       const scope = scopeRef.current;
       if (!scope) return;
 
+      const motionTargets = Array.from(scope.querySelectorAll("[data-motion]"));
+
       return withMotion(() => {
         const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
@@ -41,7 +43,7 @@ const HeroMotion = ({ children }: HeroMotionProps) => {
             { x: 24, opacity: 0, duration: 0.6 },
             "-=0.35",
           );
-      }, scope);
+      }, motionTargets);
     },
     { scope: scopeRef },
   );
