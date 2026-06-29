@@ -50,3 +50,14 @@ export const projectNotFoundTerminalSections: TerminalSection[] = [
     lines: ["Browse the portfolio for available work"],
   },
 ];
+
+export const errorTerminalSections: TerminalSection[] = [
+  {
+    label: "journalctl --priority=err",
+    lines: ["HTTP/1.1 500 Internal Server Error"],
+  },
+  {
+    label: "systemctl restart app",
+    lines: ["Attempting recovery..."],
+  },
+];
