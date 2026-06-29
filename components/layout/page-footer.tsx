@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import type { ComponentProps, ReactNode } from "react";
 import PageCTA from "./page-cta";
+import Reveal from "../motion/reveal";
+import Stagger from "../motion/stagger";
 
 type PageFooterProps = {
   label?: string;
@@ -19,7 +21,7 @@ const PageFooter = ({
 }: PageFooterProps) => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center">
+      <Reveal className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center">
         <div>
           {label ? (
             <p className="type-label text-primary mb-5">{label}</p>
@@ -38,7 +40,7 @@ const PageFooter = ({
         </div>
 
         <PageCTA label={ctaLabel} href={ctaHref} />
-      </div>
+      </Reveal>
     </section>
   );
 };

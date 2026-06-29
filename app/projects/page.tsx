@@ -1,4 +1,5 @@
 import PageFooter from "@/components/layout/page-footer";
+import Reveal from "@/components/motion/reveal";
 import ProjectsHeader from "@/components/projects/projects-header";
 import ProjectsList from "@/components/projects/projects-list";
 import { projectsByPriority } from "@/data/projects";
@@ -14,7 +15,9 @@ export const metadata = createMetadata({
 const ProjectsPage = () => {
   return (
     <>
-      <ProjectsHeader count={projectsByPriority.length} />
+      <Reveal>
+        <ProjectsHeader count={projectsByPriority.length} />
+      </Reveal>
       <ProjectsList projects={projectsByPriority} />
       <PageFooter
         title={

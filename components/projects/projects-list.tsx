@@ -1,10 +1,17 @@
 "use client";
 
+import useDebounce from "@/hooks/use-debounce";
+import { withMotion } from "@/lib/animations/gsap";
 import { filterProjects } from "@/lib/project-utils";
 import { Filter, Project } from "@/types";
-import { useMemo, useState } from "react";
+import gsap from "gsap";
+import { Flip } from "gsap/Flip";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import Reveal from "../motion/reveal";
 import ProjectCard from "./project-card";
 import ProjectsFilter from "./projects-filter";
+
+gsap.registerPlugin(Flip);
 
 type ProjectsListProps = {
   projects: Project[];
@@ -13,38 +20,122 @@ type ProjectsListProps = {
 const ProjectsList = ({ projects }: ProjectsListProps) => {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
   const [query, setQuery] = useState("");
+  const [filterQuery, setFilterQuery] = useState("");
+
+  useDebounce({
+    value: query,
+    delay: 500,
+    onDebounce: setFilterQuery,
+  });
+
+  const gridRef = useRef<HTMLDivElement>(null);
+  const flipStateRef = useRef<Flip.FlipState | null>(null);
 
   const filtered = useMemo(
-    () => filterProjects(projects, activeFilter, query),
-    [projects, activeFilter, query],
+    () => filterProjects(projects, activeFilter, filterQuery),
+    [projects, activeFilter, filterQuery],
   );
+
+  const captureFlipState = () => {
+    const grid = gridRef.current;
+    if (!grid?.children.length) return;
+    flipStateRef.current = Flip.getState(grid.children);
+  };
+
+  const updateFilter = (filter: Filter) => {
+    if (filter === activeFilter) return;
+    captureFlipState();
+    setActiveFilter(filter);
+  };
+
+  const updateQuery = (value: string) => {
+    if (value === query) return;
+    captureFlipState();
+    setQuery(value);
+    if (value === "") {
+      setFilterQuery("");
+    }
+  };
+
+  const clearFilters = () => {
+    if (activeFilter === "All" && query === "" && filterQuery === "") return;
+    captureFlipState();
+    setActiveFilter("All");
+    setQuery("");
+    setFilterQuery("");
+  };
+
+  useLayoutEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    if (filtered.length === 0) {
+      flipStateRef.current = null;
+      return;
+    }
+
+    const items = Array.from(grid.children);
+    if (!items.length) return;
+
+    const state = flipStateRef.current;
+    flipStateRef.current = null;
+
+    if (state) {
+      const lockedHeight = grid.offsetHeight;
+      grid.style.minHeight = `${lockedHeight}px`;
+
+      return withMotion(() => {
+        Flip.from(state, {
+          duration: 0.45,
+          ease: "power1.inOut",
+          absolute: true,
+          stagger: 0.03,
+          onComplete: () => {
+            gsap.set(grid, { clearProps: "minHeight" });
+          },
+        });
+      }, items);
+    }
+
+    return () => {
+      gsap.set(grid, { clearProps: "minHeight" });
+    };
+  }, [filtered]);
 
   return (
     <>
-      <ProjectsFilter
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
-        query={query}
-        setQuery={setQuery}
-        filteredCount={filtered.length}
-      />
+      <Reveal>
+        <ProjectsFilter
+          activeFilter={activeFilter}
+          setActiveFilter={updateFilter}
+          query={query}
+          setQuery={updateQuery}
+          filteredCount={filtered.length}
+          onClearFilters={clearFilters}
+        />
+      </Reveal>
 
       <section className="max-w-7xl mx-auto px-6 py-12">
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            ref={gridRef}
+            className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3"
+          >
             {filtered.map((project, index) => (
-              <ProjectCard key={project.slug} index={index} project={project} />
+              <div key={project.slug} data-project-card className="h-full">
+                <ProjectCard index={index} project={project} />
+              </div>
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-4 py-32 text-center">
+          <Reveal className="flex flex-col items-center gap-4 py-32 text-center">
             <p className="type-heading text-muted-foreground/30">
               No projects found
             </p>
             <p className="type-label-xs text-muted-foreground/30">
               Try a different filter or search term
             </p>
-          </div>
+          </Reveal>
         )}
       </section>
     </>

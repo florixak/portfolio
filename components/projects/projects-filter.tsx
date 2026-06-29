@@ -11,6 +11,7 @@ type ProjectsFilterProps = {
   query: string;
   setQuery: (query: string) => void;
   filteredCount: number;
+  onClearFilters: () => void;
 };
 
 const ProjectsFilter = ({
@@ -19,6 +20,7 @@ const ProjectsFilter = ({
   query,
   setQuery,
   filteredCount,
+  onClearFilters,
 }: ProjectsFilterProps) => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-8 border-b border-border">
@@ -79,10 +81,7 @@ const ProjectsFilter = ({
         {activeFilter !== "All" || query ? (
           <button
             type="button"
-            onClick={() => {
-              setActiveFilter("All");
-              setQuery("");
-            }}
+            onClick={onClearFilters}
             className="type-label-xs inline-flex items-center gap-1 text-muted-foreground/40 transition-colors duration-200 hover:text-primary cursor-pointer"
           >
             <X size={9} /> Clear
