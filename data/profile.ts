@@ -13,5 +13,5 @@ export const profile: Profile = {
   university: "University of West Bohemia",
   degree: "Software Engineering",
   availableForWork: true,
-  email: "ptakondrej@seznam.cz",
+  email: "ondrej@ondrejptak.dev",
 };
