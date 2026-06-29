@@ -1,5 +1,6 @@
 import ContactContent from "@/components/contact/contact-content";
 import ContactHero from "@/components/contact/contact-hero";
+import Reveal from "@/components/motion/reveal";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -11,7 +12,9 @@ export const metadata = createMetadata({
 const ContactPage = () => {
   return (
     <>
-      <ContactHero />
+      <Reveal>
+        <ContactHero />
+      </Reveal>
       <ContactContent />
     </>
   );
