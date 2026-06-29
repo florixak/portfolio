@@ -31,7 +31,10 @@ const ProjectDetailHero = ({ project }: ProjectDetailHeroProps) => {
       <p className="type-body mt-8 max-w-2xl">{description}</p>
 
       {project.stack.length > 0 ? (
-        <ul className="mt-8 flex flex-wrap gap-2">
+        <ul
+          aria-label="Technologies used"
+          className="mt-8 flex flex-wrap gap-2"
+        >
           {project.stack.map((tech) => (
             <li
               key={tech}
