@@ -66,8 +66,10 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
   useLayoutEffect(() => {
     const state = flipStateRef.current;
     const grid = gridRef.current;
-    if (!state || !grid) return;
-
+    if (!state || !grid) {
+      flipStateRef.current = null;
+      return;
+    }
     flipStateRef.current = null;
 
     const lockedHeight = grid.offsetHeight;
