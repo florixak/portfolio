@@ -2,14 +2,18 @@ import { about } from "@/data/about";
 import { profile } from "@/data/profile";
 import Column from "../layout/column";
 import SectionHeader from "../layout/section-header";
+import Reveal from "../motion/reveal";
+import Stagger from "../motion/stagger";
 
 const AboutContent = () => {
   return (
     <>
       <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
-        <SectionHeader num="01" title="Who I Am" />
+        <Reveal>
+          <SectionHeader num="01" title="Who I Am" />
+        </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-px bg-border lg:grid-cols-2">
+        <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border lg:grid-cols-2">
           <div className="flex flex-col justify-between bg-background p-8 md:p-10">
             <p className="font-heading text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">
               &ldquo;{about.quote}&rdquo;
@@ -29,23 +33,27 @@ const AboutContent = () => {
               </p>
             ))}
           </div>
-        </div>
+        </Stagger>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
-        <SectionHeader num="02" title="Currently" />
+        <Reveal>
+          <SectionHeader num="02" title="Currently" />
+        </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-px bg-border md:grid-cols-3">
+        <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border md:grid-cols-3">
           {about.currently.map(({ label, items }) => (
             <Column key={label} label={label} items={items} />
           ))}
-        </div>
+        </Stagger>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
-        <SectionHeader num="03" title="Outside of Code" />
+        <Reveal>
+          <SectionHeader num="03" title="Outside of Code" />
+        </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-px bg-border lg:grid-cols-2">
+        <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border lg:grid-cols-2">
           <div className="space-y-5 bg-background p-8 md:p-10">
             {about.outsideOfCode.map((paragraph) => (
               <p key={paragraph} className="type-body">
@@ -69,7 +77,7 @@ const AboutContent = () => {
               ))}
             </ul>
           </div>
-        </div>
+        </Stagger>
       </section>
     </>
   );
