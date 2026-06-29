@@ -31,16 +31,16 @@ const ProjectDetailHero = ({ project }: ProjectDetailHeroProps) => {
       <p className="type-body mt-8 max-w-2xl">{description}</p>
 
       {project.stack.length > 0 ? (
-        <div className="mt-8 flex flex-wrap gap-2">
+        <ul className="mt-8 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
-            <span
+            <li
               key={tech}
               className="type-label-xs bg-muted px-2.5 py-1 text-muted-foreground/60"
             >
               {tech}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       ) : null}
 
       {(project.github || project.demo) && (
