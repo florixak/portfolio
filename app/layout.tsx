@@ -9,6 +9,8 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { personSchema, websiteSchema } from "@/lib/schema";
 import { rootMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -64,6 +66,8 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
