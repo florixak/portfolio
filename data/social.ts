@@ -9,10 +9,10 @@ export const social = [
   },
   {
     label: "E-mail",
-    href: "mailto:ptakondrej@seznam.cz",
+    href: "mailto:ondrej@ondrejptak.dev",
   },
   {
     label: "Resume",
-    href: "/OndrejPtak_Resume.pdf",
+    href: "/Ondrej_Ptak_Resume.pdf",
   },
 ];

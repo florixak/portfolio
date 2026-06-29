@@ -84,7 +84,7 @@ Lower `priority` values appear first in project lists and featured ordering.
 
 Place files in `public/`:
 
-- Resume PDF → `/OndrejPtak_Resume.pdf` (linked from `data/social.ts`)
+- Resume PDF → `/Ondrej_Ptak_Resume.pdf` (linked from `data/social.ts`)
 - Project images → `/projects/<slug>/<image-name>.webp`
 
 ## Architecture notes
