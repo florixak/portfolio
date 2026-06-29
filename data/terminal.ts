@@ -28,3 +28,25 @@ export const contactTerminalSections: TerminalSection[] = [
     ],
   },
 ];
+
+export const notFoundTerminalSections: TerminalSection[] = [
+  {
+    label: "curl -I /requested-path",
+    lines: ["HTTP/1.1 404 Not Found"],
+  },
+  {
+    label: "ls /pages",
+    lines: ["home · about · projects · contact"],
+  },
+];
+
+export const projectNotFoundTerminalSections: TerminalSection[] = [
+  {
+    label: "cat project.json",
+    lines: ["Error: project not found"],
+  },
+  {
+    label: "ls ~/projects",
+    lines: ["Browse the portfolio for available work"],
+  },
+];

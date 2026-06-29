@@ -8,11 +8,16 @@ import Link from "next/link";
 type PageCTAProps = {
   label: string;
   href?: Route;
+  variant?: "default" | "outline";
 };
 
-const PageCTA = ({ label, href = "/contact" }: PageCTAProps) => {
+const PageCTA = ({
+  label,
+  href = "/contact",
+  variant = "default",
+}: PageCTAProps) => {
   return (
-    <Button asChild>
+    <Button asChild variant={variant}>
       <Link href={href}>
         {label} <ArrowUpRight className="size-4" />
       </Link>
