@@ -5,6 +5,8 @@ import { NAV_ITEMS } from "@/constants";
 import { Route } from "next";
 import Link from "next/link";
 import ConnectList from "./connect-list";
+import Reveal from "../motion/reveal";
+import Stagger from "../motion/stagger";
 
 const openToItems =
   about.currently.find((item) => item.label === "Open to")?.items ?? [];
@@ -13,7 +15,7 @@ const ContactContent = () => {
   return (
     <>
       <section className="max-w-7xl mx-auto px-6 py-8 md:py-16">
-        <div className="grid grid-cols-1 gap-px bg-border lg:grid-cols-[1fr_380px]">
+        <Stagger className="grid grid-cols-1 gap-px bg-border lg:grid-cols-[1fr_380px]">
           <div className="bg-background p-8 md:p-10">
             <p className="type-label text-primary mb-8">Connect</p>
             <ConnectList />
@@ -57,11 +59,11 @@ const ContactContent = () => {
               />
             </div>
           </div>
-        </div>
+        </Stagger>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 pt-14 pb-24 border-t border-border">
-        <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
+        <Reveal className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
           <p className="font-heading text-[clamp(2rem,5vw,4rem)] font-semibold leading-tight tracking-tight text-muted-foreground/25 transition-colors duration-300 select-none">
             {"See you around".split("").map((char, index) => (
               <span
@@ -90,7 +92,7 @@ const ContactContent = () => {
               ),
             )}
           </nav>
-        </div>
+        </Reveal>
       </section>
     </>
   );
