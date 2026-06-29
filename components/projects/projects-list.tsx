@@ -67,7 +67,12 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
 
   useLayoutEffect(() => {
     const grid = gridRef.current;
-    if (!grid || filtered.length === 0) return;
+    if (!grid) return;
+
+    if (filtered.length === 0) {
+      flipStateRef.current = null;
+      return;
+    }
 
     const items = Array.from(grid.children);
     if (!items.length) return;
@@ -91,6 +96,10 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
         });
       }, items);
     }
+
+    return () => {
+      gsap.set(grid, { clearProps: "minHeight" });
+    };
   }, [filtered]);
 
   return (
