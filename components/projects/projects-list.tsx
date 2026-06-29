@@ -1,5 +1,7 @@
 "use client";
 
+import useDebounce from "@/hooks/use-debounce";
+import { withMotion } from "@/lib/animations/gsap";
 import { filterProjects } from "@/lib/project-utils";
 import { Filter, Project } from "@/types";
 import gsap from "gsap";
@@ -8,7 +10,6 @@ import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import Reveal from "../motion/reveal";
 import ProjectCard from "./project-card";
 import ProjectsFilter from "./projects-filter";
-import useDebounce from "@/hooks/use-debounce";
 
 gsap.registerPlugin(Flip);
 
@@ -29,6 +30,7 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
 
   const gridRef = useRef<HTMLDivElement>(null);
   const flipStateRef = useRef<Flip.FlipState | null>(null);
+
   const filtered = useMemo(
     () => filterProjects(projects, activeFilter, filterQuery),
     [projects, activeFilter, filterQuery],
@@ -64,33 +66,31 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
   };
 
   useLayoutEffect(() => {
-    const state = flipStateRef.current;
     const grid = gridRef.current;
-    if (!state || !grid) {
-      flipStateRef.current = null;
-      return;
-    }
+    if (!grid || filtered.length === 0) return;
+
+    const items = Array.from(grid.children);
+    if (!items.length) return;
+
+    const state = flipStateRef.current;
     flipStateRef.current = null;
 
-    const lockedHeight = grid.offsetHeight;
-    grid.style.minHeight = `${lockedHeight}px`;
+    if (state) {
+      const lockedHeight = grid.offsetHeight;
+      grid.style.minHeight = `${lockedHeight}px`;
 
-    Flip.from(state, {
-      duration: 0.45,
-      ease: "power1.inOut",
-      absolute: true,
-      stagger: 0.03,
-      onEnter: (els) =>
-        gsap.fromTo(els, { opacity: 0 }, { opacity: 1, duration: 0.25 }),
-      onLeave: (els) => gsap.to(els, { opacity: 0, duration: 0.2 }),
-      onComplete: () => {
-        gsap.set(grid, { clearProps: "minHeight" });
-      },
-    });
-
-    return () => {
-      gsap.set(grid, { clearProps: "minHeight" });
-    };
+      return withMotion(() => {
+        Flip.from(state, {
+          duration: 0.45,
+          ease: "power1.inOut",
+          absolute: true,
+          stagger: 0.03,
+          onComplete: () => {
+            gsap.set(grid, { clearProps: "minHeight" });
+          },
+        });
+      }, items);
+    }
   }, [filtered]);
 
   return (
@@ -108,18 +108,16 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
 
       <section className="max-w-7xl mx-auto px-6 py-12">
         {filtered.length > 0 ? (
-          <Reveal>
-            <div
-              ref={gridRef}
-              className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {filtered.map((project, index) => (
-                <div key={project.slug} data-project-card className="h-full">
-                  <ProjectCard index={index} project={project} />
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <div
+            ref={gridRef}
+            className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {filtered.map((project, index) => (
+              <div key={project.slug} data-project-card className="h-full">
+                <ProjectCard index={index} project={project} />
+              </div>
+            ))}
+          </div>
         ) : (
           <Reveal className="flex flex-col items-center gap-4 py-32 text-center">
             <p className="type-heading text-muted-foreground/30">
