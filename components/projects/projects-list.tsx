@@ -19,16 +19,19 @@ type ProjectsListProps = {
 const ProjectsList = ({ projects }: ProjectsListProps) => {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
   const [query, setQuery] = useState("");
-  const { debouncedValue: debouncedQuery } = useDebounce({
+  const [filterQuery, setFilterQuery] = useState("");
+
+  useDebounce({
     value: query,
     delay: 500,
-    onDebounce: setQuery,
+    onDebounce: setFilterQuery,
   });
+
   const gridRef = useRef<HTMLDivElement>(null);
   const flipStateRef = useRef<Flip.FlipState | null>(null);
   const filtered = useMemo(
-    () => filterProjects(projects, activeFilter, debouncedQuery),
-    [projects, activeFilter, debouncedQuery],
+    () => filterProjects(projects, activeFilter, filterQuery),
+    [projects, activeFilter, filterQuery],
   );
 
   const captureFlipState = () => {
@@ -47,13 +50,17 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
     if (value === query) return;
     captureFlipState();
     setQuery(value);
+    if (value === "") {
+      setFilterQuery("");
+    }
   };
 
   const clearFilters = () => {
-    if (activeFilter === "All" && query === "") return;
+    if (activeFilter === "All" && query === "" && filterQuery === "") return;
     captureFlipState();
     setActiveFilter("All");
     setQuery("");
+    setFilterQuery("");
   };
 
   useLayoutEffect(() => {
@@ -82,7 +89,7 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
     return () => {
       gsap.set(grid, { clearProps: "minHeight" });
     };
-  }, [filtered, debouncedQuery]);
+  }, [filtered]);
 
   return (
     <>
