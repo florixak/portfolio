@@ -13,6 +13,6 @@ export const social = [
   },
   {
     label: "Resume",
-    href: "/OndrejPtak_Resume.pdf",
+    href: "/Ondrej_Ptak_Resume.pdf",
   },
 ];
