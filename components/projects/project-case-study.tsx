@@ -1,5 +1,6 @@
 import { Project } from "@/types";
 import type { ReactNode } from "react";
+import Stagger from "../motion/stagger";
 
 type ProjectCaseStudyProps = {
   caseStudy?: Project["caseStudy"];
@@ -23,10 +24,10 @@ const CaseStudyBlock = ({
 const hasCaseStudyContent = (caseStudy?: Project["caseStudy"]) =>
   Boolean(
     caseStudy &&
-      (caseStudy.motivation ||
-        caseStudy.architecture.length > 0 ||
-        caseStudy.challenges.length > 0 ||
-        caseStudy.lessons.length > 0),
+    (caseStudy.motivation ||
+      caseStudy.architecture.length > 0 ||
+      caseStudy.challenges.length > 0 ||
+      caseStudy.lessons.length > 0),
   );
 
 const ProjectCaseStudy = ({ caseStudy }: ProjectCaseStudyProps) => {
@@ -36,7 +37,7 @@ const ProjectCaseStudy = ({ caseStudy }: ProjectCaseStudyProps) => {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
-      <div className="space-y-16">
+      <Stagger className="space-y-16">
         {caseStudy.motivation ? (
           <CaseStudyBlock label="Context">
             <p className="type-body">{caseStudy.motivation}</p>
@@ -78,7 +79,7 @@ const ProjectCaseStudy = ({ caseStudy }: ProjectCaseStudyProps) => {
             </ul>
           </CaseStudyBlock>
         ) : null}
-      </div>
+      </Stagger>
     </section>
   );
 };

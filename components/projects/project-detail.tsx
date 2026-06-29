@@ -5,6 +5,7 @@ import ProjectDetailHero from "./project-detail-hero";
 import ProjectFeatures from "./project-features";
 import ProjectNext from "./project-next";
 import ProjectPreview from "./project-preview";
+import Reveal from "../motion/reveal";
 
 type ProjectDetailProps = {
   project: Project;
@@ -15,8 +16,12 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
 
   return (
     <article>
-      <ProjectDetailHero project={project} />
-      <ProjectPreview project={project} />
+      <Reveal>
+        <ProjectDetailHero project={project} />
+      </Reveal>
+      <Reveal>
+        <ProjectPreview project={project} />
+      </Reveal>
       <ProjectCaseStudy caseStudy={project.caseStudy} />
       <ProjectFeatures highlights={project.highlights} />
       {nextProject ? <ProjectNext project={nextProject} /> : null}
