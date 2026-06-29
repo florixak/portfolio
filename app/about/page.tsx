@@ -1,6 +1,7 @@
 import AboutContent from "@/components/about/about-content";
 import AboutHero from "@/components/about/about-hero";
 import PageFooter from "@/components/layout/page-footer";
+import Reveal from "@/components/motion/reveal";
 import { about } from "@/data/about";
 import { createMetadata } from "@/lib/seo";
 
@@ -13,7 +14,9 @@ export const metadata = createMetadata({
 const AboutPage = () => {
   return (
     <>
-      <AboutHero />
+      <Reveal>
+        <AboutHero />
+      </Reveal>
       <AboutContent />
       <PageFooter
         label="Get in touch"
