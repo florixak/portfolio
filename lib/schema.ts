@@ -26,7 +26,7 @@ export const personSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: `${profile.name} — Portfolio`,
+  name: profile.name,
   url: siteUrl,
   description: profile.tagline,
   author: {
@@ -45,9 +45,7 @@ export const projectSchema = (project: Project) => ({
   applicationCategory: "WebApplication",
   operatingSystem: "Web",
   ...(project.demo ? { downloadUrl: project.demo } : {}),
-  ...(project.stack.length > 0
-    ? { programmingLanguage: project.stack }
-    : {}),
+  ...(project.stack.length > 0 ? { programmingLanguage: project.stack } : {}),
   datePublished: `${project.year}-01-01`,
   author: {
     "@type": "Person",
