@@ -8,7 +8,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Projects",
   description:
-    "Explore my projects, including React, Next.js, Spring Boot, AI-powered tools, and interactive web experiences.",
+    "Selected projects built with React, Next.js, Spring Boot, and related tooling, including AI-assisted applications and interactive web work.",
   path: "/projects",
 });
 
@@ -27,7 +27,7 @@ const ProjectsPage = () => {
             <span className="text-primary">building products?</span>
           </>
         }
-        description="Then contact me to discuss your project or ideas."
+        description="Contact me if you would like to discuss a project or how I approach product work."
         ctaLabel="Contact Me"
       />
     </>
