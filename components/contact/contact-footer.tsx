@@ -14,16 +14,16 @@ const ContactFooter = () => {
         <Reveal>
           <p className="type-index mb-7">03 — Contact</p>
           <h2 className="font-heading text-4xl font-semibold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
-            Let&apos;s build
+            Interested in
             <br />
-            something
+            working
             <br />
-            <span className="text-primary">together.</span>
+            <span className="text-primary">together?</span>
           </h2>
           <p className="type-body mt-8 max-w-md">
             {profile.availableForWork
-              ? "Open to collaboration, internships, and new opportunities. Feel free to reach out."
-              : "Interested in collaboration, internships, opportunities or simply discussing ideas? Feel free to reach out."}
+              ? "I am open to internships, collaboration, and full-stack roles. Send a message through any of the links below."
+              : "I am open to internships, collaboration, and conversations about new work. Send a message through any of the links below."}
           </p>
         </Reveal>
 

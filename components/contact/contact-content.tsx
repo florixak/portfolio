@@ -26,7 +26,7 @@ const ContactContent = () => {
                 <p className="type-label-xs text-muted-foreground/40 mb-0.5">
                   Response time
                 </p>
-                <p className="type-body">Usually within 24–48 hours.</p>
+                <p className="type-body">Usually within 24 to 48 hours.</p>
               </div>
             </div>
           </div>

@@ -5,20 +5,20 @@ const ContactHero = () => {
     <section className="max-w-7xl mx-auto px-6 pt-28 pb-16 border-b border-border">
       <p className="type-label text-primary mb-6">Contact</p>
       <h1 className="font-heading text-4xl font-semibold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl mb-8 max-w-3xl">
-        Do you have an interesting
+        Have a
         <br />
-        <span className="text-primary">Project</span> or{" "}
-        <span className="text-primary">Idea</span>?
+        <span className="text-primary">project</span> or{" "}
+        <span className="text-primary">idea</span> in mind?
       </h1>
       <div className="max-w-xl space-y-4">
         <p className="type-body">
-          Feel free to reach out — I&apos;m always open to exploring interesting
-          ideas and projects.
+          Reach out if you would like to discuss a role, a collaboration, or a
+          product you are building.
         </p>
         <p className="type-body">
           {profile.availableForWork
-            ? "Open to collaboration, internships, and new opportunities."
-            : "Interested in collaboration, internships, opportunities or simply discussing ideas?"}
+            ? "I am open to internships, collaboration, and full-stack roles."
+            : "I am open to internships, collaboration, and conversations about new work."}
         </p>
       </div>
     </section>
