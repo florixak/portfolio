@@ -9,9 +9,9 @@ export const projects: Project[] = [
     status: "active",
     year: 2026,
     shortDescription:
-      "Daily Wordle-style puzzle game with OMORI themes, user accounts, and progress tracking.",
+      "Daily Wordle-style puzzle with OMORI themes, user accounts, and progress tracking.",
     description:
-      "A Wordle-inspired game based on OMORI, where players guess words related to characters, locations, and themes from the game. Includes user accounts, progress tracking, and a daily puzzle.",
+      "A Wordle-inspired game built around OMORI. Players guess words tied to characters, locations, and themes from the game. The app includes user accounts, progress tracking, and a new puzzle each day.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -37,12 +37,12 @@ export const projects: Project[] = [
     screenshots: ["/projects/omori-wordle/omori-wordle.webp"],
     caseStudy: {
       motivation:
-        "Combine a love of OMORI with the daily puzzle format of Wordle, while practicing a full-stack Next.js setup with auth and a database.",
+        "I wanted to combine an interest in OMORI with the daily puzzle format of Wordle, while working through a full-stack Next.js setup with authentication and a database.",
       challenges: [
-        "Designing a word bank tied to game lore without spoiling key story beats",
+        "Building a word bank tied to game lore without spoiling major story beats",
         "Managing game state and keyboard feedback across sessions",
-        "Persisting user progress with authenticated accounts",
-        "Keeping the game state in sync with the server",
+        "Persisting user progress for authenticated accounts",
+        "Keeping client and server game state aligned",
       ],
       architecture: [
         "Next.js App Router frontend with React Context for game state",
@@ -53,9 +53,9 @@ export const projects: Project[] = [
         "Vitest for unit and integration tests",
       ],
       lessons: [
-        "React Context works well for self-contained game state but needs careful boundaries",
-        "Daily puzzle logic is simpler when word selection is deterministic per date",
-        "Vitest makes it easier to test game logic and auth flows in isolation",
+        "React Context works well for self-contained game state, but the boundaries need to stay tight",
+        "Daily puzzle logic is simpler when word selection is deterministic by date",
+        "Vitest made it straightforward to test game logic and auth flows in isolation",
       ],
     },
   },
@@ -67,9 +67,9 @@ export const projects: Project[] = [
     status: "completed",
     year: 2026,
     shortDescription:
-      "AI-moderated pixel art community platform with artist profiles, feeds, and Sanity CMS.",
+      "AI-moderated pixel art community with artist profiles, feeds, and Sanity CMS.",
     description:
-      "PixelVerse is a modern AI-moderated community platform that allows pixel artists to share their work, connect with other artists, and explore the vibrant world of pixel art.",
+      "PixelVerse is a community platform where pixel artists share work, browse feeds, and connect with other artists. Uploads pass through AI moderation before they go live.",
     stack: [
       "Next.js 15",
       "TypeScript",
@@ -91,12 +91,12 @@ export const projects: Project[] = [
     screenshots: ["/projects/pixelverse/pixelverse.webp"],
     caseStudy: {
       motivation:
-        "Build a social platform for pixel artists that scales content moderation with AI instead of manual review alone.",
+        "I wanted to build a social platform for pixel artists where AI handles a share of content moderation instead of relying on manual review alone.",
       challenges: [
         "Balancing open community sharing with safe, moderated uploads",
         "Modeling artist profiles, posts, and feeds in a headless CMS",
         "Keeping data fetching predictable across complex UI surfaces",
-        "Saving the state of reactions (like, love, dislike, etc.) in a way that is efficient and scalable",
+        "Storing reactions efficiently at a scale that would not break down under load",
       ],
       architecture: [
         "Next.js frontend with TanStack Query for server state",
@@ -104,10 +104,10 @@ export const projects: Project[] = [
         "OpenAI API or Gemini API for AI moderation",
       ],
       lessons: [
-        "TanStack Query simplifies cache invalidation across feed and profile views",
-        "Infinite scroll is a great way to keep the UI responsive and the data fetching efficient",
-        "Sanity schemas should be designed early — retrofitting content models is costly",
-        "AI moderation token costs are significant, so it's important to optimize them for the best results",
+        "TanStack Query simplified cache invalidation across feed and profile views",
+        "Infinite scroll kept the UI responsive while spreading data fetching over time",
+        "Sanity schemas are worth defining early. Retrofitting content models is expensive",
+        "AI moderation token costs add up quickly, so batching and prompt design matter",
       ],
     },
   },
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     shortDescription:
       "Full-stack e-commerce demo with Spring Boot, Stripe payments, and Docker deployment.",
     description:
-      "Simple full-stack mini e-shop built with a Spring Boot backend, Supabase PostgreSQL, Stripe, and a Vite + React + TypeScript frontend. Containerized with Docker for local and production deployment.",
+      "A compact full-stack e-shop with a Spring Boot backend, Supabase PostgreSQL, Stripe payments, and a Vite + React + TypeScript frontend. Both services run in Docker for local development and deployment.",
     stack: [
       "React",
       "TypeScript",
@@ -146,9 +146,9 @@ export const projects: Project[] = [
     screenshots: ["/projects/minimal-eshop/minimal-eshop.webp"],
     caseStudy: {
       motivation:
-        "Practice a realistic full-stack e-commerce flow spanning a Java backend, React frontend, and payment processing.",
+        "I built this to practice a realistic e-commerce flow across a Java backend, a React frontend, and payment processing.",
       challenges: [
-        "Coordinating API contracts between Spring Boot and the Vite frontend",
+        "Aligning API contracts between Spring Boot and the Vite frontend",
         "Handling Stripe webhooks and payment confirmation reliably",
         "Packaging frontend and backend into a reproducible Docker setup",
       ],
@@ -159,9 +159,9 @@ export const projects: Project[] = [
         "Docker Compose for local development",
       ],
       lessons: [
-        "Docker is a powerful tool for local development and production deployment",
-        "Clear API boundaries between frontend and backend reduce integration friction",
-        "Stripe test mode and webhook forwarding are essential during development",
+        "Docker made it easier to run the same stack locally and in deployment",
+        "Clear API boundaries between frontend and backend reduced integration friction",
+        "Stripe test mode and webhook forwarding were essential during development",
       ],
     },
   },
@@ -173,9 +173,9 @@ export const projects: Project[] = [
     status: "completed",
     year: 2026,
     shortDescription:
-      "Production-inspired clothing e-commerce UI built in collaboration with RTSoft, featuring catalog filtering, multi-step checkout, order management, and responsive admin tools.",
+      "Production-inspired clothing e-commerce UI built with RTSoft, with catalog filtering, multi-step checkout, order management, and admin tools.",
     description:
-      "Semester project developed in collaboration with RTSoft. A modern clothing e-commerce application focused on user experience, responsiveness, and realistic shopping flows. Includes a product catalog with filtering and variants, shopping cart, multi-step checkout, user order history, and an admin dashboard for managing products, orders, and analytics. The project also included usability testing with external testers and iterative UX improvements based on feedback.",
+      "Semester project developed with RTSoft. A clothing e-commerce application focused on realistic shopping flows, responsive layout, and maintainable UI. Students browse a filterable catalog with product variants, manage a cart, complete a multi-step checkout, and review order history. Admins manage products, orders, and analytics through a separate dashboard. The team ran usability tests with external participants and revised the interface based on their feedback.",
     stack: [
       "React",
       "TypeScript",
@@ -201,26 +201,26 @@ export const projects: Project[] = [
     screenshots: ["/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp"],
     caseStudy: {
       motivation:
-        "Build a realistic e-commerce experience as part of a semester project in collaboration with RTSoft, with emphasis on usability, architecture, and maintainable UI design.",
+        "The goal was a realistic e-commerce experience for a semester project with RTSoft, with equal weight on usability, architecture, and maintainable UI design.",
       challenges: [
-        "Designing a multi-step checkout flow without overwhelming users",
-        "Managing product variants, pricing, and stock representation",
-        "Building scalable admin tables with sorting, filtering, and order management",
-        "Synchronizing cart and catalog state across application routes",
-        "Iterating UI decisions based on usability testing feedback",
+        "Designing a multi-step checkout that did not overwhelm users",
+        "Representing product variants, pricing, and stock accurately",
+        "Building admin tables with sorting, filtering, and order management",
+        "Keeping cart and catalog state consistent across routes",
+        "Adjusting UI decisions after usability testing",
       ],
       architecture: [
         "React SPA with TanStack Router and nested layouts",
-        "Server-state management using TanStack Query",
-        "Global cart state powered by Zustand",
+        "TanStack Query for server state",
+        "Zustand for global cart state",
         "Reusable UI components built with shadcn/ui and Tailwind CSS",
-        "Localization layer using i18next",
+        "Localization with i18next",
       ],
       lessons: [
-        "User testing reveals UX issues that are difficult to anticipate during implementation",
-        "Maintaining consistent UI patterns becomes increasingly important as project scope grows",
-        "Complex filtering and product variant logic affect both UX and data modelling",
-        "Client communication and feedback loops significantly improve project outcomes",
+        "Usability testing surfaced problems I had not anticipated during implementation",
+        "Consistent UI patterns matter more as project scope grows",
+        "Filtering and product variant logic affect both UX and data modeling",
+        "Regular client feedback improved the final result more than late-stage polish alone",
       ],
     },
   },
@@ -232,9 +232,9 @@ export const projects: Project[] = [
     status: "completed",
     year: 2026,
     shortDescription:
-      "Live text conversion tool with AI-powered formatting, schema inference, and Stripe premium access.",
+      "Live text conversion tool with AI formatting, schema inference, and Stripe premium access.",
     description:
-      "Convert and format text with live previews. Authenticated users can unlock AI-powered transformations that structure, clean, and infer schemas from unstructured text, with premium access handled through Stripe.",
+      "A text conversion tool with live previews. Signed-in users can run AI transformations that structure, clean, and infer schemas from unstructured text. Premium access is handled through Stripe.",
     stack: [
       "TanStack Start",
       "TypeScript",
@@ -258,10 +258,10 @@ export const projects: Project[] = [
     screenshots: ["/projects/textforge/textforge.webp"],
     caseStudy: {
       motivation:
-        "Explore TanStack Start while building a developer-friendly text utility with optional AI features behind authentication.",
+        "I built TextForge to learn TanStack Start while shipping a developer-facing text utility with optional AI features behind authentication.",
       challenges: [
         "Rendering live previews without lag on large text inputs",
-        "Gating AI features securely for authenticated users only",
+        "Restricting AI features to authenticated users",
         "Handling Stripe checkout and access control for premium tiers",
         "Designing prompts that return structured, predictable output",
       ],
@@ -273,9 +273,9 @@ export const projects: Project[] = [
         "shadcn/ui for a responsive editor interface",
       ],
       lessons: [
-        "TanStack Start blurs the client/server boundary — good for tools, but requires clear data boundaries",
-        "Debounced previews are non-negotiable for a smooth editing experience",
-        "AI tokens are expensive, so it's important to optimize them for the best results",
+        "TanStack Start blurs the client and server boundary. That helps for tools, but data boundaries need to stay explicit",
+        "Debounced previews were required for a smooth editing experience",
+        "AI token usage adds up fast, so request size and prompt design need deliberate limits",
       ],
     },
   },
@@ -287,15 +287,15 @@ export const projects: Project[] = [
     status: "completed",
     year: 2026,
     shortDescription:
-      "Interactive OMORI fan site with scroll-driven GSAP animations and polished front-end craft.",
+      "Interactive OMORI fan site with scroll-driven GSAP animations and detailed front-end work.",
     description:
-      "A stunning interactive fan website celebrating the indie psychological horror RPG OMORI, built as a portfolio demonstration of modern web development techniques and animation capabilities.",
+      "An interactive fan site for the indie RPG OMORI, built to exercise scroll-driven animation and front-end detail work.",
     stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "GSAP"],
     highlights: [
       "Scroll-driven animations",
       "Interactive UI sections",
       "OMORI-inspired visual design",
-      "Portfolio-grade polish",
+      "Refined front-end execution",
     ],
     thumbnail: "/projects/omori-headspace/omori-headspace.webp",
     github: "https://github.com/florixak/omori-headspace",
@@ -303,10 +303,10 @@ export const projects: Project[] = [
     screenshots: ["/projects/omori-headspace/omori-headspace.webp"],
     caseStudy: {
       motivation:
-        "Showcase animation and front-end craft through a fan site for OMORI — a game with a distinct visual identity worth translating to the web.",
+        "OMORI has a distinct visual identity, and I wanted a fan site that translated that mood into scroll-driven animation and front-end craft.",
       challenges: [
         "Matching the game's mood and color palette without using official assets",
-        "Orchestrating GSAP timelines across scroll triggers and page sections",
+        "Coordinating GSAP timelines across scroll triggers and page sections",
         "Keeping performance acceptable with heavy animation on lower-end devices",
       ],
       architecture: [
@@ -316,7 +316,7 @@ export const projects: Project[] = [
       ],
       lessons: [
         "GSAP timelines are easier to maintain when each section owns its animation module",
-        "Reduced motion preferences and lazy animation init improve accessibility and performance",
+        "Respecting reduced motion preferences and lazy-loading animations improved accessibility and performance",
       ],
     },
   },
@@ -328,9 +328,9 @@ export const projects: Project[] = [
     status: "completed",
     year: 2025,
     shortDescription:
-      "I created the entire frontend for the meal reservation system in the school buffet.",
+      "Frontend for a school buffet meal reservation system, including student ordering and admin tools.",
     description:
-      "I created the entire frontend for the school buffet meal reservation system. The project was created as part of the graduation project at the SPŠE and VOŠ in Pilsen 2024/2025. It allows users to browse the menu, add items to the cart, and place orders. Administrators can manage the menu, orders. I created the frontend in React with TailwindCSS. The backend was written in PHP by my classmate. The application communicates with the backend via REST API.",
+      "I built the frontend for a school buffet meal reservation system as part of my graduation project at SPŠE and VOŠ Plzeň (2024/2025). Students browse the menu, add items to a cart, and place orders. Administrators manage the menu and incoming orders. The frontend uses React with Tailwind CSS and communicates with a PHP backend written by a classmate over a REST API.",
     stack: [
       "React",
       "TypeScript",
@@ -354,23 +354,23 @@ export const projects: Project[] = [
     screenshots: ["/projects/school-buffet/buffet.webp"],
     caseStudy: {
       motivation:
-        "The cafeteria still ran on paper slips and shouted orders during the lunch rush. For our graduation project at SPŠE and VOŠ Plzeň, we wanted ordering to feel as quick as grabbing a tray — not another app students would ignore between classes.",
+        "The cafeteria still ran on paper slips and shouted orders during the lunch rush. For our graduation project at SPŠE and VOŠ Plzeň, we wanted ordering to feel as quick as grabbing a tray, not like another app students would ignore between classes.",
       challenges: [
-        "Building a real-time Kitchen Display System (KDS) that keeps tickets synced instantly without server-side performance lag.",
-        "Decoupling the frontend development flow from a concurrently developed PHP backend.",
-        "Ensuring robust client-side validation and consistent global state (cart, auth, navigation) under high user traffic.",
+        "Building a Kitchen Display System that kept tickets synced in real time without overloading the server",
+        "Developing the frontend while the PHP backend was still being built in parallel",
+        "Handling client-side validation and global state for cart, auth, and navigation under peak traffic",
       ],
       architecture: [
-        "React (Vite + TypeScript) structured as a modular SPA, styled rapidly with TailwindCSS and dynamic tailwind-merge components.",
-        "Global state powered by Zustand (CartStore) and react-auth-kit for lightweight, provider-less session and cart tracking.",
-        "Data layer split between TanStack Query (Axios-driven caching/fetching for menus/accounts) and a custom native WebSocket service with a heartbeat interval for real-time KDS synchronization.",
-        "Strict type-safe boundaries utilizing Zod schema validation for registration/inputs and static TypeScript interfaces across all data-fetching layers.",
+        "React (Vite + TypeScript) SPA with Tailwind CSS",
+        "Zustand for cart state and react-auth-kit for session handling",
+        "TanStack Query with Axios for menus and accounts, plus a custom WebSocket service with heartbeat keep-alive for the kitchen display",
+        "Zod validation on inputs and TypeScript interfaces across data-fetching layers",
       ],
       lessons: [
-        "A Kitchen Display System reframes 'done': third-party WebSocket libraries lacked vital keep-alive mechanics, forcing us to build a custom native ping-interval solution to prevent dropped kitchen connections.",
-        "Owning only the frontend forced disciplined API thinking; treating Axios and TanStack Query as the sole integration boundaries insulated the UI when backend behavior shifted late in the semester.",
-        "UX and reliability matter more than animation polish — leveraging structured components (framer-motion, react-hot-toast, ldrs) kept the UI intuitive for busy kitchen staff and rushing students alike.",
-        "Validating client-side edge cases with Zod and automating code health via ESLint/Prettier saved critical debugging time during integration testing.",
+        "Third-party WebSocket libraries did not handle keep-alive the way a kitchen display needs, so we built a native ping interval to prevent dropped connections",
+        "Owning only the frontend forced disciplined API boundaries. Axios and TanStack Query became the integration surface when backend behavior changed late in the semester",
+        "Reliability mattered more than animation polish for kitchen staff and students moving through a short lunch window",
+        "Zod validation and consistent linting saved time during integration testing",
       ],
     },
   },
