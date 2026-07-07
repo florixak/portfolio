@@ -3,12 +3,12 @@ import { profile } from "./profile";
 
 export const about: About = {
   intro:
-    "Full-Stack Engineer and Software Engineering student focused on scalable web applications, polished interfaces, and turning ideas into real products.",
+    "Full-stack Engineer and Software Engineering student. I build web applications with attention to architecture, interface quality, and getting products into production.",
   quote:
-    "I enjoy building projects that combine clean interfaces, thoughtful engineering and practical value.",
+    "I like projects where careful engineering and a clear interface meet something people will actually use.",
   whoIAm: [
-    "I'm a software engineering student focused on building interactive products and modern web experiences.",
-    "Most of my work revolves around React, Next.js and Spring Boot, while continuously expanding into architecture and backend systems.",
+    "I'm a software engineering student who builds interactive products and web experiences.",
+    "Most of my work sits in React, Next.js, and Spring Boot, and I spend a growing share of my time on backend design and system architecture.",
   ],
   currently: [
     {
@@ -31,12 +31,12 @@ export const about: About = {
     },
   ],
   outsideOfCode: [
-    "Many of my personal projects are inspired by communities, games and ideas that combine design and technology — like the OMORI Headspace and OMORI Wordle projects.",
+    "Several of my personal projects come from communities and games I've spent time in, including OMORI Headspace and OMORI Wordle.",
   ],
   interests: [
-    "Game communities & interactive fiction",
+    "Game communities and interactive fiction",
     "Creative side projects",
-    "Design systems & UI craft",
+    "Design systems and UI craft",
     "Open source tooling",
   ],
 };
