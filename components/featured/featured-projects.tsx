@@ -17,7 +17,7 @@ const FeaturedProjects = () => {
         <SectionHeader
           num="02"
           title="Featured Projects"
-          sub="Selected projects that reflect my interests in product development, full-stack architecture and interactive experiences."
+          sub="Work that spans product development, full-stack architecture, and interactive interfaces."
         />
       </Reveal>
 

@@ -10,7 +10,7 @@ export const siteUrl =
 export const defaultTitle = `${profile.name} | ${profile.role}`;
 
 export const defaultDescription =
-  "I am a Full-Stack Engineer and Software Engineering student building scalable web applications with Next.js, React, and Spring Boot. Based in Pilsen, Czech Republic.";
+  "Full-Stack Engineer and Software Engineering student from Pilsen, Czech Republic. I build web applications with Next.js, React, and Spring Boot.";
 
 export const keywords = [
   "Ondřej Pták",

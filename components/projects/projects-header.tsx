@@ -12,9 +12,9 @@ const ProjectsHeader = ({ count }: ProjectsHeaderProps) => {
 
       <div className="grid grid-cols-1 gap-6 items-end lg:grid-cols-[1fr_auto]">
         <p className="type-body max-w-2xl">
-          A collection of projects exploring full-stack development, interactive
-          interfaces and product-oriented thinking. Each project reflects
-          different challenges, technologies and approaches.
+          Selected work across full-stack development, interface design, and
+          product thinking. Each project addressed a different set of constraints
+          with different tools.
         </p>
         <p className="type-index text-right">{count} projects total</p>
       </div>
