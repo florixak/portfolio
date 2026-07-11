@@ -204,8 +204,7 @@ export const projects: Project[] = [
         "The goal was a realistic e-commerce experience for a semester project with RTSoft, with equal weight on usability, architecture, and maintainable UI design.",
       challenges: [
         "Designing a multi-step checkout that did not overwhelm users",
-        "Representing product variants, pricing, and stock accurately",
-        "Building admin tables with sorting, filtering, and order management",
+        "Representing product variants, pricing, and stock accurately (SKU management)",
         "Keeping cart and catalog state consistent across routes",
         "Adjusting UI decisions after usability testing",
       ],
@@ -218,9 +217,9 @@ export const projects: Project[] = [
       ],
       lessons: [
         "Usability testing surfaced problems I had not anticipated during implementation",
-        "Consistent UI patterns matter more as project scope grows",
         "Filtering and product variant logic affect both UX and data modeling",
         "Regular client feedback improved the final result more than late-stage polish alone",
+        "It is essential to prepare data models early to avoid costly refactoring later.",
       ],
     },
   },
@@ -258,12 +257,12 @@ export const projects: Project[] = [
     screenshots: ["/projects/textforge/textforge.webp"],
     caseStudy: {
       motivation:
-        "I built TextForge to learn TanStack Start while shipping a developer-facing text utility with optional AI features behind authentication.",
+        "I built TextForge to format data for my Minimal E-Shop project. In the process, I learned TanStack Start to ship a developer-facing text utility, featuring optional AI integrations secured behind an authentication layer.",
       challenges: [
         "Rendering live previews without lag on large text inputs",
         "Restricting AI features to authenticated users",
         "Handling Stripe checkout and access control for premium tiers",
-        "Designing prompts that return structured, predictable output",
+        "Designing prompts that return structured, predictable output, while keeping token usage low.",
       ],
       architecture: [
         "TanStack Start full-stack framework with server functions",
@@ -290,7 +289,7 @@ export const projects: Project[] = [
       "Interactive OMORI fan site with scroll-driven GSAP animations and detailed front-end work.",
     description:
       "An interactive fan site for the indie RPG OMORI, built to exercise scroll-driven animation and front-end detail work.",
-    stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "GSAP"],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
     highlights: [
       "Scroll-driven animations",
       "Interactive UI sections",
@@ -305,7 +304,7 @@ export const projects: Project[] = [
       motivation:
         "OMORI has a distinct visual identity, and I wanted a fan site that translated that mood into scroll-driven animation and front-end craft.",
       challenges: [
-        "Matching the game's mood and color palette without using official assets",
+        "Matching the game's mood and color palette",
         "Coordinating GSAP timelines across scroll triggers and page sections",
         "Keeping performance acceptable with heavy animation on lower-end devices",
       ],
