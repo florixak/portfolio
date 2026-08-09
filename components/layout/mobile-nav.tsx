@@ -89,6 +89,7 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
     <nav
       ref={ref}
       id="mobile-nav"
+      aria-label="Mobile navigation"
       className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4"
     >
       {NAV_ITEMS.map((item) => {

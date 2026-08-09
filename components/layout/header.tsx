@@ -81,6 +81,9 @@ const Header = () => {
           variant="ghost"
           size="icon"
           className="md:hidden"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
           onClick={() => setMenuOpen((v) => !v)}
         >
           {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
