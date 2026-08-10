@@ -10,6 +10,7 @@ Personal portfolio site showcasing projects, stack, and contact information. Bui
 - **Contact** — Social links, email copy, availability terminal
 - **Dark mode** — System-aware theme toggle
 - **Typed routes** — Next.js typed routes for type-safe navigation
+- **Internationalization** — English (default) and Czech via `next-intl`, with automatic locale detection, `/en` and `/cs` URL prefixes, and a language switcher
 
 ## Tech stack
 
@@ -19,6 +20,7 @@ Personal portfolio site showcasing projects, stack, and contact information. Bui
 - [Tailwind CSS v4](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/) + Radix UI
 - [next-themes](https://github.com/pacocoursey/next-themes)
+- [next-intl](https://next-intl.dev/) (internationalization)
 
 ## Getting started
 
@@ -50,14 +52,38 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Project structure
 
 ```
-app/                  # Routes (/, /about, /contact, /projects, /projects/[slug])
+app/
+  [locale]/           # Localized routes (/en, /cs, .../about, .../contact, .../projects, .../projects/[slug])
+  sitemap.ts          # Emits every route x locale with hreflang alternates
+  robots.ts, manifest.ts, not-found.tsx  # Locale-independent root files
+i18n/                 # next-intl routing config, navigation helpers, request config
+messages/             # Translation catalogs (en.json, cs.json)
 components/           # UI by section (hero, projects, contact, layout, theme, …)
 data/                 # Content (edit these to update the site)
-lib/                  # Utilities (filtering, project helpers)
+lib/                  # Utilities (filtering, project helpers, SEO)
 public/               # Static assets (resume PDF, project images)
 types/                # Shared TypeScript types
 constants/            # Nav items, filters
 ```
+
+## Internationalization
+
+The site is available in English (default, `/en`) and Czech (`/cs`), powered by [next-intl](https://next-intl.dev/).
+
+- **Routing** — `i18n/routing.ts` declares the supported locales and every static pathname (used for typed, autocompleted `Link`/`useRouter` calls). `middleware.ts` detects the visitor's locale (URL prefix → `NEXT_LOCALE` cookie → `Accept-Language` header) and redirects to the prefixed URL.
+- **Translations** — UI copy for the header/footer, hero, about, projects, and contact sections lives in `messages/en.json` and `messages/cs.json`. Longer, narrative content (bio paragraphs, project descriptions, terminal output) stays in `data/*.ts` and is currently English-only; see "Adding more translations" below to localize it too.
+- **Usage** — Server Components use `useTranslations`/`getTranslations` from `next-intl` / `next-intl/server` (e.g. `components/hero/hero.tsx`, `app/[locale]/about/page.tsx`); Client Components use the same `useTranslations` hook (e.g. `components/hero/hero-cta.tsx`, `components/layout/language-switcher.tsx`).
+- **Language switcher** — `components/layout/language-switcher.tsx` is a small client component in the header that re-navigates to the current page under the other locale.
+
+### Adding a new language
+
+1. Add the locale code to `locales` in `i18n/routing.ts`.
+2. Copy `messages/en.json` to `messages/<locale>.json` and translate every value.
+3. Add a label for it to `languageSwitcher.locales` in both message files.
+
+### Adding more translations
+
+To localize a new piece of UI copy: add a key under the relevant namespace in both `messages/en.json` and `messages/cs.json`, then read it with `useTranslations("namespace")` (or `getTranslations` in `async` Server Components) instead of hardcoding the string.
 
 ## Updating content
 

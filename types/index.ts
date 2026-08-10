@@ -28,9 +28,9 @@ export type AboutCurrentItem = {
   items: string[];
 };
 
+// `intro` and `quote` live in the `about` namespace of `messages/*.json`
+// since they're translated; the remaining fields stay data-driven.
 export type About = {
-  intro: string;
-  quote: string;
   whoIAm: string[];
   currently: AboutCurrentItem[];
   outsideOfCode: string[];

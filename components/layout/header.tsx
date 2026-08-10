@@ -1,19 +1,20 @@
 "use client";
 
 import { NAV_ITEMS } from "@/constants";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn, isNavActive } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { Route } from "next";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import ThemeToggle from "../theme/theme-toggle";
+import LanguageSwitcher from "./language-switcher";
 import { Button } from "../ui/button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MobileNav from "./mobile-nav";
 
 const Header = () => {
+  const t = useTranslations("nav");
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -64,31 +65,34 @@ const Header = () => {
             return (
               <Link
                 key={item.href}
-                href={item.href as Route}
+                href={item.href}
                 className={cn(
                   "header-nav-item",
                   "type-label text-muted-foreground hover:text-foreground transition-colors duration-200",
                   isActive && "text-primary",
                 )}
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             );
           })}
         </nav>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-          onClick={() => setMenuOpen((v) => !v)}
-        >
-          {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
-        </Button>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+          </Button>
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
       </div>
 
       <MobileNav isOpen={menuOpen} onClose={() => setMenuOpen(false)} />

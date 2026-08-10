@@ -1,5 +1,6 @@
 import { getProjectPreviewImages } from "@/lib/project-utils";
 import { Project } from "@/types";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 type ProjectPreviewProps = {
@@ -29,6 +30,7 @@ const PreviewImage = ({
 );
 
 const ProjectPreview = ({ project }: ProjectPreviewProps) => {
+  const t = useTranslations("projects.detail");
   const { preview, gallery } = getProjectPreviewImages(project);
 
   if (!preview) {
@@ -37,7 +39,7 @@ const ProjectPreview = ({ project }: ProjectPreviewProps) => {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-16 border-b border-border">
-      <h2 className="type-label text-primary mb-6">Project Preview</h2>
+      <h2 className="type-label text-primary mb-6">{t("projectPreview")}</h2>
 
       <PreviewImage
         src={preview}

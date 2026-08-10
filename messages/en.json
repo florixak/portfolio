@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "home": {
+      "description": "Full-Stack Engineer and Software Engineering student from Pilsen, Czech Republic. I build web applications with Next.js, React, and Spring Boot."
+    },
+    "about": {
+      "title": "About"
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Selected projects built with React, Next.js, Spring Boot, and related tooling, including AI-assisted applications and interactive web work."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Reach out to discuss a project, collaboration, or full-stack role. I respond to most messages within 24 to 48 hours."
+    },
+    "notFound": {
+      "title": "Page not found"
+    }
+  },
+
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileNavLabel": "Mobile navigation"
+  },
+
+  "languageSwitcher": {
+    "label": "Language",
+    "switchTo": "Switch to {language}",
+    "locales": {
+      "en": "English",
+      "cs": "Čeština"
+    }
+  },
+
+  "hero": {
+    "role": "Full-Stack Engineer",
+    "description": [
+      "Software Engineering student from Pilsen, Czech Republic. I work on interactive products and web applications from the frontend through to the backend.",
+      "I ship full-stack applications with clean interfaces and side projects that start as ideas and land as working software."
+    ],
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+
+  "home": {
+    "techStack": {
+      "title": "Tech Stack",
+      "sub": "What I build with in production projects"
+    },
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "sub": "Work that spans product development, full-stack architecture, and interactive interfaces.",
+      "viewAll": "View all projects"
+    }
+  },
+
+  "about": {
+    "eyebrow": "About me",
+    "title": "About",
+    "intro": "Full-stack Engineer and Software Engineering student. I build web applications with attention to architecture, interface quality, and getting products into production.",
+    "quote": "I like projects where careful engineering and a clear interface meet something people will actually use.",
+    "interestsLabel": "Interests",
+    "sections": {
+      "whoIAm": { "num": "01", "title": "Who I Am" },
+      "currently": { "num": "02", "title": "Currently" },
+      "outsideOfCode": { "num": "03", "title": "Outside of Code" }
+    },
+    "footer": {
+      "label": "Get in touch",
+      "title": "Interested in working together<br></br><primary>or discussing ideas?</primary>",
+      "cta": "Get in touch"
+    }
+  },
+
+  "projects": {
+    "eyebrow": "Portfolio",
+    "title": "Projects",
+    "description": "Selected work across full-stack development, interface design, and product thinking. Each project addressed a different set of constraints with different tools.",
+    "count": "{count, plural, one {# project total} other {# projects total}}",
+    "filters": {
+      "all": "All",
+      "active": "Active",
+      "completed": "Completed",
+      "archived": "Archived",
+      "filterByStatus": "Filter projects by status",
+      "searchPlaceholder": "Search projects...",
+      "clearSearch": "Clear search",
+      "results": "{count, plural, one {# result} other {# results}}",
+      "clear": "Clear",
+      "noResults": {
+        "title": "No projects found",
+        "subtitle": "Try a different filter or search term"
+      }
+    },
+    "footer": {
+      "title": "Interested in how I approach<br></br><primary>building products?</primary>",
+      "description": "Contact me if you would like to discuss a project or how I approach product work.",
+      "cta": "Contact Me"
+    },
+    "detail": {
+      "backToProjects": "← Projects",
+      "technologiesUsed": "Technologies used",
+      "github": "GitHub",
+      "liveDemo": "Live demo",
+      "projectPreview": "Project Preview",
+      "context": "Context",
+      "technicalApproach": "Technical Approach",
+      "challenges": "Challenges",
+      "whatILearned": "What I Learned",
+      "keyFeatures": "Key Features",
+      "nextProject": "Next Project",
+      "viewProject": "View Project"
+    }
+  },
+
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Have a<br></br><primary>project</primary> or <primary>idea</primary> in mind?",
+    "paragraph": "Reach out if you would like to discuss a role, a collaboration, or a product you are building.",
+    "availableForWork": "I am open to internships, collaboration, and full-stack roles.",
+    "notAvailableForWork": "I am open to internships, collaboration, and conversations about new work.",
+    "connect": "Connect",
+    "copyEmail": "Copy email",
+    "emailCopied": "Email copied",
+    "copy": "Copy",
+    "copied": "Copied",
+    "responseTimeLabel": "Response time",
+    "responseTimeValue": "Usually within 24 to 48 hours.",
+    "currentlyOpenTo": "Currently Open To",
+    "statusCheck": "Status check",
+    "seeYouAround": "See you around",
+    "pageNavLabel": "Contact page navigation",
+    "backHome": "← Home",
+    "linksNavLabel": "Contact links",
+    "homeCta": {
+      "index": "03 — Contact",
+      "title": "Interested in<br></br>working<br></br><primary>together?</primary>",
+      "availableDescription": "I am open to internships, collaboration, and full-stack roles. Send a message through any of the links below.",
+      "notAvailableDescription": "I am open to internships, collaboration, and conversations about new work. Send a message through any of the links below."
+    }
+  },
+
+  "footer": {
+    "copyright": "\u00A9 {year} {name}. All rights reserved.",
+    "madeWith": "Created with \u2764\uFE0F in Pilsen, Czech Republic"
+  },
+
+  "notFound": {
+    "label": "404",
+    "title": "Page<br></br><primary>not found</primary>",
+    "description": "The page you are looking for does not exist or may have been moved. Head back home or explore the projects.",
+    "backHome": "Back home",
+    "viewProjects": "View projects"
+  },
+
+  "projectNotFound": {
+    "metaTitle": "Project not found",
+    "label": "404 — Project",
+    "title": "Project<br></br><primary>not found</primary>",
+    "description": "This project does not exist or may have been removed from the portfolio. Browse all projects or return home.",
+    "allProjects": "All projects",
+    "backHome": "Back home"
+  },
+
+  "error": {
+    "label": "500 — Error",
+    "title": "Something<br></br><primary>went wrong</primary>",
+    "description": "An unexpected error occurred while loading this page. Try again or head back home.",
+    "tryAgain": "Try again",
+    "backHome": "Back home"
+  }
+}

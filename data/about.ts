@@ -2,10 +2,6 @@ import { About } from "@/types";
 import { profile } from "./profile";
 
 export const about: About = {
-  intro:
-    "Full-stack Engineer and Software Engineering student. I build web applications with attention to architecture, interface quality, and getting products into production.",
-  quote:
-    "I like projects where careful engineering and a clear interface meet something people will actually use.",
   whoIAm: [
     "I'm a software engineering student who builds interactive products and web experiences.",
     "Most of my work sits in React, Next.js, and Spring Boot, and I spend a growing share of my time on backend design and system architecture.",

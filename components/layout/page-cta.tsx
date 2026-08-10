@@ -1,13 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
-import { Route } from "next";
-import Link from "next/link";
+import type { ComponentProps } from "react";
 
 type PageCTAProps = {
   label: string;
-  href?: Route;
+  href?: ComponentProps<typeof Link>["href"];
   variant?: "default" | "outline";
 };
 

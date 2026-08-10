@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "home": {
+      "description": "Full-Stack vývojář a student softwarového inženýrství z Plzně. Vytvářím webové aplikace s pomocí Next.js, React a Spring Boot."
+    },
+    "about": {
+      "title": "O mně"
+    },
+    "projects": {
+      "title": "Projekty",
+      "description": "Vybrané projekty postavené na Reactu, Next.js, Spring Boot a souvisejících nástrojích, včetně aplikací s AI a interaktivních webových řešení."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Ozvěte se mi, pokud chcete probrat projekt, spolupráci nebo pozici full-stack vývojáře. Na většinu zpráv odpovídám do 24 až 48 hodin."
+    },
+    "notFound": {
+      "title": "Stránka nenalezena"
+    }
+  },
+
+  "nav": {
+    "home": "Domů",
+    "projects": "Projekty",
+    "about": "O mně",
+    "contact": "Kontakt",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu",
+    "mobileNavLabel": "Mobilní navigace"
+  },
+
+  "languageSwitcher": {
+    "label": "Jazyk",
+    "switchTo": "Přepnout na {language}",
+    "locales": {
+      "en": "English",
+      "cs": "Čeština"
+    }
+  },
+
+  "hero": {
+    "role": "Full-Stack vývojář",
+    "description": [
+      "Student softwarového inženýrství z Plzně. Věnuji se interaktivním produktům a webovým aplikacím od frontendu až po backend.",
+      "Vytvářím full-stack aplikace s čistým uživatelským rozhraním a vedlejší projekty, které začínají jako nápady a končí jako funkční software."
+    ],
+    "viewProjects": "Zobrazit projekty",
+    "contactMe": "Kontaktujte mě"
+  },
+
+  "home": {
+    "techStack": {
+      "title": "Technologie",
+      "sub": "S čím pracuji na produkčních projektech"
+    },
+    "featuredProjects": {
+      "title": "Vybrané projekty",
+      "sub": "Práce napříč vývojem produktů, full-stack architekturou a interaktivními rozhraními.",
+      "viewAll": "Zobrazit všechny projekty"
+    }
+  },
+
+  "about": {
+    "eyebrow": "O mně",
+    "title": "O mně",
+    "intro": "Full-stack vývojář a student softwarového inženýrství. Stavím webové aplikace s důrazem na architekturu, kvalitu rozhraní a jejich nasazení do provozu.",
+    "quote": "Mám rád projekty, ve kterých se pečlivé inženýrství a srozumitelné rozhraní potkají s něčím, co lidé skutečně využijí.",
+    "interestsLabel": "Zájmy",
+    "sections": {
+      "whoIAm": { "num": "01", "title": "Kdo jsem" },
+      "currently": { "num": "02", "title": "Aktuálně" },
+      "outsideOfCode": { "num": "03", "title": "Mimo kód" }
+    },
+    "footer": {
+      "label": "Ozvěte se",
+      "title": "Máte zájem o spolupráci<br></br><primary>nebo chcete probrat nápad?</primary>",
+      "cta": "Ozvěte se"
+    }
+  },
+
+  "projects": {
+    "eyebrow": "Portfolio",
+    "title": "Projekty",
+    "description": "Výběr prací z oblasti full-stack vývoje, návrhu rozhraní a produktového myšlení. Každý projekt řešil jiné zadání a vyžadoval jiné nástroje.",
+    "count": "{count, plural, one {# projekt celkem} few {# projekty celkem} many {# projektu celkem} other {# projektů celkem}}",
+    "filters": {
+      "all": "Vše",
+      "active": "Aktivní",
+      "completed": "Dokončené",
+      "archived": "Archivované",
+      "filterByStatus": "Filtrovat projekty podle stavu",
+      "searchPlaceholder": "Hledat projekty...",
+      "clearSearch": "Vymazat hledání",
+      "results": "{count, plural, one {# výsledek} few {# výsledky} many {# výsledku} other {# výsledků}}",
+      "clear": "Zrušit filtr",
+      "noResults": {
+        "title": "Nenalezeny žádné projekty",
+        "subtitle": "Zkuste jiný filtr nebo hledaný výraz"
+      }
+    },
+    "footer": {
+      "title": "Zajímá vás, jak přistupuji<br></br><primary>k tvorbě produktů?</primary>",
+      "description": "Ozvěte se, pokud chcete probrat projekt nebo můj přístup k práci na produktech.",
+      "cta": "Kontaktujte mě"
+    },
+    "detail": {
+      "backToProjects": "← Projekty",
+      "technologiesUsed": "Použité technologie",
+      "github": "GitHub",
+      "liveDemo": "Živé demo",
+      "projectPreview": "Náhled projektu",
+      "context": "Kontext",
+      "technicalApproach": "Technický přístup",
+      "challenges": "Výzvy",
+      "whatILearned": "Co jsem se naučil",
+      "keyFeatures": "Klíčové vlastnosti",
+      "nextProject": "Další projekt",
+      "viewProject": "Zobrazit projekt"
+    }
+  },
+
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Máte na mysli<br></br><primary>projekt</primary> nebo <primary>nápad</primary>?",
+    "paragraph": "Ozvěte se, pokud chcete probrat roli, spolupráci nebo produkt, na kterém pracujete.",
+    "availableForWork": "Jsem otevřený stážím, spolupráci a pozicím full-stack vývojáře.",
+    "notAvailableForWork": "Jsem otevřený stážím, spolupráci a rozhovorům o nové práci.",
+    "connect": "Propojme se",
+    "copyEmail": "Kopírovat e-mail",
+    "emailCopied": "E-mail zkopírován",
+    "copy": "Kopírovat",
+    "copied": "Zkopírováno",
+    "responseTimeLabel": "Doba odezvy",
+    "responseTimeValue": "Obvykle do 24 až 48 hodin.",
+    "currentlyOpenTo": "Aktuálně otevřený",
+    "statusCheck": "Kontrola stavu",
+    "seeYouAround": "Uvidíme se",
+    "pageNavLabel": "Navigace na stránce kontaktu",
+    "backHome": "← Domů",
+    "linksNavLabel": "Kontaktní odkazy",
+    "homeCta": {
+      "index": "03 — Kontakt",
+      "title": "Máte zájem<br></br>o společnou<br></br><primary>práci?</primary>",
+      "availableDescription": "Jsem otevřený stážím, spolupráci a pozicím full-stack vývojáře. Napište mi přes některý z odkazů níže.",
+      "notAvailableDescription": "Jsem otevřený stážím, spolupráci a rozhovorům o nové práci. Napište mi přes některý z odkazů níže."
+    }
+  },
+
+  "footer": {
+    "copyright": "\u00A9 {year} {name}. Všechna práva vyhrazena.",
+    "madeWith": "Vytvořeno s \u2764\uFE0F v Plzni, Česká republika"
+  },
+
+  "notFound": {
+    "label": "404",
+    "title": "Stránka<br></br><primary>nenalezena</primary>",
+    "description": "Stránka, kterou hledáte, neexistuje nebo mohla být přesunuta. Vraťte se na hlavní stránku nebo si prohlédněte projekty.",
+    "backHome": "Zpět domů",
+    "viewProjects": "Zobrazit projekty"
+  },
+
+  "projectNotFound": {
+    "metaTitle": "Projekt nenalezen",
+    "label": "404 — Projekt",
+    "title": "Projekt<br></br><primary>nenalezen</primary>",
+    "description": "Tento projekt neexistuje nebo mohl být z portfolia odstraněn. Prohlédněte si všechny projekty nebo se vraťte domů.",
+    "allProjects": "Všechny projekty",
+    "backHome": "Zpět domů"
+  },
+
+  "error": {
+    "label": "500 — Chyba",
+    "title": "Něco<br></br><primary>se pokazilo</primary>",
+    "description": "Při načítání této stránky došlo k neočekávané chybě. Zkuste to znovu nebo se vraťte na hlavní stránku.",
+    "tryAgain": "Zkusit znovu",
+    "backHome": "Zpět domů"
+  }
+}

@@ -12,6 +12,7 @@ import {
   User,
 } from "lucide-react";
 import { Route } from "next";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -57,6 +58,7 @@ type EmailConnectRowProps = {
 };
 
 const EmailConnectRow = ({ item, onCopy, copied }: EmailConnectRowProps) => {
+  const t = useTranslations("contact");
   const value = getDisplayValue(item.href);
 
   return (
@@ -77,18 +79,19 @@ const EmailConnectRow = ({ item, onCopy, copied }: EmailConnectRowProps) => {
       <button
         type="button"
         onClick={() => onCopy(item.href)}
-        aria-label={copied ? "Email copied" : "Copy email"}
+        aria-label={copied ? t("emailCopied") : t("copyEmail")}
         className="type-label-xs shrink-0 text-muted-foreground transition-colors duration-200 hover:text-primary"
       >
         <span className="inline-flex items-center gap-1">
           {copied ? (
             <>
               <Check size={13} />{" "}
-              <span className="hidden md:inline">Copied</span>
+              <span className="hidden md:inline">{t("copied")}</span>
             </>
           ) : (
             <>
-              <Copy size={13} /> <span className="hidden md:inline">Copy</span>
+              <Copy size={13} />{" "}
+              <span className="hidden md:inline">{t("copy")}</span>
             </>
           )}
         </span>

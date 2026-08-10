@@ -1,12 +1,11 @@
 "use client";
 
 import { NAV_ITEMS } from "@/constants";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn, isNavActive } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Route } from "next";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 
 type MobileNavProps = {
@@ -15,6 +14,7 @@ type MobileNavProps = {
 };
 
 const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
+  const t = useTranslations("nav");
   const [shouldRender, setShouldRender] = useState(false);
   const ref = useRef<HTMLElement>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
@@ -89,7 +89,7 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
     <nav
       ref={ref}
       id="mobile-nav"
-      aria-label="Mobile navigation"
+      aria-label={t("mobileNavLabel")}
       className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4"
     >
       {NAV_ITEMS.map((item) => {
@@ -97,7 +97,7 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
         return (
           <Link
             key={item.href}
-            href={item.href as Route}
+            href={item.href}
             onClick={onClose}
             className={cn(
               "header-nav-item",
@@ -105,7 +105,7 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
               isActive && "text-primary",
             )}
           >
-            {item.label}
+            {t(item.labelKey)}
           </Link>
         );
       })}
