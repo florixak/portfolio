@@ -169,7 +169,7 @@ export const projects: Project[] = [
     slug: "rtsoft-clothing-eshop",
     title: "RTSoft Clothing E-Shop",
     featured: true,
-    priority: 2,
+    priority: 3,
     status: "completed",
     year: 2026,
     shortDescription:
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     slug: "textforge",
     title: "TextForge",
     featured: true,
-    priority: 3,
+    priority: 2,
     status: "completed",
     year: 2026,
     shortDescription:
