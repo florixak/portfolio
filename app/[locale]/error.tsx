@@ -2,6 +2,7 @@
 
 import ErrorContent from "@/components/layout/error-content";
 import { errorTerminalSections } from "@/data/terminal";
+import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 
 type ErrorProps = {
@@ -10,10 +11,12 @@ type ErrorProps = {
 };
 
 const Error = ({ error, reset }: ErrorProps) => {
+  const t = useTranslations("error");
+
   useEffect(() => {
-    document.title = "Error";
+    document.title = t("label");
     console.error(error);
-  }, [error]);
+  }, [error, t]);
 
   return (
     <ErrorContent reset={reset} terminalSections={errorTerminalSections} />

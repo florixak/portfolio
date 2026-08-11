@@ -1,19 +1,23 @@
 import PageFooter from "@/components/layout/page-footer";
 import { Project } from "@/types";
-import { Route } from "next";
+import { useTranslations } from "next-intl";
 
 type ProjectNextProps = {
   project: Project;
 };
 
-const ProjectNext = ({ project }: ProjectNextProps) => (
-  <PageFooter
-    label="Next Project"
-    title={project.title}
-    description={project.shortDescription}
-    ctaLabel="View Project"
-    ctaHref={`/projects/${project.slug}` as Route}
-  />
-);
+const ProjectNext = ({ project }: ProjectNextProps) => {
+  const t = useTranslations("projects.detail");
+
+  return (
+    <PageFooter
+      label={t("nextProject")}
+      title={project.title}
+      description={project.shortDescription}
+      ctaLabel={t("viewProject")}
+      ctaHref={{ pathname: "/projects/[slug]", params: { slug: project.slug } }}
+    />
+  );
+};
 
 export default ProjectNext;

@@ -1,33 +1,63 @@
-import { about } from "@/data/about";
-import { profile } from "@/data/profile";
+import { useTranslations } from "next-intl";
 import Column from "../layout/column";
 import SectionHeader from "../layout/section-header";
 import Reveal from "../motion/reveal";
 import Stagger from "../motion/stagger";
 
 const AboutContent = () => {
+  const t = useTranslations("about");
+  const tProfile = useTranslations("profile");
+
+  const whoIAm = t.raw("whoIAm") as string[];
+  const outsideOfCode = t.raw("outsideOfCode") as string[];
+  const interests = t.raw("interests") as string[];
+  const buildingWithItems = t.raw("currently.buildingWith.items") as string[];
+  const openToItems = t.raw("currently.openTo.items") as string[];
+
+  const currently = [
+    {
+      label: t("currently.studying.label"),
+      items: [
+        tProfile("degree"),
+        tProfile("university"),
+        tProfile("location"),
+      ],
+    },
+    {
+      label: t("currently.buildingWith.label"),
+      items: buildingWithItems,
+    },
+    {
+      label: t("currently.openTo.label"),
+      items: openToItems,
+    },
+  ];
+
   return (
     <>
       <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
         <Reveal>
-          <SectionHeader num="01" title="Who I Am" />
+          <SectionHeader
+            num={t("sections.whoIAm.num")}
+            title={t("sections.whoIAm.title")}
+          />
         </Reveal>
 
         <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border lg:grid-cols-2">
           <div className="flex flex-col justify-between bg-background p-8 md:p-10">
             <p className="font-heading text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">
-              &ldquo;{about.quote}&rdquo;
+              &ldquo;{t("quote")}&rdquo;
             </p>
             <div className="mt-10 flex items-center gap-3">
               <div className="h-px w-8 bg-primary" />
               <span className="type-label-xs text-primary">
-                {profile.location}
+                {tProfile("location")}
               </span>
             </div>
           </div>
 
           <div className="space-y-5 bg-background p-8 md:p-10">
-            {about.whoIAm.map((paragraph) => (
+            {whoIAm.map((paragraph) => (
               <p key={paragraph} className="type-body">
                 {paragraph}
               </p>
@@ -38,11 +68,14 @@ const AboutContent = () => {
 
       <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
         <Reveal>
-          <SectionHeader num="02" title="Currently" />
+          <SectionHeader
+            num={t("sections.currently.num")}
+            title={t("sections.currently.title")}
+          />
         </Reveal>
 
         <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border md:grid-cols-3">
-          {about.currently.map(({ label, items }) => (
+          {currently.map(({ label, items }) => (
             <Column key={label} label={label} items={items} />
           ))}
         </Stagger>
@@ -50,12 +83,15 @@ const AboutContent = () => {
 
       <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
         <Reveal>
-          <SectionHeader num="03" title="Outside of Code" />
+          <SectionHeader
+            num={t("sections.outsideOfCode.num")}
+            title={t("sections.outsideOfCode.title")}
+          />
         </Reveal>
 
         <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border lg:grid-cols-2">
           <div className="space-y-5 bg-background p-8 md:p-10">
-            {about.outsideOfCode.map((paragraph) => (
+            {outsideOfCode.map((paragraph) => (
               <p key={paragraph} className="type-body">
                 {paragraph}
               </p>
@@ -64,10 +100,10 @@ const AboutContent = () => {
 
           <div className="flex flex-col bg-card p-8 md:p-10">
             <p className="type-label-xs text-muted-foreground/30 mb-6">
-              Interests
+              {t("interestsLabel")}
             </p>
             <ul className="space-y-2.5">
-              {about.interests.map((item) => (
+              {interests.map((item) => (
                 <li
                   key={item}
                   className="type-body hover:text-foreground transition-colors duration-200 cursor-default"

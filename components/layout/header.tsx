@@ -1,23 +1,22 @@
 "use client";
 
 import { NAV_ITEMS } from "@/constants";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn, isNavActive } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { Route } from "next";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import ThemeToggle from "../theme/theme-toggle";
+import LanguageSwitcher from "./language-switcher";
 import { Button } from "../ui/button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import MobileNav from "./mobile-nav";
 
 const Header = () => {
+  const t = useTranslations("nav");
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const isFirstMobileMenuRun = useRef(true);
-  const menuTl = useRef<gsap.core.Timeline | null>(null);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
 
@@ -38,69 +37,7 @@ const Header = () => {
         ease: "power2.out",
       });
     },
-    {
-      scope: headerRef,
-    },
-  );
-
-  useGSAP(
-    () => {
-      const menu = mobileMenuRef.current;
-      if (!menu) return;
-
-      const links = gsap.utils.toArray<HTMLElement>(".header-nav-item", menu);
-
-      if (isFirstMobileMenuRun.current) {
-        isFirstMobileMenuRun.current = false;
-        if (!menuOpen) {
-          gsap.set(menu, {
-            clipPath: "inset(0 0 100% 0)",
-            opacity: 0,
-            pointerEvents: "none",
-          });
-          return;
-        }
-      }
-
-      menuTl.current?.kill();
-      menuTl.current = gsap.timeline();
-
-      const mm = gsap.matchMedia();
-
-      mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(menu, {
-          clipPath: menuOpen ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)",
-          opacity: menuOpen ? 1 : 0,
-          pointerEvents: menuOpen ? "auto" : "none",
-        });
-        gsap.set(links, { opacity: menuOpen ? 1 : 0, y: 0 });
-      });
-
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.set(menu, { pointerEvents: "auto" });
-        menuTl.current
-          ?.to(menu, {
-            clipPath: "inset(0 0 0% 0)",
-            opacity: 1,
-            duration: 0.35,
-            ease: "power2.out",
-          })
-          .from(
-            links,
-            {
-              y: 12,
-              opacity: 0,
-              stagger: 0.06,
-              duration: 0.25,
-              ease: "power2.out",
-            },
-            "-=0.15",
-          );
-      });
-
-      return () => mm.revert();
-    },
-    { scope: headerRef, dependencies: [menuOpen] },
+    { scope: headerRef },
   );
 
   if (pathname !== prevPathname) {
@@ -128,57 +65,37 @@ const Header = () => {
             return (
               <Link
                 key={item.href}
-                href={item.href as Route}
+                href={item.href}
                 className={cn(
                   "header-nav-item",
                   "type-label text-muted-foreground hover:text-foreground transition-colors duration-200",
                   isActive && "text-primary",
                 )}
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             );
           })}
         </nav>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setMenuOpen((v) => !v)}
-        >
-          {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
-        </Button>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+          </Button>
+        </div>
       </div>
 
-      {menuOpen && (
-        <nav
-          id="mobile-nav"
-          ref={mobileMenuRef}
-          aria-hidden={!menuOpen}
-          tabIndex={menuOpen ? 0 : -1}
-          className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4"
-        >
-          {NAV_ITEMS.map((item) => {
-            const isActive = isNavActive(pathname, item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href as Route}
-                onClick={() => setMenuOpen(false)}
-                className={cn(
-                  "header-nav-item",
-                  "type-label text-muted-foreground hover:text-foreground transition-colors duration-200",
-                  isActive && "text-primary",
-                )}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-      )}
+      <MobileNav isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   );
 };

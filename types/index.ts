@@ -23,28 +23,10 @@ export type Project = {
   };
 };
 
-export type AboutCurrentItem = {
-  label: string;
-  items: string[];
-};
-
-export type About = {
-  intro: string;
-  quote: string;
-  whoIAm: string[];
-  currently: AboutCurrentItem[];
-  outsideOfCode: string[];
-  interests: string[];
-};
-
+// Locale-invariant identity fields. Role, tagline, location, university,
+// and degree live in the `profile` namespace of `messages/*.json`.
 export type Profile = {
   name: string;
-  role: string;
-  tagline: string;
-  description: string[];
-  location: string;
-  university: string;
-  degree: string;
   availableForWork: boolean;
   email: string;
 };

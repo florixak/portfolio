@@ -1,8 +1,7 @@
 import ProjectStatusBadge from "@/components/projects/project-status-badge";
+import { Link } from "@/i18n/navigation";
 import { Project } from "@/types";
 import { ArrowUpRight } from "lucide-react";
-import { Route } from "next";
-import Link from "next/link";
 
 type FeaturedProjectCardProps = {
   index: number;
@@ -12,7 +11,7 @@ type FeaturedProjectCardProps = {
 const FeaturedProjectCard = ({ index, project }: FeaturedProjectCardProps) => {
   return (
     <Link
-      href={`/projects/${project.slug}` as Route}
+      href={{ pathname: "/projects/[slug]", params: { slug: project.slug } }}
       className="group flex h-full flex-col bg-background p-8 transition-colors duration-200 hover:bg-card hover:text-primary"
     >
       <div className="grid grid-cols-1 md:grid-cols-[28px_1fr_80px] gap-6 md:gap-10 items-start">

@@ -1,28 +1,31 @@
-import NotFoundContent from "@/components/layout/not-found-content";
-import { notFoundTerminalSections } from "@/data/terminal";
-import type { Metadata } from "next";
+import type { Route } from "next";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Page not found",
-  robots: { index: false, follow: true },
-};
-
-const NotFound = () => {
+// Fallback for requests that don't match the `[locale]` segment at all
+// (e.g. a request that slips past the middleware matcher). In normal
+// operation, visitors always land on `app/[locale]/not-found.tsx` instead,
+// which is fully localized. This route has no access to next-intl context
+// since it sits outside `app/[locale]/layout.tsx`, so it renders a minimal,
+// framework-level document instead of reusing the site's design system.
+export default function GlobalNotFound() {
   return (
-    <NotFoundContent
-      title={
-        <>
-          Page
-          <br />
-          <span className="text-primary">not found</span>
-        </>
-      }
-      description="The page you are looking for does not exist or may have been moved. Head back home or explore the projects."
-      primaryLink={{ label: "Back home", href: "/" }}
-      secondaryLink={{ label: "View projects", href: "/projects" }}
-      terminalSections={notFoundTerminalSections}
-    />
+    <html lang="en">
+      <body
+        style={{
+          display: "flex",
+          minHeight: "100vh",
+          alignItems: "center",
+          justifyContent: "center",
+          fontFamily: "system-ui, sans-serif",
+        }}
+      >
+        <div style={{ textAlign: "center" }}>
+          <h1>404 — Page not found</h1>
+          <p>
+            <Link href={"/" as Route}>Back home</Link>
+          </p>
+        </div>
+      </body>
+    </html>
   );
-};
-
-export default NotFound;
+}

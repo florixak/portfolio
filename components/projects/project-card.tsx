@@ -1,7 +1,7 @@
+import { Link } from "@/i18n/navigation";
 import { Project } from "@/types";
 import { ArrowUpRight } from "lucide-react";
-import { Route } from "next";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import ProjectStatusBadge from "./project-status-badge";
 
 type ProjectCardProps = {
@@ -10,9 +10,11 @@ type ProjectCardProps = {
 };
 
 const ProjectCard = ({ index, project }: ProjectCardProps) => {
+  const t = useTranslations("projects.detail");
+
   return (
     <Link
-      href={`/projects/${project.slug}` as Route}
+      href={{ pathname: "/projects/[slug]", params: { slug: project.slug } }}
       className="group flex h-full flex-col bg-background p-8 transition-colors duration-200 hover:bg-card"
     >
       <div className="mb-4 flex items-start justify-between gap-4">
@@ -43,7 +45,7 @@ const ProjectCard = ({ index, project }: ProjectCardProps) => {
       </div>
 
       <span className="type-label inline-flex items-center gap-2 border-t border-border pt-5 text-muted-foreground transition-colors duration-200 group-hover:text-primary">
-        View Project
+        {t("viewProject")}
         <ArrowUpRight
           size={12}
           className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

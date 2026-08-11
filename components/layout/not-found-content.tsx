@@ -1,13 +1,13 @@
 import Terminal from "@/components/layout/terminal";
 import Reveal from "@/components/motion/reveal";
+import { Link } from "@/i18n/navigation";
 import type { TerminalSection } from "@/types";
-import type { Route } from "next";
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import PageCTA from "./page-cta";
 
 type NotFoundLink = {
   label: string;
-  href: Route;
+  href: ComponentProps<typeof Link>["href"];
 };
 
 type NotFoundContentProps = {

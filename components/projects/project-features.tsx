@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Reveal from "../motion/reveal";
 
 type ProjectFeaturesProps = {
@@ -5,6 +6,8 @@ type ProjectFeaturesProps = {
 };
 
 const ProjectFeatures = ({ highlights }: ProjectFeaturesProps) => {
+  const t = useTranslations("projects.detail");
+
   if (highlights.length === 0) {
     return null;
   }
@@ -12,7 +15,7 @@ const ProjectFeatures = ({ highlights }: ProjectFeaturesProps) => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
       <Reveal>
-        <h2 className="type-label text-primary mb-6">Key Features</h2>
+        <h2 className="type-label text-primary mb-6">{t("keyFeatures")}</h2>
         <ul className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
           {highlights.map((highlight) => (
             <li key={highlight} className="type-body bg-background p-6">

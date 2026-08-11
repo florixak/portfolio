@@ -1,4 +1,5 @@
 import { Project } from "@/types";
+import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 import Stagger from "../motion/stagger";
 
@@ -31,6 +32,8 @@ const hasCaseStudyContent = (caseStudy?: Project["caseStudy"]) =>
   );
 
 const ProjectCaseStudy = ({ caseStudy }: ProjectCaseStudyProps) => {
+  const t = useTranslations("projects.detail");
+
   if (!hasCaseStudyContent(caseStudy) || !caseStudy) {
     return null;
   }
@@ -39,13 +42,13 @@ const ProjectCaseStudy = ({ caseStudy }: ProjectCaseStudyProps) => {
     <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
       <Stagger className="space-y-16">
         {caseStudy.motivation ? (
-          <CaseStudyBlock label="Context">
+          <CaseStudyBlock label={t("context")}>
             <p className="type-body">{caseStudy.motivation}</p>
           </CaseStudyBlock>
         ) : null}
 
         {caseStudy.architecture.length > 0 ? (
-          <CaseStudyBlock label="Technical Approach">
+          <CaseStudyBlock label={t("technicalApproach")}>
             <ul className="space-y-2.5">
               {caseStudy.architecture.map((item) => (
                 <li key={item} className="type-body">
@@ -57,7 +60,7 @@ const ProjectCaseStudy = ({ caseStudy }: ProjectCaseStudyProps) => {
         ) : null}
 
         {caseStudy.challenges.length > 0 ? (
-          <CaseStudyBlock label="Challenges">
+          <CaseStudyBlock label={t("challenges")}>
             <ul className="space-y-2.5">
               {caseStudy.challenges.map((item) => (
                 <li key={item} className="type-body">
@@ -69,7 +72,7 @@ const ProjectCaseStudy = ({ caseStudy }: ProjectCaseStudyProps) => {
         ) : null}
 
         {caseStudy.lessons.length > 0 ? (
-          <CaseStudyBlock label="What I Learned">
+          <CaseStudyBlock label={t("whatILearned")}>
             <ul className="space-y-2.5">
               {caseStudy.lessons.map((item) => (
                 <li key={item} className="type-body">
