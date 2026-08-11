@@ -25,7 +25,7 @@ const FeaturedProjectCard = ({ index, project }: FeaturedProjectCardProps) => {
             <h3 className="type-title">{project.title}</h3>
             <ProjectStatusBadge status={project.status} />
           </div>
-          <p className="type-body mb-5 max-w-xl">{project.description}</p>
+          <p className="type-body mb-5 max-w-xl">{project.shortDescription}</p>
           <div className="flex flex-wrap gap-2">
             {project.stack.map((tech) => (
               <span
