@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import type { ComponentProps, ReactNode } from "react";
 import PageCTA from "./page-cta";
 import Reveal from "../motion/reveal";
-import Stagger from "../motion/stagger";
 
 type PageFooterProps = {
   label?: string;
