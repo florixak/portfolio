@@ -15,6 +15,6 @@ export const NAV_ITEMS: {
   { labelKey: "contact", href: "/contact" },
 ];
 
-export const COPYRIGHT_YEAR = new Date().getFullYear();
+export const getCopyrightYear = () => new Date().getFullYear();
 
 export const FILTERS = ["All", "Active", "Completed", "Archived"] as const;
