@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { profile } from "@/data/profile";
 import { defaultDescription } from "@/lib/seo";
+import en from "@/messages/en.json";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${profile.name} | ${profile.role}`,
+    name: `${profile.name} | ${en.profile.role}`,
     short_name: profile.name.split(" ")[0] ?? profile.name,
     description: defaultDescription,
     start_url: "/",

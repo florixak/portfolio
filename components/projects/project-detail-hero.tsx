@@ -1,6 +1,7 @@
+import { Link } from "@/i18n/navigation";
 import { Project } from "@/types";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import ProjectStatusBadge from "./project-status-badge";
 
 type ProjectDetailHeroProps = {
@@ -8,6 +9,7 @@ type ProjectDetailHeroProps = {
 };
 
 const ProjectDetailHero = ({ project }: ProjectDetailHeroProps) => {
+  const t = useTranslations("projects.detail");
   const description = project.description || project.shortDescription;
 
   return (
@@ -16,7 +18,7 @@ const ProjectDetailHero = ({ project }: ProjectDetailHeroProps) => {
         href="/projects"
         className="type-label mb-6 inline-block text-muted-foreground transition-colors duration-200 hover:text-primary"
       >
-        ← Projects
+        {t("backToProjects")}
       </Link>
 
       <div className="mb-4 flex flex-wrap items-center gap-3">
@@ -32,7 +34,7 @@ const ProjectDetailHero = ({ project }: ProjectDetailHeroProps) => {
 
       {project.stack.length > 0 ? (
         <ul
-          aria-label="Technologies used"
+          aria-label={t("technologiesUsed")}
           className="mt-8 flex flex-wrap gap-2"
         >
           {project.stack.map((tech) => (
@@ -55,7 +57,7 @@ const ProjectDetailHero = ({ project }: ProjectDetailHeroProps) => {
               rel="noopener noreferrer"
               className="type-label inline-flex items-center gap-2 text-muted-foreground transition-colors duration-200 hover:text-primary"
             >
-              GitHub <ArrowUpRight size={12} />
+              {t("github")} <ArrowUpRight size={12} />
             </a>
           ) : null}
           {project.demo ? (
@@ -65,7 +67,7 @@ const ProjectDetailHero = ({ project }: ProjectDetailHeroProps) => {
               rel="noopener noreferrer"
               className="type-label inline-flex items-center gap-2 text-muted-foreground transition-colors duration-200 hover:text-primary"
             >
-              Live demo <ArrowUpRight size={12} />
+              {t("liveDemo")} <ArrowUpRight size={12} />
             </a>
           ) : null}
         </div>

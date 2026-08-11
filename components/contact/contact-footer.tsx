@@ -1,10 +1,14 @@
 import { profile } from "@/data/profile";
 import { social } from "@/data/social";
+import { useTranslations } from "next-intl";
 import ContactLink from "./contact-link";
 import Reveal from "../motion/reveal";
 import Stagger from "../motion/stagger";
 
 const ContactFooter = () => {
+  const t = useTranslations("contact.homeCta");
+  const tContact = useTranslations("contact");
+
   return (
     <section
       id="contact"
@@ -12,22 +16,23 @@ const ContactFooter = () => {
     >
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 lg:items-stretch">
         <Reveal>
-          <p className="type-index mb-7">03 — Contact</p>
+          <p className="type-index mb-7">{t("index")}</p>
           <h2 className="font-heading text-4xl font-semibold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
-            Interested in
-            <br />
-            working
-            <br />
-            <span className="text-primary">together?</span>
+            {t.rich("title", {
+              primary: (chunks) => (
+                <span className="text-primary">{chunks}</span>
+              ),
+              br: () => <br />,
+            })}
           </h2>
           <p className="type-body mt-8 max-w-md">
             {profile.availableForWork
-              ? "I am open to internships, collaboration, and full-stack roles. Send a message through any of the links below."
-              : "I am open to internships, collaboration, and conversations about new work. Send a message through any of the links below."}
+              ? t("availableDescription")
+              : t("notAvailableDescription")}
           </p>
         </Reveal>
 
-        <nav aria-label="Contact links">
+        <nav aria-label={tContact("linksNavLabel")}>
           <Stagger as="ul" className="flex h-full flex-col gap-px bg-border">
             {social.map((item) => (
               <ContactLink key={item.label} item={item} />

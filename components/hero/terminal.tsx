@@ -1,8 +1,16 @@
 import Terminal from "@/components/layout/terminal";
-import { heroTerminalSections } from "@/data/terminal";
+import { getHeroTerminalSections } from "@/data/terminal";
+import { useTranslations } from "next-intl";
 
 const HeroTerminal = () => {
-  return <Terminal sections={heroTerminalSections} />;
+  const tProfile = useTranslations("profile");
+
+  const sections = getHeroTerminalSections({
+    role: tProfile("role"),
+    location: tProfile("location"),
+  });
+
+  return <Terminal sections={sections} />;
 };
 
 export default HeroTerminal;

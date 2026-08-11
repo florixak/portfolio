@@ -6,6 +6,7 @@ import { filterProjects } from "@/lib/project-utils";
 import { Filter, Project } from "@/types";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
+import { useTranslations } from "next-intl";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import Reveal from "../motion/reveal";
 import ProjectCard from "./project-card";
@@ -18,6 +19,7 @@ type ProjectsListProps = {
 };
 
 const ProjectsList = ({ projects }: ProjectsListProps) => {
+  const t = useTranslations("projects.filters.noResults");
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
   const [query, setQuery] = useState("");
   const [filterQuery, setFilterQuery] = useState("");
@@ -130,10 +132,10 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
         ) : (
           <Reveal className="flex flex-col items-center gap-4 py-32 text-center">
             <p className="type-heading text-muted-foreground/30">
-              No projects found
+              {t("title")}
             </p>
             <p className="type-label-xs text-muted-foreground/30">
-              Try a different filter or search term
+              {t("subtitle")}
             </p>
           </Reveal>
         )}
