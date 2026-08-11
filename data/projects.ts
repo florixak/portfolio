@@ -4,8 +4,8 @@ export const projects: Project[] = [
   {
     slug: "omori-wordle",
     title: "OMORI Wordle",
-    featured: true,
-    priority: 3,
+    featured: false,
+    priority: 6,
     status: "active",
     year: 2026,
     shortDescription:
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     screenshots: ["/projects/omori-wordle/omori-wordle.webp"],
     caseStudy: {
       motivation:
-        "I wanted to combine an interest in OMORI with the daily puzzle format of Wordle, while working through a full-stack Next.js setup with authentication and a database.",
+        "I wanted to combine an interest in OMORI with Wordle's daily puzzle format, and practice a full-stack Next.js setup with authentication and a database.",
       challenges: [
         "Building a word bank tied to game lore without spoiling major story beats",
         "Managing game state and keyboard feedback across sessions",
@@ -62,8 +62,8 @@ export const projects: Project[] = [
   {
     slug: "pixelverse",
     title: "PixelVerse",
-    featured: true,
-    priority: 2,
+    featured: false,
+    priority: 5,
     status: "completed",
     year: 2026,
     shortDescription:
@@ -91,12 +91,12 @@ export const projects: Project[] = [
     screenshots: ["/projects/pixelverse/pixelverse.webp"],
     caseStudy: {
       motivation:
-        "I wanted to build a social platform for pixel artists where AI handles a share of content moderation instead of relying on manual review alone.",
+        "I wanted a social platform for pixel artists where AI could take on part of content moderation instead of relying on manual review alone.",
       challenges: [
         "Balancing open community sharing with safe, moderated uploads",
         "Modeling artist profiles, posts, and feeds in a headless CMS",
         "Keeping data fetching predictable across complex UI surfaces",
-        "Storing reactions efficiently at a scale that would not break down under load",
+        "Storing reactions efficiently without the model falling apart under load",
       ],
       architecture: [
         "Next.js frontend with TanStack Query for server state",
@@ -168,14 +168,14 @@ export const projects: Project[] = [
   {
     slug: "rtsoft-clothing-eshop",
     title: "RTSoft Clothing E-Shop",
-    featured: false,
-    priority: 5,
+    featured: true,
+    priority: 2,
     status: "completed",
     year: 2026,
     shortDescription:
-      "Production-inspired clothing e-commerce UI built with RTSoft, with catalog filtering, multi-step checkout, order management, and admin tools.",
+      "Clothing e-commerce UI built with RTSoft, with catalog filtering, multi-step checkout, order management, and admin tools.",
     description:
-      "Semester project developed with RTSoft. A clothing e-commerce application focused on realistic shopping flows, responsive layout, and maintainable UI. Students browse a filterable catalog with product variants, manage a cart, complete a multi-step checkout, and review order history. Admins manage products, orders, and analytics through a separate dashboard. The team ran usability tests with external participants and revised the interface based on their feedback.",
+      "Semester project developed with RTSoft. A clothing e-commerce app with realistic shopping flows, responsive layout, and a maintainable UI. Users browse a filterable catalog with product variants, manage a cart, complete a multi-step checkout, and review order history. Admins manage products, orders, and analytics in a separate dashboard. We ran usability tests with external participants and revised the interface from their feedback.",
     stack: [
       "React",
       "TypeScript",
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     screenshots: ["/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp"],
     caseStudy: {
       motivation:
-        "The goal was a realistic e-commerce experience for a semester project with RTSoft, with equal weight on usability, architecture, and maintainable UI design.",
+        "For a semester project with RTSoft, we wanted a realistic e-commerce experience with equal weight on usability, architecture, and a maintainable UI.",
       challenges: [
         "Designing a multi-step checkout that did not overwhelm users",
         "Representing product variants, pricing, and stock accurately (SKU management)",
@@ -219,7 +219,7 @@ export const projects: Project[] = [
         "Usability testing surfaced problems I had not anticipated during implementation",
         "Filtering and product variant logic affect both UX and data modeling",
         "Regular client feedback improved the final result more than late-stage polish alone",
-        "It is essential to prepare data models early to avoid costly refactoring later.",
+        "Preparing data models early saves expensive refactoring later",
       ],
     },
   },
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     slug: "textforge",
     title: "TextForge",
     featured: true,
-    priority: 1,
+    priority: 3,
     status: "completed",
     year: 2026,
     shortDescription:
@@ -257,12 +257,12 @@ export const projects: Project[] = [
     screenshots: ["/projects/textforge/textforge.webp"],
     caseStudy: {
       motivation:
-        "I built TextForge to format data for my Minimal E-Shop project. In the process, I learned TanStack Start to ship a developer-facing text utility, featuring optional AI integrations secured behind an authentication layer.",
+        "I built TextForge to format data for my Minimal E-Shop project. Along the way I learned TanStack Start and shipped a developer-facing text utility with optional AI features behind authentication.",
       challenges: [
         "Rendering live previews without lag on large text inputs",
         "Restricting AI features to authenticated users",
         "Handling Stripe checkout and access control for premium tiers",
-        "Designing prompts that return structured, predictable output, while keeping token usage low.",
+        "Designing prompts that return structured, predictable output while keeping token usage low",
       ],
       architecture: [
         "TanStack Start full-stack framework with server functions",
@@ -272,7 +272,7 @@ export const projects: Project[] = [
         "shadcn/ui for a responsive editor interface",
       ],
       lessons: [
-        "TanStack Start blurs the client and server boundary. That helps for tools, but data boundaries need to stay explicit",
+        "TanStack Start blurs the client and server boundary. That helps for tools, but data boundaries still need to stay explicit",
         "Debounced previews were required for a smooth editing experience",
         "AI token usage adds up fast, so request size and prompt design need deliberate limits",
       ],
@@ -282,19 +282,19 @@ export const projects: Project[] = [
     slug: "omori-headspace",
     title: "OMORI Headspace",
     featured: false,
-    priority: 6,
+    priority: 8,
     status: "completed",
     year: 2026,
     shortDescription:
       "Interactive OMORI fan site with scroll-driven GSAP animations and detailed front-end work.",
     description:
-      "An interactive fan site for the indie RPG OMORI, built to exercise scroll-driven animation and front-end detail work.",
+      "An interactive fan site for the indie RPG OMORI, built to practice scroll-driven animation and careful front-end work.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
     highlights: [
       "Scroll-driven animations",
       "Interactive UI sections",
       "OMORI-inspired visual design",
-      "Refined front-end execution",
+      "Attention to front-end detail",
     ],
     thumbnail: "/projects/omori-headspace/omori-headspace.webp",
     github: "https://github.com/florixak/omori-headspace",
@@ -302,7 +302,7 @@ export const projects: Project[] = [
     screenshots: ["/projects/omori-headspace/omori-headspace.webp"],
     caseStudy: {
       motivation:
-        "OMORI has a distinct visual identity, and I wanted a fan site that translated that mood into scroll-driven animation and front-end craft.",
+        "OMORI has a distinct visual identity. I wanted a fan site that carried that mood into scroll-driven animation and front-end craft.",
       challenges: [
         "Matching the game's mood and color palette",
         "Coordinating GSAP timelines across scroll triggers and page sections",
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     shortDescription:
       "Frontend for a school buffet meal reservation system, including student ordering and admin tools.",
     description:
-      "I built the frontend for a school buffet meal reservation system as part of my graduation project at SPŠE and VOŠ Plzeň (2024/2025). Students browse the menu, add items to a cart, and place orders. Administrators manage the menu and incoming orders. The frontend uses React with Tailwind CSS and communicates with a PHP backend written by a classmate over a REST API.",
+      "I built the frontend for a school buffet meal reservation system as part of my graduation project at SPŠE and VOŠ Plzeň (2024/2025). Students browse the menu, add items to a cart, and place orders. Administrators manage the menu and incoming orders. The frontend uses React with Tailwind CSS and talks to a PHP backend written by a classmate over a REST API.",
     stack: [
       "React",
       "TypeScript",
@@ -370,6 +370,74 @@ export const projects: Project[] = [
         "Owning only the frontend forced disciplined API boundaries. Axios and TanStack Query became the integration surface when backend behavior changed late in the semester",
         "Reliability mattered more than animation polish for kitchen staff and students moving through a short lunch window",
         "Zod validation and consistent linting saved time during integration testing",
+      ],
+    },
+  },
+  {
+    slug: "brick-match",
+    title: "BrickMatch",
+    featured: true,
+    priority: 1,
+    status: "active",
+    year: 2026,
+    shortDescription:
+      "Find which LEGO sets you can build from parts you already own, using a custom matching engine over the Rebrickable catalog.",
+    description:
+      "A full-stack app that matches owned LEGO parts against the Rebrickable set catalog. It shows which sets you are closest to completing and what parts are still missing. The core is a matching engine: index-backed candidate search plus one aggregated SQL query, not a naive per-set scan or an AI brick scanner.",
+    stack: [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "Drizzle ORM",
+      "Neon Postgres",
+      "Zod",
+      "pnpm workspaces",
+      "TanStack Query",
+      "nuqs",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Vitest",
+      "Jest",
+    ],
+    highlights: [
+      "Index-backed matching engine over a 20,000+ set catalog",
+      "Shared Zod schemas between frontend and backend via a pnpm workspace package",
+      "Cookie-based JWT auth with password confirmation on sensitive actions",
+      "Missing-parts CSV in Rebrickable format, then BrickLink XML via Rebrickable's converter, without a hand-built ID mapping",
+      "Import-time minifig expansion into set inventories so matching stays a flat parts query",
+      "Atomic build-set action that subtracts required parts from the collection only when the user can complete the set",
+    ],
+    thumbnail: "/projects/brick-match/matches.webp",
+    github: "https://github.com/florixak/brick-match",
+    demo: "https://brick-match.ondrejptak.dev",
+    screenshots: [
+      "/projects/brick-match/matches.webp",
+      "/projects/brick-match/search.webp",
+      "/projects/brick-match/owned-parts.webp",
+    ],
+    caseStudy: {
+      motivation:
+        "LEGO is a real personal interest for me. I kept finding old bricks or buying mixed part lots and not knowing what they could complete. Existing tools either scan bricks with AI, which is unreliable on color and part recognition, or they never answer the simple question of what I am closest to finishing. I wanted to build that matching piece properly over a large real dataset, instead of wrapping another CRUD app in AI.",
+      challenges: [
+        "Rebrickable keeps minifig parts in a separate inventory graph (inventories → inventory_minifigs → inventory_parts), not on the owning set's inventory. I resolved that at import time by expanding minifig components into the parent set.",
+        "BrickLink and Rebrickable use different internal IDs for parts and colors, with no clean downloadable mapping. I exported Rebrickable-format CSV and routed BrickLink conversion through Rebrickable's own tool instead of maintaining a mapping table.",
+        "Tuning a single minimum-match-percentage threshold that behaves sensibly across very different set sizes, from a few dozen parts to several thousand",
+        "Paginating a user's growing collection correctly while leaving small fixed reference data (colors, themes) unpaginated",
+      ],
+      architecture: [
+        "NestJS API and Next.js frontend as separate deployables in a pnpm workspace monorepo, sharing one Zod schema package for types and validation",
+        "PostgreSQL B-tree index on (part_num, color_id) narrows the full set catalog to realistic candidates before any percentage calculation runs",
+        "Match percentage computed for all candidates in a single grouped SQL query with a HAVING clause, rather than one query per candidate",
+        "Catalog data imported from Rebrickable's CSV export up front. The backend never calls a third-party API on the request path. Part and set images are hotlinked from Rebrickable's CDN in the browser.",
+        "JWT delivered via an httpOnly cookie and validated by Nest Passport on the API. The frontend never reads the token and derives auth state from a /me query via TanStack Query.",
+        "Server state in TanStack Query only. URL filter state (theme, min match %) owned by nuqs.",
+      ],
+      lessons: [
+        "For large catalogs, the useful work belongs in the index and a single SQL aggregation. Looping over tens of thousands of sets in application code is a design smell.",
+        "Expand nested catalog complexity such as minifigs at import time so runtime matching stays a flat (part_num, color_id) problem. Denormalize once, query simply.",
+        "Shared Zod schemas remove a whole class of frontend/backend drift. A short custom Nest validation pipe was enough. nestjs-zod was optional complexity, not a requirement.",
+        "Avoid building and maintaining cross-vendor ID mappings when an upstream converter already exists. Shipping a Rebrickable CSV export was the smaller surface.",
+        "Pagination is a product decision. Growing user collections need it. Tiny static reference tables like colors and themes are better fetched whole and cached.",
       ],
     },
   },
