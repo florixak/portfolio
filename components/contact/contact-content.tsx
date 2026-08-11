@@ -1,19 +1,25 @@
-import { about } from "@/data/about";
-import { contactTerminalSections } from "@/data/terminal";
+import { getContactTerminalSections } from "@/data/terminal";
 import Terminal from "@/components/layout/terminal";
 import { NAV_ITEMS } from "@/constants";
+import { profile } from "@/data/profile";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import ConnectList from "./connect-list";
 import Reveal from "../motion/reveal";
 import Stagger from "../motion/stagger";
 
-const openToItems =
-  about.currently.find((item) => item.label === "Open to")?.items ?? [];
-
 const ContactContent = () => {
   const t = useTranslations("contact");
+  const tAbout = useTranslations("about");
   const tNav = useTranslations("nav");
+  const tTerminal = useTranslations("terminal");
+
+  const openToItems = tAbout.raw("currently.openTo.items") as string[];
+  const contactTerminalSections = getContactTerminalSections({
+    statusLine: profile.availableForWork
+      ? tTerminal("openToCollaboration")
+      : tTerminal("interestedInCollaboration"),
+  });
 
   return (
     <>
@@ -69,20 +75,6 @@ const ContactContent = () => {
 
       <section className="max-w-7xl mx-auto px-6 pt-14 pb-24 border-t border-border">
         <Reveal className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-          <p className="font-heading text-[clamp(2rem,5vw,4rem)] font-semibold leading-tight tracking-tight text-muted-foreground/25 transition-colors duration-300 select-none">
-            {t("seeYouAround")
-              .split("")
-              .map((char, index) => (
-                <span
-                  key={index}
-                  className="hover:text-primary transition-colors duration-200"
-                >
-                  {char}
-                </span>
-              ))}
-            <span className="text-primary">.</span>
-          </p>
-
           <nav
             aria-label={t("pageNavLabel")}
             className="flex items-center gap-6"

@@ -79,6 +79,8 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
@@ -90,8 +92,6 @@ const Header = () => {
           >
             {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
           </Button>
-          <LanguageSwitcher />
-          <ThemeToggle />
         </div>
       </div>
 

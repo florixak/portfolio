@@ -12,7 +12,7 @@
     },
     "contact": {
       "title": "Contact",
-      "description": "Reach out to discuss a project, collaboration, or full-stack role. I respond to most messages within 24 to 48 hours."
+      "description": "Reach out to discuss a project, collaboration, internship, or temporary work. I respond to most messages within 24 to 48 hours."
     },
     "notFound": {
       "title": "Page not found"
@@ -39,7 +39,6 @@
   },
 
   "hero": {
-    "role": "Full-Stack Engineer",
     "description": [
       "Software Engineering student from Pilsen, Czech Republic. I work on interactive products and web applications from the frontend through to the backend.",
       "I ship full-stack applications with clean interfaces and side projects that start as ideas and land as working software."
@@ -48,10 +47,23 @@
     "contactMe": "Contact Me"
   },
 
+  "profile": {
+    "role": "Full-Stack Engineer",
+    "tagline": "Full-Stack Engineer building web applications with Next.js, React, and Spring Boot.",
+    "location": "Pilsen, Czech Republic",
+    "university": "University of West Bohemia",
+    "degree": "Software Engineering"
+  },
+
+  "terminal": {
+    "openToCollaboration": "Open to collaboration",
+    "interestedInCollaboration": "Interested in collaboration"
+  },
+
   "home": {
     "techStack": {
       "title": "Tech Stack",
-      "sub": "What I build with in production projects"
+      "sub": "Selected technologies I work with on projects."
     },
     "featuredProjects": {
       "title": "Featured Projects",
@@ -66,6 +78,38 @@
     "intro": "Full-stack Engineer and Software Engineering student. I build web applications with attention to architecture, interface quality, and getting products into production.",
     "quote": "I like projects where careful engineering and a clear interface meet something people will actually use.",
     "interestsLabel": "Interests",
+    "whoIAm": [
+      "I'm a software engineering student who builds interactive products and web experiences.",
+      "Most of my work sits in React, Next.js, and Spring Boot, and I spend a growing share of my time on backend design and system architecture."
+    ],
+    "currently": {
+      "studying": {
+        "label": "Studying"
+      },
+      "buildingWith": {
+        "label": "Building with",
+        "items": [
+          "React & Next.js",
+          "TanStack Ecosystem",
+          "Spring Boot",
+          "Drizzle ORM",
+          "PostgreSQL"
+        ]
+      },
+      "openTo": {
+        "label": "Open to",
+        "items": ["Internships", "Collaboration", "Part-time / temp work"]
+      }
+    },
+    "outsideOfCode": [
+      "Several of my personal projects come from communities and games I've spent time in, including OMORI Headspace and OMORI Wordle."
+    ],
+    "interests": [
+      "Game communities and interactive fiction",
+      "Creative side projects",
+      "Design systems and UI craft",
+      "Open source tooling"
+    ],
     "sections": {
       "whoIAm": { "num": "01", "title": "Who I Am" },
       "currently": { "num": "02", "title": "Currently" },
@@ -122,9 +166,9 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Have a<br></br><primary>project</primary> or <primary>idea</primary> in mind?",
-    "paragraph": "Reach out if you would like to discuss a role, a collaboration, or a product you are building.",
-    "availableForWork": "I am open to internships, collaboration, and full-stack roles.",
-    "notAvailableForWork": "I am open to internships, collaboration, and conversations about new work.",
+    "paragraph": "Reach out if you would like to discuss an internship, temporary work, collaboration, or a product you are building.",
+    "availableForWork": "As a student, I am looking for internships, collaboration, and part-time or temporary work. I am not seeking full-time roles right now.",
+    "notAvailableForWork": "I am not currently seeking full-time work, but I am open to conversations about possible collaboration or internships.",
     "connect": "Connect",
     "copyEmail": "Copy email",
     "emailCopied": "Email copied",
@@ -134,15 +178,14 @@
     "responseTimeValue": "Usually within 24 to 48 hours.",
     "currentlyOpenTo": "Currently Open To",
     "statusCheck": "Status check",
-    "seeYouAround": "See you around",
     "pageNavLabel": "Contact page navigation",
     "backHome": "← Home",
     "linksNavLabel": "Contact links",
     "homeCta": {
       "index": "03 — Contact",
       "title": "Interested in<br></br>working<br></br><primary>together?</primary>",
-      "availableDescription": "I am open to internships, collaboration, and full-stack roles. Send a message through any of the links below.",
-      "notAvailableDescription": "I am open to internships, collaboration, and conversations about new work. Send a message through any of the links below."
+      "availableDescription": "As a student, I am looking for internships, collaboration, and part-time or temporary work. Send a message through any of the links below.",
+      "notAvailableDescription": "I am open to conversations about internships, collaboration, and temporary work alongside my studies. Send a message through any of the links below."
     }
   },
 

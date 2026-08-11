@@ -2,11 +2,16 @@ import { profile } from "@/data/profile";
 import { absoluteUrl, sameAs, siteUrl } from "@/lib/seo";
 import type { Project } from "@/types";
 
-export const personSchema = {
+type LocalizedProfileCopy = {
+  role: string;
+  tagline: string;
+};
+
+export const personSchema = ({ role }: Pick<LocalizedProfileCopy, "role">) => ({
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
-  jobTitle: profile.role,
+  jobTitle: role,
   url: siteUrl,
   sameAs,
   address: {
@@ -21,20 +26,22 @@ export const personSchema = {
     "Spring Boot",
     "TypeScript",
   ],
-};
+});
 
-export const websiteSchema = {
+export const websiteSchema = ({
+  tagline,
+}: Pick<LocalizedProfileCopy, "tagline">) => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: profile.name,
   url: siteUrl,
-  description: profile.tagline,
+  description: tagline,
   author: {
     "@type": "Person",
     name: profile.name,
     url: siteUrl,
   },
-};
+});
 
 export const projectSchema = (project: Project) => ({
   "@context": "https://schema.org",

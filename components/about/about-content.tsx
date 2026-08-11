@@ -1,5 +1,3 @@
-import { about } from "@/data/about";
-import { profile } from "@/data/profile";
 import { useTranslations } from "next-intl";
 import Column from "../layout/column";
 import SectionHeader from "../layout/section-header";
@@ -8,6 +6,32 @@ import Stagger from "../motion/stagger";
 
 const AboutContent = () => {
   const t = useTranslations("about");
+  const tProfile = useTranslations("profile");
+
+  const whoIAm = t.raw("whoIAm") as string[];
+  const outsideOfCode = t.raw("outsideOfCode") as string[];
+  const interests = t.raw("interests") as string[];
+  const buildingWithItems = t.raw("currently.buildingWith.items") as string[];
+  const openToItems = t.raw("currently.openTo.items") as string[];
+
+  const currently = [
+    {
+      label: t("currently.studying.label"),
+      items: [
+        tProfile("degree"),
+        tProfile("university"),
+        tProfile("location"),
+      ],
+    },
+    {
+      label: t("currently.buildingWith.label"),
+      items: buildingWithItems,
+    },
+    {
+      label: t("currently.openTo.label"),
+      items: openToItems,
+    },
+  ];
 
   return (
     <>
@@ -27,13 +51,13 @@ const AboutContent = () => {
             <div className="mt-10 flex items-center gap-3">
               <div className="h-px w-8 bg-primary" />
               <span className="type-label-xs text-primary">
-                {profile.location}
+                {tProfile("location")}
               </span>
             </div>
           </div>
 
           <div className="space-y-5 bg-background p-8 md:p-10">
-            {about.whoIAm.map((paragraph) => (
+            {whoIAm.map((paragraph) => (
               <p key={paragraph} className="type-body">
                 {paragraph}
               </p>
@@ -51,7 +75,7 @@ const AboutContent = () => {
         </Reveal>
 
         <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border md:grid-cols-3">
-          {about.currently.map(({ label, items }) => (
+          {currently.map(({ label, items }) => (
             <Column key={label} label={label} items={items} />
           ))}
         </Stagger>
@@ -67,7 +91,7 @@ const AboutContent = () => {
 
         <Stagger className="mt-12 grid grid-cols-1 gap-px bg-border lg:grid-cols-2">
           <div className="space-y-5 bg-background p-8 md:p-10">
-            {about.outsideOfCode.map((paragraph) => (
+            {outsideOfCode.map((paragraph) => (
               <p key={paragraph} className="type-body">
                 {paragraph}
               </p>
@@ -79,7 +103,7 @@ const AboutContent = () => {
               {t("interestsLabel")}
             </p>
             <ul className="space-y-2.5">
-              {about.interests.map((item) => (
+              {interests.map((item) => (
                 <li
                   key={item}
                   className="type-body hover:text-foreground transition-colors duration-200 cursor-default"

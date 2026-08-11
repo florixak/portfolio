@@ -2,10 +2,22 @@ import { omitDiacritics } from "@/lib/utils";
 import { profile } from "./profile";
 import { TerminalSection } from "@/types";
 
-export const heroTerminalSections: TerminalSection[] = [
+type HeroTerminalOptions = {
+  role: string;
+  location: string;
+};
+
+type ContactTerminalOptions = {
+  statusLine: string;
+};
+
+export const getHeroTerminalSections = ({
+  role,
+  location,
+}: HeroTerminalOptions): TerminalSection[] => [
   {
     label: "whoami",
-    lines: [omitDiacritics(profile.name), profile.role],
+    lines: [omitDiacritics(profile.name), role],
   },
   {
     label: "cat stack.txt",
@@ -13,19 +25,17 @@ export const heroTerminalSections: TerminalSection[] = [
   },
   {
     label: "echo $LOCATION",
-    lines: [profile.location],
+    lines: [location],
   },
 ];
 
-export const contactTerminalSections: TerminalSection[] = [
+export const getContactTerminalSections = ({
+  statusLine,
+}: ContactTerminalOptions): TerminalSection[] => [
   { label: "echo $EMAIL", lines: [profile.email] },
   {
     label: "curl --status",
-    lines: [
-      profile.availableForWork
-        ? "Open to collaboration"
-        : "Interested in collaboration",
-    ],
+    lines: [statusLine],
   },
 ];
 

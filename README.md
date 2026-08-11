@@ -91,12 +91,13 @@ Most site content is data-driven. Edit the files in `data/` — no component cha
 
 | File | Purpose |
 |------|---------|
-| `profile.ts` | Name, role, location, availability |
-| `about.ts` | About page copy |
+| `profile.ts` | Locale-invariant identity (name, email, availability) |
 | `projects.ts` | Project entries |
 | `stack.ts` | Home page tech stack |
 | `social.ts` | Social links and resume path |
-| `terminal.ts` | Terminal section copy on the contact page |
+| `terminal.ts` | Terminal section builders (localized strings passed in) |
+
+About page body copy and profile fields like role, tagline, location, university, and degree live in `messages/en.json` and `messages/cs.json` under the `about` and `profile` namespaces.
 
 ### Adding a project
 

@@ -23,27 +23,10 @@ export type Project = {
   };
 };
 
-export type AboutCurrentItem = {
-  label: string;
-  items: string[];
-};
-
-// `intro` and `quote` live in the `about` namespace of `messages/*.json`
-// since they're translated; the remaining fields stay data-driven.
-export type About = {
-  whoIAm: string[];
-  currently: AboutCurrentItem[];
-  outsideOfCode: string[];
-  interests: string[];
-};
-
+// Locale-invariant identity fields. Role, tagline, location, university,
+// and degree live in the `profile` namespace of `messages/*.json`.
 export type Profile = {
   name: string;
-  role: string;
-  tagline: string;
-  location: string;
-  university: string;
-  degree: string;
   availableForWork: boolean;
   email: string;
 };

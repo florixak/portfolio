@@ -11,7 +11,7 @@ import JsonLd from "@/components/seo/json-ld";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { routing, type Locale } from "@/i18n/routing";
 import { personSchema, websiteSchema } from "@/lib/schema";
-import { createRootMetadata } from "@/lib/seo";
+import { buildDefaultTitle, createRootMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -35,8 +35,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata.home" });
+  const tProfile = await getTranslations({ locale, namespace: "profile" });
 
-  return createRootMetadata({ locale, description: t("description") });
+  return createRootMetadata({
+    locale,
+    title: buildDefaultTitle(tProfile("role")),
+    description: t("description"),
+  });
 }
 
 export const viewport: Viewport = {
@@ -70,8 +75,9 @@ export default async function RootLayout({
     notFound();
   }
 
-  // Enables static rendering for this layout and everything nested below it.
   setRequestLocale(locale);
+
+  const tProfile = await getTranslations("profile");
 
   return (
     <html
@@ -86,7 +92,12 @@ export default async function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
-        <JsonLd data={[personSchema, websiteSchema]} />
+        <JsonLd
+          data={[
+            personSchema({ role: tProfile("role") }),
+            websiteSchema({ tagline: tProfile("tagline") }),
+          ]}
+        />
         {/* Makes messages resolved via `i18n/request.ts` available to Client Components. */}
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider

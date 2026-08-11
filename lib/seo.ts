@@ -8,13 +8,11 @@ const DEFAULT_SITE_URL = "https://ondrejptak.dev";
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? DEFAULT_SITE_URL;
 
-export const defaultTitle = `${profile.name} | ${profile.role}`;
+export const buildDefaultTitle = (role: string) => `${profile.name} | ${role}`;
 
 export const defaultDescription =
   "Full-Stack Engineer and Software Engineering student from Pilsen, Czech Republic. I build web applications with Next.js, React, and Spring Boot.";
 
-// Maps our short BCP 47 locale codes to the region-qualified tags expected
-// by `openGraph.locale` (og:locale).
 const OG_LOCALE_MAP: Record<Locale, string> = {
   en: "en_US",
   cs: "cs_CZ",
@@ -29,8 +27,6 @@ export const localizedPath = (path: string, locale: Locale): string => {
 export const localizedUrl = (path: string, locale: Locale): string =>
   absoluteUrl(localizedPath(path, locale));
 
-// Builds an `alternates.languages` map so search engines can discover the
-// `en`/`cs` versions of a given page (hreflang).
 export const buildLanguageAlternates = (
   path: string,
 ): Record<string, string> => {
@@ -138,6 +134,7 @@ export const createMetadata = ({
 
 type CreateRootMetadataOptions = {
   locale: Locale;
+  title: string;
   description?: string;
 };
 
@@ -146,11 +143,12 @@ type CreateRootMetadataOptions = {
 // Open Graph locale reflect the active language.
 export const createRootMetadata = ({
   locale,
+  title,
   description = defaultDescription,
 }: CreateRootMetadataOptions): Metadata => ({
   metadataBase: new URL(siteUrl),
   title: {
-    default: defaultTitle,
+    default: title,
     template: `%s | ${profile.name}`,
   },
   description,
@@ -167,12 +165,12 @@ export const createRootMetadata = ({
     siteName: profile.name,
     locale: OG_LOCALE_MAP[locale],
     url: localizedUrl("/", locale),
-    title: defaultTitle,
+    title,
     description,
   },
   twitter: {
     card: "summary_large_image",
-    title: defaultTitle,
+    title,
     description,
   },
   robots,

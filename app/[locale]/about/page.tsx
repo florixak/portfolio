@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: AboutPageProps) {
 const AboutPage = async ({ params }: AboutPageProps) => {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("about.footer");
+  const t = await getTranslations("about");
 
   return (
     <>
@@ -37,12 +37,12 @@ const AboutPage = async ({ params }: AboutPageProps) => {
       </Reveal>
       <AboutContent />
       <PageFooter
-        label={t("label")}
-        title={t.rich("title", {
+        label={t("footer.label")}
+        title={t.rich("footer.title", {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
           br: () => <br />,
         })}
-        ctaLabel={t("cta")}
+        ctaLabel={t("footer.cta")}
       />
     </>
   );
