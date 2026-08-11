@@ -41,7 +41,6 @@ export type Profile = {
   name: string;
   role: string;
   tagline: string;
-  description: string[];
   location: string;
   university: string;
   degree: string;
