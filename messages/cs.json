@@ -40,8 +40,8 @@
 
   "hero": {
     "description": [
-      "Student softwarového inženýrství z Plzně. Pracuji na interaktivních produktech a webových aplikacích od uživatelského rozhraní po backend.",
-      "Dodávám full-stack aplikace s čistým rozhraním a vedlejší projekty, které z nápadu dovedu k funkčnímu softwaru."
+      "Jsem student softwarového inženýrství z Plzně. Baví mě stavět aplikace, které řeší konkrétní problémy, od promyšleného rozhraní až po backend a databázi, které to celé drží pohromadě.",
+      "Nejde jen o to, aby to fungovalo, ale přemýšlím také o tom, proč to funguje a co z toho dělá produkt, který budou lidé skutečně chtít používat."
     ],
     "viewProjects": "Projekty",
     "contactMe": "Napište mi"
