@@ -1,17 +1,12 @@
-import { Project } from "@/types";
+import { ProjectMeta } from "@/types";
 
-export const projects: Project[] = [
+export const projects: ProjectMeta[] = [
   {
     slug: "omori-wordle",
-    title: "OMORI Wordle",
     featured: false,
     priority: 7,
     status: "active",
     year: 2026,
-    shortDescription:
-      "Daily Wordle-style puzzle with OMORI themes, user accounts, and progress tracking.",
-    description:
-      "A Wordle-inspired game built around OMORI. Players guess words tied to characters, locations, and themes from the game. The app includes user accounts, progress tracking, and a new puzzle each day.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -24,52 +19,19 @@ export const projects: Project[] = [
       "Vitest",
       "React Context",
     ],
-    highlights: [
-      "Daily word puzzle",
-      "User authentication",
-      "Game state management",
-      "OMORI-themed word bank",
-      "Vitest test coverage",
-    ],
     thumbnail: "/projects/omori-wordle/omori-wordle.webp",
     github: "https://github.com/florixak/omori-wordle",
     demo: "https://omori-wordle.vercel.app",
-    screenshots: ["/projects/omori-wordle/omori-wordle.webp"],
-    caseStudy: {
-      motivation:
-        "I wanted to combine an interest in OMORI with Wordle's daily puzzle format, and practice a full-stack Next.js setup with authentication and a database.",
-      challenges: [
-        "Building a word bank tied to game lore without spoiling major story beats",
-        "Managing game state and keyboard feedback across sessions",
-        "Persisting user progress for authenticated accounts",
-        "Keeping client and server game state aligned",
-      ],
-      architecture: [
-        "Next.js App Router frontend with React Context for game state",
-        "Drizzle ORM with Neon Postgres for users and stats",
-        "Better Auth for session management",
-        "TanStack Query for data fetching and caching",
-        "TanStack Hotkeys for keyboard controls",
-        "Vitest for unit and integration tests",
-      ],
-      lessons: [
-        "React Context works well for self-contained game state, but the boundaries need to stay tight",
-        "Daily puzzle logic is simpler when word selection is deterministic by date",
-        "Vitest made it straightforward to test game logic and auth flows in isolation",
-      ],
-    },
+    screenshots: [
+      "/projects/omori-wordle/omori-wordle.webp",
+    ],
   },
   {
     slug: "pixelverse",
-    title: "PixelVerse",
     featured: false,
     priority: 6,
     status: "completed",
     year: 2026,
-    shortDescription:
-      "AI-moderated pixel art community with artist profiles, feeds, and Sanity CMS.",
-    description:
-      "PixelVerse is a community platform where pixel artists share work, browse feeds, and connect with other artists. Uploads pass through AI moderation before they go live.",
     stack: [
       "Next.js 15",
       "TypeScript",
@@ -79,49 +41,19 @@ export const projects: Project[] = [
       "TanStack Table",
       "TanStack Form",
     ],
-    highlights: [
-      "AI content moderation",
-      "Artist profiles and feeds",
-      "Headless CMS with Sanity",
-      "Community discovery",
-    ],
     thumbnail: "/projects/pixelverse/pixelverse.webp",
     github: "https://github.com/florixak/PixelVerse",
     demo: "https://pixel-verse-eta.vercel.app",
-    screenshots: ["/projects/pixelverse/pixelverse.webp"],
-    caseStudy: {
-      motivation:
-        "I wanted a social platform for pixel artists where AI could take on part of content moderation instead of relying on manual review alone.",
-      challenges: [
-        "Balancing open community sharing with safe, moderated uploads",
-        "Modeling artist profiles, posts, and feeds in a headless CMS",
-        "Keeping data fetching predictable across complex UI surfaces",
-        "Storing reactions efficiently without the model falling apart under load",
-      ],
-      architecture: [
-        "Next.js frontend with TanStack Query for server state",
-        "Sanity.io as headless CMS for content and metadata",
-        "OpenAI API or Gemini API for AI moderation",
-      ],
-      lessons: [
-        "TanStack Query simplified cache invalidation across feed and profile views",
-        "Infinite scroll kept the UI responsive while spreading data fetching over time",
-        "Sanity schemas are worth defining early. Retrofitting content models is expensive",
-        "AI moderation token costs add up quickly, so batching and prompt design matter",
-      ],
-    },
+    screenshots: [
+      "/projects/pixelverse/pixelverse.webp",
+    ],
   },
   {
     slug: "minimal-eshop",
-    title: "Minimal E-Shop",
     featured: false,
     priority: 5,
     status: "completed",
     year: 2025,
-    shortDescription:
-      "Full-stack e-commerce demo with Spring Boot, Stripe payments, and Docker deployment.",
-    description:
-      "A compact full-stack e-shop with a Spring Boot backend, Supabase PostgreSQL, Stripe payments, and a Vite + React + TypeScript frontend. Both services run in Docker for local development and deployment.",
     stack: [
       "React",
       "TypeScript",
@@ -134,48 +66,19 @@ export const projects: Project[] = [
       "TanStack Router",
       "React Hook Form",
     ],
-    highlights: [
-      "Stripe checkout integration",
-      "Spring Boot REST API",
-      "Dockerized deployment",
-      "Product catalog and cart",
-    ],
     thumbnail: "/projects/minimal-eshop/minimal-eshop.webp",
     github: "https://github.com/florixak/minimal-eshop",
     demo: "https://minimal-minieshop.vercel.app",
-    screenshots: ["/projects/minimal-eshop/minimal-eshop.webp"],
-    caseStudy: {
-      motivation:
-        "I built this to practice a realistic e-commerce flow across a Java backend, a React frontend, and payment processing.",
-      challenges: [
-        "Aligning API contracts between Spring Boot and the Vite frontend",
-        "Handling Stripe webhooks and payment confirmation reliably",
-        "Packaging frontend and backend into a reproducible Docker setup",
-      ],
-      architecture: [
-        "Spring Boot REST API with PostgreSQL on Supabase",
-        "Vite + React SPA with TanStack Router",
-        "Stripe for payment processing",
-        "Docker Compose for local development",
-      ],
-      lessons: [
-        "Docker made it easier to run the same stack locally and in deployment",
-        "Clear API boundaries between frontend and backend reduced integration friction",
-        "Stripe test mode and webhook forwarding were essential during development",
-      ],
-    },
+    screenshots: [
+      "/projects/minimal-eshop/minimal-eshop.webp",
+    ],
   },
   {
     slug: "rtsoft-clothing-eshop",
-    title: "RTSoft Clothing E-Shop",
     featured: true,
     priority: 3,
     status: "completed",
     year: 2026,
-    shortDescription:
-      "Clothing e-commerce UI built with RTSoft, with catalog filtering, multi-step checkout, order management, and admin tools.",
-    description:
-      "Semester project developed with RTSoft. A clothing e-commerce app with realistic shopping flows, responsive layout, and a maintainable UI. Users browse a filterable catalog with product variants, manage a cart, complete a multi-step checkout, and review order history. Admins manage products, orders, and analytics in a separate dashboard. We ran usability tests with external participants and revised the interface from their feedback.",
     stack: [
       "React",
       "TypeScript",
@@ -187,53 +90,19 @@ export const projects: Project[] = [
       "TanStack Table",
       "i18next",
     ],
-    highlights: [
-      "Responsive e-commerce experience",
-      "Multi-step checkout flow",
-      "Admin dashboard with analytics",
-      "Product variants and filtering",
-      "Internationalization (CZ / EN)",
-      "Usability testing and UX iteration",
-    ],
     thumbnail: "/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp",
     github: "https://github.com/florixak/rtsoft-clothing-eshop",
     demo: "https://rtsoft-clothing-eshop.vercel.app",
-    screenshots: ["/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp"],
-    caseStudy: {
-      motivation:
-        "For a semester project with RTSoft, we wanted a realistic e-commerce experience with equal weight on usability, architecture, and a maintainable UI.",
-      challenges: [
-        "Designing a multi-step checkout that did not overwhelm users",
-        "Representing product variants, pricing, and stock accurately (SKU management)",
-        "Keeping cart and catalog state consistent across routes",
-        "Adjusting UI decisions after usability testing",
-      ],
-      architecture: [
-        "React SPA with TanStack Router and nested layouts",
-        "TanStack Query for server state",
-        "Zustand for global cart state",
-        "Reusable UI components built with shadcn/ui and Tailwind CSS",
-        "Localization with i18next",
-      ],
-      lessons: [
-        "Usability testing surfaced problems I had not anticipated during implementation",
-        "Filtering and product variant logic affect both UX and data modeling",
-        "Regular client feedback improved the final result more than late-stage polish alone",
-        "Preparing data models early saves expensive refactoring later",
-      ],
-    },
+    screenshots: [
+      "/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp",
+    ],
   },
   {
     slug: "textforge",
-    title: "TextForge",
     featured: true,
     priority: 2,
     status: "completed",
     year: 2026,
-    shortDescription:
-      "Live text conversion tool with AI formatting, schema inference, and Stripe premium access.",
-    description:
-      "A text conversion tool with live previews. Signed-in users can run AI transformations that structure, clean, and infer schemas from unstructured text. Premium access is handled through Stripe.",
     stack: [
       "TanStack Start",
       "TypeScript",
@@ -245,91 +114,38 @@ export const projects: Project[] = [
       "Resend",
       "TanStack Query",
     ],
-    highlights: [
-      "Live text previews",
-      "AI-powered formatting",
-      "Schema inference",
-      "Stripe payments for premium features",
-    ],
     thumbnail: "/projects/textforge/textforge.webp",
     github: "https://github.com/florixak/text-forge",
     demo: "https://text-forge-phi.vercel.app",
-    screenshots: ["/projects/textforge/textforge.webp"],
-    caseStudy: {
-      motivation:
-        "I built TextForge to format data for my Minimal E-Shop project. Along the way I learned TanStack Start and shipped a developer-facing text utility with optional AI features behind authentication.",
-      challenges: [
-        "Rendering live previews without lag on large text inputs",
-        "Restricting AI features to authenticated users",
-        "Handling Stripe checkout and access control for premium tiers",
-        "Designing prompts that return structured, predictable output while keeping token usage low",
-      ],
-      architecture: [
-        "TanStack Start full-stack framework with server functions",
-        "Drizzle ORM on Neon Postgres for user data",
-        "Better Auth with Resend for email flows",
-        "Stripe for premium feature payments",
-        "shadcn/ui for a responsive editor interface",
-      ],
-      lessons: [
-        "TanStack Start blurs the client and server boundary. That helps for tools, but data boundaries still need to stay explicit",
-        "Debounced previews were required for a smooth editing experience",
-        "AI token usage adds up fast, so request size and prompt design need deliberate limits",
-      ],
-    },
+    screenshots: [
+      "/projects/textforge/textforge.webp",
+    ],
   },
   {
     slug: "omori-headspace",
-    title: "OMORI Headspace",
     featured: false,
     priority: 9,
     status: "completed",
     year: 2026,
-    shortDescription:
-      "Interactive OMORI fan site with scroll-driven GSAP animations and detailed front-end work.",
-    description:
-      "An interactive fan site for the indie RPG OMORI, built to practice scroll-driven animation and careful front-end work.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
-    highlights: [
-      "Scroll-driven animations",
-      "Interactive UI sections",
-      "OMORI-inspired visual design",
-      "Attention to front-end detail",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
     ],
     thumbnail: "/projects/omori-headspace/omori-headspace.webp",
     github: "https://github.com/florixak/omori-headspace",
     demo: "https://omori-headspace.vercel.app",
-    screenshots: ["/projects/omori-headspace/omori-headspace.webp"],
-    caseStudy: {
-      motivation:
-        "OMORI has a distinct visual identity. I wanted a fan site that carried that mood into scroll-driven animation and front-end craft.",
-      challenges: [
-        "Matching the game's mood and color palette",
-        "Coordinating GSAP timelines across scroll triggers and page sections",
-        "Keeping performance acceptable with heavy animation on lower-end devices",
-      ],
-      architecture: [
-        "Next.js 16 with App Router",
-        "GSAP ScrollTrigger for section-based animations",
-        "Tailwind CSS v4 for styling and responsive layout",
-      ],
-      lessons: [
-        "GSAP timelines are easier to maintain when each section owns its animation module",
-        "Respecting reduced motion preferences and lazy-loading animations improved accessibility and performance",
-      ],
-    },
+    screenshots: [
+      "/projects/omori-headspace/omori-headspace.webp",
+    ],
   },
   {
     slug: "school-buffet-reservation-system",
-    title: "Reservation System for School Buffet",
     featured: false,
     priority: 8,
     status: "completed",
     year: 2025,
-    shortDescription:
-      "Frontend for a school buffet meal reservation system, including student ordering and admin tools.",
-    description:
-      "I built the frontend for a school buffet meal reservation system as part of my graduation project at SPŠE and VOŠ Plzeň (2024/2025). Students browse the menu, add items to a cart, and place orders. Administrators manage the menu and incoming orders. The frontend uses React with Tailwind CSS and talks to a PHP backend written by a classmate over a REST API.",
     stack: [
       "React",
       "TypeScript",
@@ -341,49 +157,19 @@ export const projects: Project[] = [
       "Axios",
       "Zod",
     ],
-    highlights: [
-      "Student interface",
-      "Admin interface",
-      "WebSocket KDS integration",
-      "REST API",
-    ],
     thumbnail: "/projects/school-buffet/buffet.webp",
     github: "https://github.com/Web-Projekty/buffet-rezervace",
     demo: "https://buffet.vlastas.cc/",
-    screenshots: ["/projects/school-buffet/buffet.webp"],
-    caseStudy: {
-      motivation:
-        "The cafeteria still ran on paper slips and shouted orders during the lunch rush. For our graduation project at SPŠE and VOŠ Plzeň, we wanted ordering to feel as quick as grabbing a tray, not like another app students would ignore between classes.",
-      challenges: [
-        "Building a Kitchen Display System that kept tickets synced in real time without overloading the server",
-        "Developing the frontend while the PHP backend was still being built in parallel",
-        "Handling client-side validation and global state for cart, auth, and navigation under peak traffic",
-      ],
-      architecture: [
-        "React (Vite + TypeScript) SPA with Tailwind CSS",
-        "Zustand for cart state and react-auth-kit for session handling",
-        "TanStack Query with Axios for menus and accounts, plus a custom WebSocket service with heartbeat keep-alive for the kitchen display",
-        "Zod validation on inputs and TypeScript interfaces across data-fetching layers",
-      ],
-      lessons: [
-        "Third-party WebSocket libraries did not handle keep-alive the way a kitchen display needs, so we built a native ping interval to prevent dropped connections",
-        "Owning only the frontend forced disciplined API boundaries. Axios and TanStack Query became the integration surface when backend behavior changed late in the semester",
-        "Reliability mattered more than animation polish for kitchen staff and students moving through a short lunch window",
-        "Zod validation and consistent linting saved time during integration testing",
-      ],
-    },
+    screenshots: [
+      "/projects/school-buffet/buffet.webp",
+    ],
   },
   {
     slug: "brick-match",
-    title: "BrickMatch",
     featured: true,
     priority: 1,
     status: "active",
     year: 2026,
-    shortDescription:
-      "Find which LEGO sets you can build from parts you already own, using a custom matching engine over the Rebrickable catalog.",
-    description:
-      "A full-stack app that matches owned LEGO parts against the Rebrickable set catalog. It shows which sets you are closest to completing and what parts are still missing. The core is a matching engine: index-backed candidate search plus one aggregated SQL query, not a naive per-set scan or an AI brick scanner.",
     stack: [
       "Next.js",
       "NestJS",
@@ -399,14 +185,6 @@ export const projects: Project[] = [
       "Vitest",
       "Jest",
     ],
-    highlights: [
-      "Index-backed matching engine over a 20,000+ set catalog",
-      "Shared Zod schemas between frontend and backend via a pnpm workspace package",
-      "Cookie-based JWT auth with password confirmation on sensitive actions",
-      "Missing-parts CSV in Rebrickable format, then BrickLink XML via Rebrickable's converter, without a hand-built ID mapping",
-      "Import-time minifig expansion into set inventories so matching stays a flat parts query",
-      "Atomic build-set action that subtracts required parts from the collection only when the user can complete the set",
-    ],
     thumbnail: "/projects/brick-match/matches.webp",
     github: "https://github.com/florixak/brick-match",
     demo: "https://brick-match.ondrejptak.dev",
@@ -415,43 +193,13 @@ export const projects: Project[] = [
       "/projects/brick-match/search.webp",
       "/projects/brick-match/owned-parts.webp",
     ],
-    caseStudy: {
-      motivation:
-        "LEGO is a real personal interest for me. I kept finding old bricks or buying mixed part lots and not knowing what they could complete. Existing tools either scan bricks with AI, which is unreliable on color and part recognition, or they never answer the simple question of what I am closest to finishing. I wanted to build that matching piece properly over a large real dataset, instead of wrapping another CRUD app in AI.",
-      challenges: [
-        "Rebrickable keeps minifig parts in a separate inventory graph (inventories → inventory_minifigs → inventory_parts), not on the owning set's inventory. I resolved that at import time by expanding minifig components into the parent set.",
-        "BrickLink and Rebrickable use different internal IDs for parts and colors, with no clean downloadable mapping. I exported Rebrickable-format CSV and routed BrickLink conversion through Rebrickable's own tool instead of maintaining a mapping table.",
-        "Tuning a single minimum-match-percentage threshold that behaves sensibly across very different set sizes, from a few dozen parts to several thousand",
-        "Paginating a user's growing collection correctly while leaving small fixed reference data (colors, themes) unpaginated",
-      ],
-      architecture: [
-        "NestJS API and Next.js frontend as separate deployables in a pnpm workspace monorepo, sharing one Zod schema package for types and validation",
-        "PostgreSQL B-tree index on (part_num, color_id) narrows the full set catalog to realistic candidates before any percentage calculation runs",
-        "Match percentage computed for all candidates in a single grouped SQL query with a HAVING clause, rather than one query per candidate",
-        "Catalog data imported from Rebrickable's CSV export up front. The backend never calls a third-party API on the request path. Part and set images are hotlinked from Rebrickable's CDN in the browser.",
-        "JWT delivered via an httpOnly cookie and validated by Nest Passport on the API. The frontend never reads the token and derives auth state from a /me query via TanStack Query.",
-        "Server state in TanStack Query only. URL filter state (theme, min match %) owned by nuqs.",
-      ],
-      lessons: [
-        "For large catalogs, the useful work belongs in the index and a single SQL aggregation. Looping over tens of thousands of sets in application code is a design smell.",
-        "Expand nested catalog complexity such as minifigs at import time so runtime matching stays a flat (part_num, color_id) problem. Denormalize once, query simply.",
-        "Shared Zod schemas remove a whole class of frontend/backend drift. A short custom Nest validation pipe was enough. nestjs-zod was optional complexity, not a requirement.",
-        "Avoid building and maintaining cross-vendor ID mappings when an upstream converter already exists. Shipping a Rebrickable CSV export was the smaller surface.",
-        "Pagination is a product decision. Growing user collections need it. Tiny static reference tables like colors and themes are better fetched whole and cached.",
-      ],
-    },
   },
   {
     slug: "spinjitzu-api",
-    title: "Spinjitzu API",
     featured: false,
     priority: 4,
     status: "completed",
     year: 2026,
-    shortDescription:
-      "A public REST API for the LEGO NINJAGO universe: characters, seasons, elements, weapons, locations, and realms.",
-    description:
-      "Ninjago has a large lore surface and almost no structured way to query it. Spinjitzu API is a public REST API I built for that gap: characters, seasons, elements, weapons, locations, and realms, with filtering, pagination, and OpenAPI docs. I treated it as a public service with consistent response envelopes, validation, JWT-protected admin writes disabled in production, rate limiting, tests, Docker for local work, and a serverless deploy.",
     stack: [
       "NestJS",
       "TypeScript",
@@ -465,41 +213,12 @@ export const projects: Project[] = [
       "Docker",
       "Swagger / OpenAPI",
     ],
-    highlights: [
-      "Full CRUD across 6 relational resources with many-to-many relationships (characters ↔ elements, weapons, seasons)",
-      "JWT authentication with role-based guards. Admin write operations are disabled in production at the guard level, not only hidden from docs",
-      "Tiered rate limiting (read 200 / write 20 / auth 5 per minute) with per-route throttler overrides",
-      "Consistent {data, meta} success responses and structured error envelopes across the API",
-      "URI-based API versioning so a future v2 can run alongside v1 without breaking existing consumers",
-      "Unit tests with a mocked Drizzle query layer covering service logic and auth. Interactive OpenAPI docs at /docs",
-    ],
     thumbnail: "/projects/spinjitzu-api/docs.webp",
     github: "https://github.com/florixak/spinjitzu-api",
     demo: "https://spinjitzu-api.vercel.app/docs",
-    screenshots: ["/projects/spinjitzu-api/docs.webp"],
-    caseStudy: {
-      motivation:
-        "I have followed Ninjago for years. When I looked for an API to query characters, seasons, elements, and the rest of that universe, there was nothing usable, so I built one. The theme is personal, but the engineering still had to hold up: clear contracts, auth boundaries, rate limits, docs, and a deploy I would trust.",
-      challenges: [
-        "Modeling many-to-many relationships between characters, elements, weapons, and seasons so the data stays accurate as lore changes owners, powers, and eras over time",
-        "Diagnosing a NestJS API-versioning and global-prefix conflict that broke the unversioned root endpoint. Solved with VERSION_NEUTRAL routing",
-        "Getting Swagger UI static assets to load on Vercel's serverless bundler by serving CSS and JS from a CDN instead of the package's dynamic paths",
-        "Deciding what to disable versus merely hide in production. Admin routes and login are blocked by DisabledInProductionGuard, not only excluded from the OpenAPI spec",
-      ],
-      architecture: [
-        "Feature-first module structure: Controller → Service → Drizzle → PostgreSQL, with a repository layer omitted until it proves necessary",
-        "Neon serverless Postgres via the HTTP driver, chosen for compatibility with serverless deployment on Vercel",
-        "Centralized response shaping with a global interceptor and exception filter, so every endpoint returns the same success and error envelope",
-        "Composed decorators such as @AdminWrite() that bundle JWT auth, role checks, write-tier throttling, and production disable/hide rules for every write endpoint",
-      ],
-      lessons: [
-        "Starting from a personal interest helped me finish the project. Publishing it as a public API still required the same design choices any consumer-facing service would",
-        "Writing the architecture and decision log (AGENTS.md) before and during implementation made trade-offs explicit and kept later decisions consistent with earlier ones",
-        "Serverless deployment surfaces framework assumptions around static file serving and in-memory state that never show up on a traditional always-on server",
-        "Security checklist items from automated review tools need context. Some mattered here, such as unique constraint race conditions. Others did not fit a public, read-heavy API, such as CORS wildcarding",
-        "Personal Access Tokens sharing the Authorization header with JWT are planned for v2. Shipping dual auth before the public read surface was solid would have been premature",
-      ],
-    },
+    screenshots: [
+      "/projects/spinjitzu-api/docs.webp",
+    ],
   },
 ];
 

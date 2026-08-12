@@ -1,15 +1,16 @@
 import { Link } from "@/i18n/navigation";
 import { getFeaturedProjects } from "@/lib/project-utils";
 import { ArrowUpRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useMessages, useTranslations } from "next-intl";
 import SectionHeader from "../layout/section-header";
 import FeaturedProjectCard from "./featured-project-card";
 import Reveal from "../motion/reveal";
 import Stagger from "../motion/stagger";
 
 const FeaturedProjects = () => {
-  const projects = getFeaturedProjects();
   const t = useTranslations("home.featuredProjects");
+  const messages = useMessages();
+  const projects = getFeaturedProjects(messages.projectEntries);
 
   return (
     <section
