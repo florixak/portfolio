@@ -13,7 +13,7 @@ export const techStack: TechStackCategory[] = [
   },
   {
     label: "Backend",
-    items: [{ label: "Java" }, { label: "Spring Boot" }],
+    items: [{ label: "Java" }, { label: "Spring Boot" }, { label: "NestJS" }],
   },
   {
     label: "Database",
