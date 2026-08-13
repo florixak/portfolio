@@ -1,11 +1,39 @@
 import { projects, projectsByPriority } from "@/data/projects";
-import { Filter, Project } from "@/types";
+import { Filter, Project, ProjectCopy, ProjectMeta } from "@/types";
 
-export const getProjectBySlug = (slug: string) =>
-  projects.find((project) => project.slug === slug);
+export type ProjectEntries = IntlMessages["projectEntries"];
+type ProjectEntryKey = keyof ProjectEntries;
 
-export const getFeaturedProjects = () =>
-  projectsByPriority.filter((project) => project.featured).slice(0, 3);
+/**
+ * Merge locale-invariant meta with prose from `messages.*.projectEntries`.
+ * Pass `messages.projectEntries` from `getMessages()` / `useMessages()` —
+ * `t.raw()` only types leaf keys, so nested entry objects are read from the
+ * messages map directly (same end result as `about`'s `t.raw` for arrays).
+ */
+export const localizeProject = (
+  meta: ProjectMeta,
+  entries: ProjectEntries,
+): Project => {
+  const copy = entries[meta.slug as ProjectEntryKey] as ProjectCopy;
+  return { ...meta, ...copy };
+};
+
+export const getLocalizedProjects = (entries: ProjectEntries): Project[] =>
+  projectsByPriority.map((meta) => localizeProject(meta, entries));
+
+export const getProjectBySlug = (
+  slug: string,
+  entries: ProjectEntries,
+): Project | undefined => {
+  const meta = projects.find((project) => project.slug === slug);
+  if (!meta) return undefined;
+  return localizeProject(meta, entries);
+};
+
+export const getFeaturedProjects = (entries: ProjectEntries): Project[] =>
+  getLocalizedProjects(entries)
+    .filter((project) => project.featured)
+    .slice(0, 3);
 
 export const getProjectPreviewImages = (project: Project) => {
   const screenshots = project.screenshots?.filter(Boolean) ?? [];
@@ -15,32 +43,35 @@ export const getProjectPreviewImages = (project: Project) => {
   return { preview, gallery };
 };
 
-export const getNextProject = (slug: string): Project | undefined => {
-  if (projectsByPriority.length <= 1) {
+export const getNextProject = (
+  slug: string,
+  entries: ProjectEntries,
+): Project | undefined => {
+  const localized = getLocalizedProjects(entries);
+
+  if (localized.length <= 1) {
     return undefined;
   }
 
-  const index = projectsByPriority.findIndex(
-    (project) => project.slug === slug,
-  );
+  const index = localized.findIndex((project) => project.slug === slug);
 
   if (index === -1) {
     return undefined;
   }
 
-  const nextProject = projectsByPriority[index + 1] ?? projectsByPriority[0];
+  const nextProject = localized[index + 1] ?? localized[0];
 
   return nextProject.slug === slug ? undefined : nextProject;
 };
 
 export const filterProjects = (
-  projects: Project[],
+  projectList: Project[],
   filter: Filter,
   query: string,
 ) => {
   const normalizedQuery = query.trim().toLowerCase();
 
-  return projects.filter((project) => {
+  return projectList.filter((project) => {
     const matchesFilter =
       filter === "All" || project.status === filter.toLowerCase();
 

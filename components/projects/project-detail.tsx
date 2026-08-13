@@ -1,5 +1,6 @@
 import { getNextProject } from "@/lib/project-utils";
 import { Project } from "@/types";
+import { useMessages } from "next-intl";
 import ProjectCaseStudy from "./project-case-study";
 import ProjectDetailHero from "./project-detail-hero";
 import ProjectFeatures from "./project-features";
@@ -12,7 +13,8 @@ type ProjectDetailProps = {
 };
 
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
-  const nextProject = getNextProject(project.slug);
+  const messages = useMessages();
+  const nextProject = getNextProject(project.slug, messages.projectEntries);
 
   return (
     <article>

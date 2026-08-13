@@ -1,20 +1,25 @@
 import { FILTERS } from "@/constants";
 
-export type Project = {
+// Locale-invariant project fields. Prose lives under `projectEntries` in
+// `messages/*.json` and is merged via `localizeProject` / `getLocalizedProjects`.
+export type ProjectMeta = {
   slug: string;
-  title: string;
   featured: boolean;
   priority: number;
   status: "completed" | "active" | "archived";
   year: number;
-  shortDescription: string;
-  description: string;
   stack: string[];
-  highlights: string[];
   thumbnail: `/projects/${string}/${string}.webp`;
   github?: string;
   demo?: string;
   screenshots?: `/projects/${string}/${string}.webp`[];
+};
+
+export type ProjectCopy = {
+  title: string;
+  shortDescription: string;
+  description: string;
+  highlights: string[];
   caseStudy?: {
     motivation: string;
     challenges: string[];
@@ -22,6 +27,8 @@ export type Project = {
     lessons: string[];
   };
 };
+
+export type Project = ProjectMeta & ProjectCopy;
 
 // Locale-invariant identity fields. Role, tagline, location, university,
 // and degree live in the `profile` namespace of `messages/*.json`.

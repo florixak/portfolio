@@ -2,10 +2,10 @@ import PageFooter from "@/components/layout/page-footer";
 import Reveal from "@/components/motion/reveal";
 import ProjectsHeader from "@/components/projects/projects-header";
 import ProjectsList from "@/components/projects/projects-list";
-import { projectsByPriority } from "@/data/projects";
 import type { Locale } from "@/i18n/routing";
+import { getLocalizedProjects } from "@/lib/project-utils";
 import { createMetadata } from "@/lib/seo";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 
 type ProjectsPageProps = {
   params: Promise<{ locale: Locale }>;
@@ -26,21 +26,23 @@ export async function generateMetadata({ params }: ProjectsPageProps) {
 const ProjectsPage = async ({ params }: ProjectsPageProps) => {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("projects.footer");
+  const tFooter = await getTranslations("projects.footer");
+  const messages = await getMessages();
+  const localizedProjects = getLocalizedProjects(messages.projectEntries);
 
   return (
     <>
       <Reveal>
-        <ProjectsHeader count={projectsByPriority.length} />
+        <ProjectsHeader count={localizedProjects.length} />
       </Reveal>
-      <ProjectsList projects={projectsByPriority} />
+      <ProjectsList projects={localizedProjects} />
       <PageFooter
-        title={t.rich("title", {
+        title={tFooter.rich("title", {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
           br: () => <br />,
         })}
-        description={t("description")}
-        ctaLabel={t("cta")}
+        description={tFooter("description")}
+        ctaLabel={tFooter("cta")}
       />
     </>
   );

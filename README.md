@@ -71,7 +71,7 @@ constants/            # Nav items, filters
 The site is available in English (default, `/en`) and Czech (`/cs`), powered by [next-intl](https://next-intl.dev/).
 
 - **Routing** — `i18n/routing.ts` declares the supported locales and every static pathname (used for typed, autocompleted `Link`/`useRouter` calls). `middleware.ts` detects the visitor's locale (URL prefix → `NEXT_LOCALE` cookie → `Accept-Language` header) and redirects to the prefixed URL.
-- **Translations** — UI copy for the header/footer, hero, about, projects, and contact sections lives in `messages/en.json` and `messages/cs.json`. Longer, narrative content (bio paragraphs, project descriptions, terminal output) stays in `data/*.ts` and is currently English-only; see "Adding more translations" below to localize it too.
+- **Translations** — UI copy for the header/footer, hero, about, projects chrome, and contact sections lives in `messages/en.json` and `messages/cs.json`. Project prose (titles, descriptions, highlights, case studies) lives under the `projectEntries` namespace in those catalogs. Locale-invariant project meta stays in `data/projects.ts`.
 - **Usage** — Server Components use `useTranslations`/`getTranslations` from `next-intl` / `next-intl/server` (e.g. `components/hero/hero.tsx`, `app/[locale]/about/page.tsx`); Client Components use the same `useTranslations` hook (e.g. `components/hero/hero-cta.tsx`, `components/layout/language-switcher.tsx`).
 - **Language switcher** — `components/layout/language-switcher.tsx` is a small client component in the header that re-navigates to the current page under the other locale.
 
@@ -92,18 +92,21 @@ Most site content is data-driven. Edit the files in `data/` — no component cha
 | File | Purpose |
 |------|---------|
 | `profile.ts` | Locale-invariant identity (name, email, availability) |
-| `projects.ts` | Project entries |
+| `projects.ts` | Locale-invariant project meta (slug, stack, images, links, status, year, priority) |
 | `stack.ts` | Home page tech stack |
 | `social.ts` | Social links and resume path |
 | `terminal.ts` | Terminal section builders (localized strings passed in) |
 
 About page body copy and profile fields like role, tagline, location, university, and degree live in `messages/en.json` and `messages/cs.json` under the `about` and `profile` namespaces.
 
+Project prose (title, descriptions, highlights, case study) lives under the `projectEntries` namespace in those same message catalogs, keyed by slug. Helpers in `lib/project-utils.ts` merge meta + copy into a single `Project`.
+
 ### Adding a project
 
-1. Add a new entry to `data/projects.ts` (set `slug`, `thumbnail`, `screenshots`, `featured`, `priority`, etc.).
-2. Place preview images in `public/projects/<slug>/`.
-3. Reference them in the project entry, e.g. `/projects/omori-wordle/omori-wordle.webp`.
+1. Add a new meta entry to `data/projects.ts` (set `slug`, `thumbnail`, `screenshots`, `featured`, `priority`, `stack`, links, etc.).
+2. Add matching prose under `projectEntries.<slug>` in both `messages/en.json` and `messages/cs.json`.
+3. Place preview images in `public/projects/<slug>/`.
+4. Reference them in the project meta, e.g. `/projects/omori-wordle/omori-wordle.webp`.
 
 Lower `priority` values appear first in project lists and featured ordering.
 

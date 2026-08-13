@@ -2,11 +2,11 @@ import ProjectDetail from "@/components/projects/project-detail";
 import JsonLd from "@/components/seo/json-ld";
 import { projects } from "@/data/projects";
 import type { Locale } from "@/i18n/routing";
-import { createMetadata } from "@/lib/seo";
-import { projectBreadcrumbSchema, projectSchema } from "@/lib/schema";
 import { getProjectBySlug } from "@/lib/project-utils";
+import { projectBreadcrumbSchema, projectSchema } from "@/lib/schema";
+import { createMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 type ProjectPageProps = {
@@ -20,7 +20,8 @@ export const generateMetadata = async ({
   params,
 }: ProjectPageProps): Promise<Metadata> => {
   const { locale, slug } = await params;
-  const project = getProjectBySlug(slug);
+  const messages = await getMessages({ locale });
+  const project = getProjectBySlug(slug, messages.projectEntries);
 
   if (!project) {
     const t = await getTranslations({ locale, namespace: "projectNotFound" });
@@ -40,7 +41,8 @@ export const generateMetadata = async ({
 const ProjectPage = async ({ params }: ProjectPageProps) => {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const project = getProjectBySlug(slug);
+  const messages = await getMessages();
+  const project = getProjectBySlug(slug, messages.projectEntries);
 
   if (!project) {
     notFound();
