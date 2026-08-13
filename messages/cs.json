@@ -91,11 +91,7 @@
       },
       "openTo": {
         "label": "Hledám",
-        "items": [
-          "Stáže",
-          "Spolupráce",
-          "Brigády"
-        ]
+        "items": ["Stáže", "Spolupráce", "Brigády"]
       }
     },
     "outsideOfCode": [
@@ -221,191 +217,191 @@
   "projectEntries": {
     "omori-wordle": {
       "title": "OMORI Wordle",
-      "shortDescription": "Denní Wordle puzzle s motivy z OMORI, uživatelskými účty a sledováním postupu.",
-      "description": "Hra inspirovaná Wordle postavená kolem OMORI. Hráči hádají slova spojená s postavami, lokacemi a tématy ze hry. Aplikace zahrnuje uživatelské účty, sledování postupu a každý den nový puzzle.",
+      "shortDescription": "Denní slovní hra ve stylu Wordle s motivy z OMORI, uživatelskými účty a sledováním postupu.",
+      "description": "Slovní hra inspirovaná populárním Wordle, postavená na motivy hry OMORI. Hráči hádají slova spojená s postavami, místy a tématy z herního světa. Aplikace nabízí uživatelské účty, ukládání postupu a každý den novou hádanku.",
       "highlights": [
-        "Denní slovní puzzle",
-        "Uživatelská autentizace",
+        "Každodenní slovní hádanka",
+        "Autentizace uživatelů",
         "Správa herního stavu",
-        "Slovní banka s motivy OMORI",
-        "Testovací pokrytí ve Vitestu"
+        "Slovní banka na motivy OMORI",
+        "Pokrytí testy ve Vitestu"
       ],
       "caseStudy": {
-        "motivation": "Chtěl jsem propojit zájem o OMORI s denním puzzle formátem Wordle a procvičit si full-stack Next.js setup s autentizací a databází.",
+        "motivation": "Chtěl jsem propojit svůj zájem o hru OMORI s populárním konceptem denních hádanek po vzoru Wordle a zároveň si vyzkoušet kompletní full-stack v Next.js včetně autentizace a databáze.",
         "challenges": [
-          "Sestavit slovní banku napojenou na herní lore bez spoilerů klíčových momentů příběhu",
-          "Řídit herní stav a zpětnou vazbu klávesnice napříč sezeními",
-          "Ukládat postup přihlášených uživatelů",
-          "Udržet klientský a serverový herní stav v souladu"
+          "Vytvoření slovní banky navázané na herní reálie tak, aby neobsahovala spoilery ke klíčovým momentům příběhu",
+          "Správa herního stavu a odezvy klávesnice mezi jednotlivými herními relacemi",
+          "Ukládání herního postupu pro přihlášené uživatele",
+          "Synchronizace stavu hry mezi klientem a serverem"
         ],
         "architecture": [
-          "Frontend na Next.js App Router s React Contextem pro herní stav",
-          "Drizzle ORM s Neon Postgres pro uživatele a statistiky",
-          "Better Auth pro správu sezení",
-          "TanStack Query pro načítání a cache dat",
-          "TanStack Hotkeys pro ovládání klávesnicí",
-          "Vitest pro unit a integrační testy"
+          "Frontend postavený na Next.js App Routeru s využitím React Contextu pro správu herního stavu",
+          "Drizzle ORM a Neon Postgres pro ukládání uživatelů a jejich statistik",
+          "Better Auth pro správu uživatelských relací",
+          "TanStack Query pro asynchronní načítání a cachování dat",
+          "TanStack Hotkeys pro podporu klávesových zkratek",
+          "Vitest pro jednotkové (unit) a integrační testy"
         ],
         "lessons": [
-          "React Context se dobře hodí pro uzavřený herní stav, hranice ale musí zůstat úzké",
-          "Logika denního puzzle je jednodušší, když je výběr slova deterministický podle data",
-          "Vitest usnadnil izolované testování herní logiky a auth toků"
+          "React Context se dobře hodí pro uzavřený herní stav, ale jeho rozsah je potřeba držet pevně pod kontrolou",
+          "Logika denní hry se zjednoduší, pokud je výběr slova deterministický a odvíjí se od aktuálního data",
+          "Vitest výrazně usnadnil izolované testování herní logiky a autentizačních procesů"
         ]
       }
     },
     "pixelverse": {
       "title": "PixelVerse",
-      "shortDescription": "Pixelartová komunita s AI moderací, profily umělců, feedy a Sanity CMS.",
-      "description": "PixelVerse je komunitní platforma, kde pixeloví umělci sdílejí práci, procházejí feedy a spojují se s ostatními. Nahrávky před zveřejněním procházejí AI moderací.",
+      "shortDescription": "Komunitní platforma pro pixel art s profily umělců, feedy a Sanity CMS.",
+      "description": "PixelVerse je komunitní platforma, kde mohou tvůrci pixel artu sdílet svá díla, sledovat příspěvky ostatních a propojovat se. Moderování obsahu funguje na bázi uživatelských nahlášení vyhodnocovaných pomocí AI, což doplňuje klasické administrátorské zásahy pro zachování přátelského prostředí.",
       "highlights": [
-        "AI moderace obsahu",
-        "Profily umělců a feedy",
-        "Headless CMS se Sanity",
-        "Objevování komunity"
+        "Profily uživatelů a feedy příspěvků",
+        "Headless CMS postavené na platformě Sanity",
+        "Uživatelská nahlášení vyhodnocovaná pomocí AI",
+        "Snadné objevování příspěvků v rámci komunity"
       ],
       "caseStudy": {
-        "motivation": "Chtěl jsem sociální platformu pro pixelové umělce, kde AI převezme část moderace obsahu místo spoléhání jen na ruční review.",
+        "motivation": "Mým cílem bylo vytvořit komunitní platformu pro tvůrce pixel artu, kde by s moderováním nahlášeného obsahu pomáhala umělá inteligence, abychom nemuseli spoléhat výhradně na manuální kontrolu administrátory.",
         "challenges": [
-          "Vyvážit otevřené sdílení v komunitě s bezpečnými, moderovanými uploady",
-          "Namodelovat profily umělců, příspěvky a feedy v headless CMS",
-          "Udržet předvídatelné načítání dat napříč složitějšími UI povrchy",
-          "Ukládat reakce efektivně, aniž by model pod zátěží spadl"
+          "Hledání rovnováhy mezi volným sdílením v rámci komunity a bezpečností nahraného obsahu",
+          "Návrh datového modelu pro profily autorů, příspěvky a feedy v rámci headless CMS",
+          "Zajištění předvídatelného a efektivního načítání dat napříč složitým uživatelským rozhraním",
+          "Efektivní ukládání uživatelských reakcí, které neohrozí stabilitu datového modelu při vysoké zátěži"
         ],
         "architecture": [
-          "Next.js frontend s TanStack Query pro serverový stav",
-          "Sanity.io jako headless CMS pro obsah a metadata",
-          "OpenAI API nebo Gemini API pro AI moderaci"
+          "Frontend v Next.js s využitím TanStack Query pro správu serverového stavu",
+          "Sanity.io jako headless CMS pro správu obsahu a metadat",
+          "OpenAI nebo Gemini API pro vyhodnocování uživatelských nahlášení"
         ],
         "lessons": [
-          "TanStack Query zjednodušil invalidaci cache napříč feedy a profily",
-          "Infinite scroll udržel UI svižné a rozložil načítání dat v čase",
-          "Sanity schémata se vyplatí definovat brzy. Dodatečné předělávání content modelů je drahé",
-          "Náklady na tokeny AI moderace rychle narůstají, takže záleží na dávkování a návrhu promptů"
+          "TanStack Query výrazně zjednodušil invalidaci cache mezi příspěvky a profily uživatelů",
+          "Implementace nekonečného scrollování (infinite scroll) zajistila plynulý chod rozhraní a rozložila síťové požadavky v čase",
+          "Definici schémat v Sanity se vyplatí navrhnout co nejdříve. Pozdější úpravy datových modelů bývají nákladné",
+          "Využití AI k analýze uživatelských nahlášení namísto preventivního ověřování všech nahrávaných souborů pomáhá držet spotřebu tokenů a provozní náklady na minimu"
         ]
       }
     },
     "minimal-eshop": {
       "title": "Minimal E-Shop",
-      "shortDescription": "Full-stack e-commerce demo se Spring Bootem, Stripe platbami a Docker nasazením.",
-      "description": "Kompaktní full-stack e-shop se Spring Boot backendem, Supabase PostgreSQL, Stripe platbami a frontendem na Vite + React + TypeScript. Obě služby běží v Dockeru pro lokální vývoj i nasazení.",
+      "shortDescription": "Full-stack e-commerce demo se Spring Bootem, platbami přes Stripe a dockerizovaným backendem.",
+      "description": "Kompaktní full-stack e-shop se Spring Boot backendem, PostgreSQL na Supabase, platbami přes Stripe a frontendem postaveným na kombinaci Vite, Reactu a TypeScriptu. Backend běží v Dockeru pro usnadnění lokálního vývoje i produkčního nasazení.",
       "highlights": [
-        "Integrace Stripe checkoutu",
-        "REST API ve Spring Bootu",
-        "Dockerizované nasazení",
-        "Katalog produktů a košík"
+        "Propojení s platební bránou Stripe (Stripe Checkout)",
+        "REST API postavené na Spring Bootu",
+        "Kontejnerizace a nasazení backendu přes Docker",
+        "Katalog produktů a nákupní košík"
       ],
       "caseStudy": {
-        "motivation": "Postavil jsem to, abych si procvičil realistický e-commerce tok napříč Java backendem, React frontendem a zpracováním plateb.",
+        "motivation": "E-shop jsem vytvořil, abych si vyzkoušel ucelený nákupní proces spojující Java backend, React frontend a zpracování plateb.",
         "challenges": [
-          "Srovnat API kontrakty mezi Spring Bootem a Vite frontendem",
-          "Spolehlivě zpracovat Stripe webhooky a potvrzení plateb",
-          "Zabalit frontend i backend do reprodukovatelného Docker setupu"
+          "Sladění API kontraktů mezi Spring Bootem a frontendem",
+          "Spolehlivé zpracování Stripe webhooků a potvrzení plateb",
+          "Zabalení Java backendu do reprodukovatelného Docker prostředí"
         ],
         "architecture": [
-          "Spring Boot REST API s PostgreSQL na Supabase",
-          "Vite + React SPA s TanStack Routerem",
+          "REST API ve Spring Bootu s PostgreSQL databází na Supabase",
+          "Vite a React SPA s využitím TanStack Routeru",
           "Stripe pro zpracování plateb",
-          "Docker Compose pro lokální vývoj"
+          "Docker pro kontejnerizaci backendové části"
         ],
         "lessons": [
-          "Docker usnadnil běh stejného stacku lokálně i v nasazení",
-          "Jasné API hranice mezi frontendem a backendem snížily třecí plochy při integraci",
-          "Stripe test mode a přeposílání webhooků byly při vývoji nezbytné"
+          "Docker zjednodušil lokální spouštění a produkční nasazení backendové části aplikace",
+          "Definování jasných hranic API mezi frontendem a backendem výrazně usnadnilo celkovou integraci",
+          "Testovací režim Stripe (Test Mode) a lokální přesměrování webhooků byly pro plynulý vývoj naprosto klíčové"
         ]
       }
     },
     "rtsoft-clothing-eshop": {
       "title": "RTSoft Clothing E-Shop",
-      "shortDescription": "UI oděvního e-shopu vytvořené s RTSoft, s filtrováním katalogu, vícestupňovým checkoutem, správou objednávek a admin nástroji.",
-      "description": "Semestrální projekt vyvíjený s RTSoft. Oděvní e-commerce aplikace s realistickými nákupními toky, responzivním layoutem a udržovatelným UI. Uživatelé procházejí filtrovatelný katalog s variantami produktů, spravují košík, dokončí vícestupňový checkout a prohlížejí historii objednávek. Administrátoři v samostatném dashboardu spravují produkty, objednávky a analytiku. S externími účastníky jsme provedli usability testy a podle zpětné vazby upravili rozhraní.",
+      "shortDescription": "Uživatelské rozhraní e-shopu s oblečením vytvořené ve spolupráci s RTSoft, s filtrováním katalogu, vícestupňovým nákupním procesem, správou objednávek a administrátorským rozhraním.",
+      "description": "Semestrální projekt vytvořený ve spolupráci s firmou RTSoft. Jde o moderní e-shop s oblečením zaměřený na plynulý nákupní proces, responzivní design a snadno udržovatelný kód. Uživatelé mohou procházet filtrovatelný katalog s variantami zboží, spravovat košík, projít vícestupňovým nákupním procesem a sledovat historii svých objednávek. Administrátoři mají k dispozici přehledný panel pro správu produktů, objednávky a základní analytiku. Součástí projektu bylo i uživatelské testování (usability testing) s reálnými testery a následná iterace rozhraní.",
       "highlights": [
-        "Responzivní e-commerce zkušenost",
-        "Vícestupňový checkout",
-        "Admin dashboard s analytikou",
-        "Varianty produktů a filtrování",
-        "Internacionalizace (CZ / EN)",
-        "Usability testování a UX iterace"
+        "Responzivní e-commerce rozhraní",
+        "Vícestupňový nákupní proces (checkout)",
+        "Administrátorský panel s přehledy a analytikou",
+        "Podpora variant zboží a pokročilé filtrování",
+        "Vícejazyčnost (čeština a angličtina)",
+        "Uživatelské testování a iterativní vylepšování UX"
       ],
       "caseStudy": {
-        "motivation": "Pro semestrální projekt s RTSoft jsme chtěli realistickou e-commerce zkušenost se stejným důrazem na použitelnost, architekturu a udržovatelné UI.",
+        "motivation": "Cílem projektu vyvíjeného ve spolupráci s firmou RTSoft bylo vytvořit reálnou e-commerce aplikaci s důrazem na skvělou použitelnost, čistou architekturu a dlouhodobě udržovatelný kód.",
         "challenges": [
-          "Navrhnout vícestupňový checkout, který uživatele nepřehlí",
-          "Přesně reprezentovat varianty produktů, ceny a sklad (správa SKU)",
-          "Udržet stav košíku a katalogu konzistentní napříč routami",
-          "Upravovat UI rozhodnutí po usability testování"
+          "Návrh vícestupňového nákupního procesu, který uživatele nezahltí množstvím polí",
+          "Přesná reprezentace produktových variant, cenotvorby a skladových zásob (správa SKU)",
+          "Zajištění konzistence stavu košíku a katalogu při přecházení mezi jednotlivými stránkami",
+          "Zpětná úprava designu a chování rozhraní na základě výsledků uživatelského testování"
         ],
         "architecture": [
-          "React SPA s TanStack Routerem a vnořenými layouty",
-          "TanStack Query pro serverový stav",
-          "Zustand pro globální stav košíku",
-          "Znovupoužitelné UI komponenty postavené na shadcn/ui a Tailwind CSS",
-          "Lokalizace přes i18next"
+          "React SPA s využitím TanStack Routeru a vnořených layouty",
+          "TanStack Query pro synchronizaci a správu serverového stavu",
+          "Zustand pro lehkou globální správu stavu košíku",
+          "Znovupoužitelné UI komponenty postavené na kombinaci shadcn/ui a Tailwind CSS",
+          "Lokalizační vrstva postavená na i18next"
         ],
         "lessons": [
-          "Usability testování odhalilo problémy, které jsem při implementaci nečekal",
-          "Filtrování a logika variant produktů ovlivňují jak UX, tak datové modelování",
-          "Pravidelná zpětná vazba od klienta zlepšila výsledek víc než samotné pozdní leštění",
-          "Příprava datových modelů brzy šetří drahý refactoring později"
+          "Uživatelské testování odhalilo neočekávané UX nedostatky, kterých si vývojář při implementaci málokdy všimne",
+          "Komplexní filtrování a logika produktových variant mají zásadní dopad jak na uživatelskou přívětivost, tak na správný návrh datového modelu",
+          "Pravidelná komunikace a zpětná vazba od klienta přispěly k lepšímu výsledku mnohem více než dodatečné úpravy těsně před odevzdáním",
+          "Pečlivá příprava datových modelů v počáteční fázi projektu předchází komplikovaným a nákladným úpravám kódu v budoucnu"
         ]
       }
     },
     "textforge": {
       "title": "TextForge",
-      "shortDescription": "Nástroj pro živou konverzi textu s AI formátováním, odvozováním schémat a prémiovým přístupem přes Stripe.",
-      "description": "Nástroj pro konverzi textu s živými náhledy. Přihlášení uživatelé mohou spouštět AI transformace, které strukturují, čistí a odvozují schémata z nestrukturovaného textu. Prémiový přístup řeší Stripe.",
+      "shortDescription": "Nástroj pro okamžitý převod a formátování textu s podporou AI, odvozováním schémat a prémiovým přístupem přes Stripe.",
+      "description": "Nástroj pro převod a formátování textu s okamžitým náhledem. Přihlášení uživatelé mohou využít transformace poháněné AI pro strukturování, čištění a odvozování schémat z nestrukturovaného textu. Platby za prémiové funkce zajišťuje platforma Stripe.",
       "highlights": [
-        "Živé náhledy textu",
-        "Formátování s pomocí AI",
-        "Odvozování schémat",
-        "Stripe platby za prémiové funkce"
+        "Živé náhledy textu v reálném čase",
+        "Formátování textu pomocí AI",
+        "Automatické odvozování datových schémat",
+        "Integrace platební brány Stripe pro prémiové funkce"
       ],
       "caseStudy": {
-        "motivation": "TextForge jsem postavil kvůli formátování dat pro projekt Minimal E-Shop. Cestou jsem se naučil TanStack Start a vydal vývojářský textový nástroj s volitelnými AI funkcemi za autentizací.",
+        "motivation": "TextForge vznikl původně jako pomocný nástroj pro formátování dat k mému projektu Minimal E-Shop. Rozhodl jsem se na něm prozkoumat možnosti nového frameworku TanStack Start a vytvořit užitečnou textovou utilitu pro vývojáře s pokročilými transformacemi pomocí AI zabezpečenými autentizační vrstvou.",
         "challenges": [
-          "Vykreslovat živé náhledy bez zpoždění u velkých textových vstupů",
-          "Omezit AI funkce jen na přihlášené uživatele",
-          "Zvládnout Stripe checkout a řízení přístupu pro prémiové úrovně",
-          "Navrhnout prompty, které vrací strukturovaný, předvídatelný výstup a zároveň drží spotřebu tokenů nízko"
+          "Optimalizace vykreslování okamžitých náhledů u rozsáhlých textových vstupů bez znatelného zpoždění",
+          "Zabezpečení a zpřístupnění AI funkcí výhradně přihlášeným uživatelům",
+          "Implementace nákupního procesu přes Stripe Checkout a správa přístupových práv pro prémiové účty",
+          "Návrh promptů, které vracejí strukturovaný a předvídatelný výstup s ohledem na nízkou spotřebu tokenů"
         ],
         "architecture": [
-          "Full-stack framework TanStack Start se server functions",
-          "Drizzle ORM na Neon Postgres pro uživatelská data",
-          "Better Auth s Resendem pro e-mailové toky",
-          "Stripe pro platby za prémiové funkce",
-          "shadcn/ui pro responzivní editorové rozhraní"
+          "Full-stack framework TanStack Start s využitím serverových funkcí (Server Functions)",
+          "Drizzle ORM a Neon Postgres pro bezpečné ukládání uživatelských dat",
+          "Better Auth v kombinaci se službou Resend pro rozesílání systémových e-mailů",
+          "Stripe pro správu plateb a předplatného",
+          "Responzivní editorové rozhraní postavené na shadcn/ui"
         ],
         "lessons": [
-          "TanStack Start stírá hranici mezi klientem a serverem. U nástrojů to pomáhá, ale datové hranice musí zůstat explicitní",
-          "Debouncované náhledy byly nutné pro plynulé editování",
-          "Spotřeba AI tokenů roste rychle, takže velikost requestů a návrh promptů potřebují vědomé limity"
+          "TanStack Start stírá hranici mezi klientem a serverem. U podobných nástrojů je to skvělé, ale datové a bezpečnostní hranice musí zůstat naprosto explicitní",
+          "Debouncování požadavků na náhled bylo nezbytné pro zajištění plynulého psaní a editace",
+          "Spotřeba AI tokenů roste extrémně rychle, proto velikost požadavků a samotný návrh promptů vyžadují pečlivou optimalizaci"
         ]
       }
     },
     "omori-headspace": {
       "title": "OMORI Headspace",
-      "shortDescription": "Interaktivní fanovský web o OMORI se scroll-driven GSAP animacemi a pečlivou front-end prací.",
-      "description": "Interaktivní fanovský web pro indie RPG OMORI, postavený kvůli procvičení scroll-driven animací a pečlivé front-endové práce.",
+      "shortDescription": "Interaktivní fanouškovská stránka věnovaná hře OMORI se scroll-driven animacemi v GSAP a precizním front-endovým zpracováním.",
+      "description": "Interaktivní fanouškovská stránka oslavující úspěšné indie RPG OMORI. Projekt slouží jako ukázka moderních animačních technik a precizního front-endového řemesla.",
       "highlights": [
-        "Animace řízené scrollem",
-        "Interaktivní UI sekce",
-        "Vizuální design inspirovaný OMORI",
-        "Důraz na front-endový detail"
+        "Pokročilé animace řízené scrollováním (scroll-driven animations)",
+        "Interaktivní části uživatelského rozhraní",
+        "Vizuální styl věrně inspirovaný hrou OMORI",
+        "Důraz na detail a precizní front-endové zpracování"
       ],
       "caseStudy": {
-        "motivation": "OMORI má výraznou vizuální identitu. Chtěl jsem fanovský web, který přenese tu náladu do scroll-driven animací a front-endového řemesla.",
+        "motivation": "Hra OMORI má naprosto jedinečnou vizuální identitu. Chtěl jsem vytvořit interaktivní web, který by tuto specifickou atmosféru věrně přenesl do prohlížeče pomocí plynulých scroll-driven animací.",
         "challenges": [
-          "Zachytit náladu a barevnou paletu hry",
-          "Skloubit GSAP timeline napříč scroll triggery a sekcemi stránky",
-          "Udržet přijatelný výkon při těžkých animacích na slabších zařízeních"
+          "Věrné zachycení melancholické atmosféry a barevné palety hry bez přímého použití originálních grafických podkladů",
+          "Koordinace časových os v GSAP napříč jednotlivými scroll triggery a sekcemi webu",
+          "Optimalizace výkonu a zachování plynulosti náročných animací i na méně výkonných zařízeních"
         ],
         "architecture": [
-          "Next.js 16 s App Routerem",
-          "GSAP ScrollTrigger pro animace po sekcích",
-          "Tailwind CSS v4 pro styling a responzivní layout"
+          "Next.js s využitím App Routeru",
+          "GSAP ScrollTrigger pro plynulé přechody mezi sekcemi",
+          "Tailwind CSS v4 pro moderní styling a responzivní rozvržení"
         ],
         "lessons": [
-          "GSAP timeline se lépe udržují, když každá sekce vlastní svůj animační modul",
-          "Respektování reduced motion preferencí a lazy-loading animací zlepšily přístupnost i výkon"
+          "Animační časové osy (GSAP timelines) se udržují mnohem snáze, pokud má každá sekce vlastní izolovaný animační modul",
+          "Zohlednění systémového nastavení pro omezení pohybu (reduced motion) a líné spouštění (lazy-loading) animací výrazně zlepšilo přístupnost i celkový výkon webu"
         ]
       }
     },
@@ -442,73 +438,73 @@
     },
     "brick-match": {
       "title": "BrickMatch",
-      "shortDescription": "Zjistěte, které LEGO sety dokážete postavit z dílků, které už máte, díky vlastnímu matching enginu nad katalogem Rebrickable.",
-      "description": "Full-stack aplikace, která páruje vlastněné LEGO dílky s katalogem setů Rebrickable. Ukáže, ke kterým setům máte nejblíž a které dílky ještě chybí. Jádrem je matching engine: kandidátské hledání podpořené indexem plus jeden agregovaný SQL dotaz, ne naivní průchod po setech ani AI skener kostiček.",
+      "shortDescription": "Zjistěte, které LEGO stavebnice můžete postavit z dílků ve své sbírce, díky vlastnímu matching enginu nad katalogem Rebrickable.",
+      "description": "Full-stack aplikace, která páruje vlastní LEGO dílky s katalogem stavebnic Rebrickable. Ukáže vám, ke kterým setům máte nejblíže a které dílky vám do jejich dokončení scházejí. Jádrem aplikace je vyhledávací matching engine postavený na efektivní databázové indexaci a jediném agregovaném SQL dotazu, namísto pomalého procházení jednotlivých položek nebo nespolehlivého rozpoznávání obrázků pomocí AI.",
       "highlights": [
-        "Matching engine s podporou indexu nad katalogem 20 000+ setů",
-        "Sdílená Zod schémata mezi frontendem a backendem přes pnpm workspace balíček",
-        "JWT autentizace v cookie s potvrzením hesla u citlivých akcí",
-        "CSV chybějících dílků ve formátu Rebrickable, poté BrickLink XML přes konvertor Rebrickable, bez ručně budované mapy ID",
-        "Rozbalení minifigurek do inventářů setů při importu, aby matching zůstal plochým dotazem na dílky",
-        "Atomická akce sestavení setu, která odečte potřebné dílky ze sbírky jen když set opravdu dokončíte"
+        "Vyhledávací matching engine využívající databázové indexy nad katalogem s více než 20 000 stavebnicemi",
+        "Sdílená Zod schémata pro stoprocentní typovou bezpečnost a validaci mezi frontendem a backendem v rámci pnpm workspace",
+        "Bezpečná JWT autentizace předávaná přes httpOnly cookie s dodatečným potvrzením hesla u citlivých akcí",
+        "Export chybějících dílků do CSV (formát Rebrickable) a BrickLink XML prostřednictvím oficiálního převodníku",
+        "Předpřipravení (denormalizace) dílků z minifigurek přímo do inventáře stavebnic při importu, což zrychluje vyhledávání",
+        "Atomická operace „postavení stavebnice“, která odečte použité dílky z vaší sbírky pouze při stoprocentním dokončení setu"
       ],
       "caseStudy": {
-        "motivation": "LEGO je pro mě opravdový osobní zájem. Pořád jsem nacházel staré kostičky nebo kupoval míchané balíčky dílků a nevěděl, co z nich jde dokončit. Existující nástroje buď skenují kostičky AI, což je nespolehlivé na barvu a rozpoznání dílků, nebo nikdy neodpoví na jednoduchou otázku, k čemu mám nejblíž. Chtěl jsem tu matching část postavit pořádně nad velkým reálným datasetem, ne jen obalit další CRUD appku AI.",
+        "motivation": "LEGO je moje osobní záležitost. Často se mi stávalo, že jsem doma našel staré kostky nebo koupil náhodnou směs dílků, ale neměl jsem přehled, co z nich vlastně dokážu postavit. Dostupné nástroje buď spoléhají na rozpoznávání obrazu pomocí AI, které je u barev a specifických dílků velmi nespolehlivé, nebo nedokážou odpovědět na tu nejjednodušší otázku: které stavebnici jsem s dostupnými dílky nejblíže. Chtěl jsem vytvořit robustní vyhledávací jádro nad rozsáhlým reálným datasetem, spíše než jen postavit další jednoduchou CRUD aplikaci s nálepkou AI.",
         "challenges": [
-          "Rebrickable drží dílky minifigurek v samostatném inventářovém grafu (inventories → inventory_minifigs → inventory_parts), ne v inventáři vlastnického setu. Vyřešil jsem to při importu rozbalením komponent minifigurek do rodičovského setu.",
-          "BrickLink a Rebrickable používají různá interní ID pro dílky a barvy, bez čisté stažitelné mapy. Exportoval jsem CSV ve formátu Rebrickable a konverzi do BrickLink nechal na vlastním nástroji Rebrickable místo udržování mapovací tabulky.",
-          "Doladit jednu prahovou hodnotu minimálního procenta shody, která dává smysl napříč velmi různými velikostmi setů, od pár desítek dílků po několik tisíc",
-          "Správně stránkovat rostoucí uživatelskou sbírku a zároveň nechat malá pevná referenční data (barvy, témata) bez stránkování"
+          "Služba Rebrickable ukládá dílky minifigurek v oddělené struktuře (grafu) namísto přímého inventáře dané stavebnice. Tento problém jsem vyřešil už ve fázi importu denormalizací a rozbalením všech částí minifigurek přímo do mateřského setu.",
+          "Platformy BrickLink a Rebrickable používají odlišné interní identifikátory pro dílky a barvy, přičemž neexistuje žádné ucelené mapování. Místo náročné údržby vlastní převodní tabulky generuji exporty ve formátu Rebrickable CSV a samotný převod na formát BrickLink XML deleguji na osvědčený externí nástroj Rebrickable.",
+          "Nalezení optimální prahové hodnoty pro minimální procento shody, která by fungovala konzistentně pro stavebnice různých velikostí – od drobných setů s desítkami dílků až po obří modely s tisíci kostkami.",
+          "Návrh efektivního stránkování pro neustále se rozrůstající sbírku uživatele při zachování přímého načítání malých statických číselníků (barvy, témata) bez zbytečné režie."
         ],
         "architecture": [
-          "NestJS API a Next.js frontend jako samostatné deployable v pnpm workspace monorepu, se sdíleným Zod schema balíčkem pro typy a validaci",
-          "PostgreSQL B-tree index na (part_num, color_id) zúží celý katalog setů na realistické kandidáty ještě před výpočtem procent",
-          "Procento shody se počítá pro všechny kandidáty v jediném seskupeném SQL dotazu s HAVING klauzulí, ne jedním dotazem na kandidáta",
-          "Katalogová data se importují z CSV exportu Rebrickable předem. Backend na request path nikdy nevolá API třetí strany. Obrázky dílků a setů se v prohlížeči hotlinkují z CDN Rebrickable.",
-          "JWT se doručuje přes httpOnly cookie a na API validuje Nest Passport. Frontend token nikdy nečte a auth stav odvozuje z /me query přes TanStack Query.",
-          "Serverový stav jen v TanStack Query. Stav filtrů v URL (téma, min. shoda %) drží nuqs."
+          "API v NestJS a frontend v Next.js provozované jako samostatně nasaditelné služby v pnpm monorepu, sdílející společný balíček se schématy Zod pro typovou bezpečnost a validaci dat.",
+          "PostgreSQL B-tree index nad dvojicí (part_num, color_id) efektivně omezí prohledávaný katalog pouze na reálné kandidáty ještě před samotným výpočtem shody.",
+          "Výpočet procentuální shody pro všechny potenciální stavebnice v rámci jediného seskupeného SQL dotazu s klauzulí HAVING namísto postupného dotazování pro každého kandidáta zvlášť.",
+          "Katalogová data se do databáze importují předem z datových exportů Rebrickable. Backend tak při zpracování požadavků nemusí komunikovat s API třetích stran. Obrázky dílků a setů se načítají na straně klienta přímo z CDN sítě Rebrickable.",
+          "JWT je bezpečně předáván prostřednictvím httpOnly cookie a na straně API validován pomocí Nest Passport. Frontend k tokenu nemá přímý přístup a stav přihlášení odvozuje z požadavku na endpoint /me prostřednictvím TanStack Query.",
+          "Správa serverového stavu výhradně pomocí TanStack Query. Stav filtrů v URL adrese (témata, minimální shoda) je synchronizován pomocí knihovny nuqs."
         ],
         "lessons": [
-          "U velkých katalogů patří užitečná práce do indexu a jediné SQL agregace. Loopovat v aplikačním kódu přes desítky tisíc setů je designový zápach.",
-          "Vnořenou komplexitu katalogu, třeba minifigurky, rozbalte při importu, aby runtime matching zůstal plochým problémem (part_num, color_id). Denormalizujte jednou, dotazujte jednoduše.",
-          "Sdílená Zod schémata odstraní celou třídu driftu mezi frontendem a backendem. Krátká vlastní Nest validation pipe stačila. nestjs-zod byla volitelná složitost, ne nutnost.",
-          "Nevyplatí se budovat a udržovat mapování ID napříč vendory, když už existuje upstream konvertor. Exportovat Rebrickable CSV byl menší povrch.",
-          "Stránkování je produktové rozhodnutí. Rostoucí uživatelské sbírky ho potřebují. Drobné statické referenční tabulky jako barvy a témata je lepší stáhnout celé a cachovat."
+          "U rozsáhlých katalogů patří nejtěžší práce do databázového indexu a jediné SQL agregace. Cyklické procházení desítek tisíc záznamů v aplikačním kódu je jasným architektonickým prohřeškem (code smell).",
+          "Komplexní vazby v katalogu, jako jsou dílky minifigurek, je nejlepší denormalizovat už při importu. Runtime vyhledávání pak zůstane jednoduchou a plochou operací nad dvojicí (part_num, color_id).",
+          "Sdílení Zod schémata eliminuje riziko nesouladu (driftu) datových modelů mezi frontendem a backendem. Pro integraci plně postačila jednoduchá vlastní validační runda v NestJS – použití knihoven jako nestjs-zod by přineslo jen zbytečnou komplexitu.",
+          "Nemá smysl vyvíjet a udržovat vlastní převodníky ID mezi různými platformami, pokud již existuje spolehlivé řešení přímo u zdroje. Generování CSV ve formátu Rebrickable se ukázalo jako podstatně jednodušší cesta s minimální režií.",
+          "Stránkování je důležité produktové rozhodnutí. Zatímco neustále rostoucí uživatelské sbírky jej vyžadují, drobné statické číselníky (barvy, témata) je mnohem efektivnější stáhnout jednorázově a cachovat na klientovi."
         ]
       }
     },
     "spinjitzu-api": {
       "title": "Spinjitzu API",
-      "shortDescription": "Veřejné REST API pro vesmír LEGO NINJAGO: postavy, sezóny, elementy, zbraně, lokace a říše.",
-      "description": "Ninjago má velkou lore plochu a skoro žádný strukturovaný způsob, jak se na ni ptát. Spinjitzu API je veřejné REST API, které jsem kvůli té mezeře postavil: postavy, sezóny, elementy, zbraně, lokace a říše, s filtrováním, stránkováním a OpenAPI dokumentací. Bral jsem to jako veřejnou službu s konzistentními response envelopes, validací, JWT-chráněnými admin zápisy vypnutými v produkci, rate limitingem, testy, Dockerem pro lokální práci a serverless deployem.",
+      "shortDescription": "Veřejné REST API pro svět LEGO NINJAGO: postavy, série, elementy, zbraně, lokace a říše.",
+      "description": "Svět Ninjago má neobyčejně bohatou historii a lore, avšak dosud chyběl jakýkoli strukturovaný způsob, jak v těchto datech vyhledávat. Spinjitzu API je veřejné REST API, které tuto mezeru zaplňuje. Poskytuje strukturovaná data o postavách, sériích, elementech, zbraních, lokacích a říších s podporou filtrování, stránkováním a interaktivní dokumentace OpenAPI. K projektu jsem přistupoval jako k plnohodnotné veřejné službě: navrhl jsem jednotnou strukturu odpovědí (response envelopes), důslednou validaci, rate limiting, zabezpečení pomocí JWT, testování, kontejnerizaci v Dockeru a serverless nasazení.",
       "highlights": [
-        "Plné CRUD napříč 6 relačními zdroji s many-to-many vztahy (postavy ↔ elementy, zbraně, sezóny)",
-        "JWT autentizace s role-based guards. Admin zápisy jsou v produkci vypnuté na úrovni guardu, ne jen skryté v dokumentaci",
-        "Vrstvený rate limiting (čtení 200 / zápis 20 / auth 5 za minutu) s přepsáním throttleru po routách",
-        "Konzistentní success odpovědi {data, meta} a strukturované error envelopes napříč API",
-        "API versioning založené na URI, aby budoucí v2 mohlo běžet vedle v1 bez rozbití stávajících konzumentů",
-        "Unit testy s mockovanou Drizzle query vrstvou pokrývající service logiku a auth. Interaktivní OpenAPI docs na /docs"
+        "Kompletní CRUD operace pro 6 relačně propojených entit se složitými vazbami typu many-to-many (postavy ↔ elementy, zbraně, série)",
+        "Autentizace pomocí JWT s ochranou přístupu na základě uživatelských rolí (role-based guards). Administrační zápisy jsou v produkčním prostředí striktně zablokovány přímo v autorizační vrstvě, nikoli pouze skryty v dokumentaci",
+        "Víceúrovňový rate limiting (např. 200 požadavků pro čtení, 20 pro zápis, 5 pro autentizaci za minutu) s možností specifického přepsání (throttler overrides) u jednotlivých tras",
+        "Jednotný formát úspěšných odpovědí se strukturou {data, meta} a konzistentní chybové obálky (error envelopes) napříč všemi endpointy",
+        "Verzování API pomocí URI, což umožňuje bezproblémový souběh verzí v1 a v2 bez rizika narušení funkčnosti u stávajících uživatelů",
+        "Jednotkové testy s mockováním databázové vrstvy Drizzle pokrývající aplikační logiku a autentizaci. Interaktivní dokumentace OpenAPI na adrese /docs"
       ],
       "caseStudy": {
-        "motivation": "Ninjago sleduji roky. Když jsem hledal API na postavy, sezóny, elementy a zbytek toho vesmíru, nic použitelného nebylo, tak jsem si ho postavil. Téma je osobní, ale inženýrství stejně muselo obstát: jasné kontrakty, auth hranice, rate limity, dokumentace a deploy, kterému bych věřil.",
+        "motivation": "Sérii Ninjago sleduji už řadu let. Když jsem pro jeden ze svých nápadů hledal veřejné API s daty o postavách, sériích nebo elementech, zjistil jsem, že neexistuje nic použitelného – tak jsem se rozhodl ho vybudovat sám. I když je téma ryze neformální, technické zpracování muselo splňovat standardy reálného produkčního projektu: od jasně definovaných kontraktů a bezpečnostních bariér přes rate limiting až po kompletní dokumentaci a robustní nasazení.",
         "challenges": [
-          "Namodelovat many-to-many vztahy mezi postavami, elementy, zbraněmi a sezónami tak, aby data zůstala přesná, když lore v čase mění vlastníky, síly a éry",
-          "Diagnostikovat konflikt NestJS API versioningu a global-prefix, který rozbil neverzovanou root endpointu. Vyřešeno přes VERSION_NEUTRAL routing",
-          "Donutit Swagger UI static assets načítat na Vercel serverless bundleru servírováním CSS a JS z CDN místo dynamických cest balíčku",
-          "Rozhodnout, co v produkci vypnout a co jen skrýt. Admin routy a login blokuje DisabledInProductionGuard, nejsou jen vynechané z OpenAPI specifikace"
+          "Správný návrh a modelování vazeb typu many-to-many mezi postavami, elementy, zbraněmi a sériemi. Data musela zůstat historicky přesná, přestože se v průběhu času mění majitelé zbraní, jejich schopnosti či jednotlivé éry příběhu.",
+          "Hledání příčiny konfliktu mezi verzováním API v NestJS a globálním prefixem, který znefunkčnil neverzovaný kořenový endpoint. Problém jsem vyřešil konfigurací směrování jako VERSION_NEUTRAL.",
+          "Zajištění spolehlivého načítání statických souborů pro Swagger UI v serverless prostředí na platformě Vercel, čehož jsem docílil servírováním CSS a JS souborů z veřejné CDN sítě namísto spoléhání se na dynamické cesty v lokálním balíčku.",
+          "Rozhodnutí, které funkce je v produkci nutné zcela deaktivovat a které stačí pouze skrýt. Administrační trasy a přihlašování jsou v produkčním režimu nekompromisně blokovány vlastním autorizačním strážcem (DisabledInProductionGuard) a nezmizely tak pouze z OpenAPI dokumentace."
         ],
         "architecture": [
-          "Feature-first struktura modulů: Controller → Service → Drizzle → PostgreSQL, bez repository vrstvy, dokud se neukáže potřebná",
-          "Neon serverless Postgres přes HTTP driver, zvolený kvůli kompatibilitě se serverless nasazením na Vercelu",
-          "Centralizované tvarování odpovědí přes globální interceptor a exception filter, aby každý endpoint vracel stejný success a error envelope",
-          "Složené dekorátory jako @AdminWrite(), které pro každý write endpoint sdružují JWT auth, role checks, write-tier throttling a produkční disable/hide pravidla"
+          "Modulární struktura organizovaná podle funkcí (feature-first) s průchodem Controller → Service → Drizzle → PostgreSQL. Vzor Repository jsem se rozhodl vynechat, dokud pro něj nevznikne reálné opodstatnění.",
+          "Neon serverless Postgres s využitím HTTP ovladače, který byl zvolen pro optimální kompatibilitu a výkon v bezserverovém (serverless) prostředí Vercelu.",
+          "Centralizované sjednocení struktury odpovědí pomocí globálního interceptoru a filtru výjimek (exception filter) zajišťující, že každý endpoint vrací identický formát pro úspěšné i chybové stavy.",
+          "Vlastní složené dekorátory (např. @AdminWrite()), které u zápisových endpointů elegantně sdružují ověření JWT tokenu, kontrolu rolí, přísnější rate limiting pro zápis a pravidla pro produkční deaktivaci či skrytí."
         ],
         "lessons": [
-          "Začít od osobního zájmu mi pomohlo projekt dokončit. Publikovat ho jako veřejné API stejně vyžadovalo stejná designová rozhodnutí jako kterákoli služba pro konzumenty",
-          "Psaní architektury a decision logu (AGENTS.md) před i během implementace udělalo trade-offy explicitními a udrželo pozdější rozhodnutí konzistentní s dřívějšími",
-          "Serverless deploy vytáhne na povrch frameworkové předpoklady kolem servírování static files a in-memory stavu, které se na klasickém always-on serveru neukážou",
-          "Položky security checklistu z automatických review nástrojů potřebují kontext. Některé tady dávaly smysl, třeba race conditions u unique constraintů. Jiné se na veřejné, read-heavy API nehodily, třeba CORS wildcarding",
-          "Personal Access Tokens sdílející Authorization header s JWT jsou plánované na v2. Shipnout dual auth dřív, než bude veřejná read plocha pevná, by bylo předčasné"
+          "Osobní vztah k tématu byl skvělým motorem pro dokončení projektu. Publikace ve formě veřejně přístupného API však i tak vyžadovala stejně precizní architektonická rozhodnutí jako při návrhu komerčních B2B služeb.",
+          "Vedení podrobného architektonického deníku a záznamu rozhodnutí (decision log v souboru AGENTS.md) již od počáteční fáze mi pomohlo jasně definovat technologické kompromisy a udržet konzistentní směr napříč celým vývojem.",
+          "Bezserverové (serverless) nasazení odhalí skryté předpoklady frameworku týkající se servírování statických souborů a práce s vnitřní pamětí, které se při běhu na klasickém, nepřetržitě běžícím serveru vůbec neprojeví.",
+          "Doporučení z automatizovaných bezpečnostních auditů je vždy nutné posuzovat v širším kontextu. Zatímco některé nálezy (např. ošetření souběhu u unikátních databázových omezení) byly klíčové, jiné (jako zákaz divokých karet u CORS) nedávaly u veřejného, převážně čtecího API žádný smysl.",
+          "Zavedení osobních přístupových tokenů (Personal Access Tokens) sdílejících hlavičku Authorization s JWT je naplánováno do verze v2. Implementace složité hybridní autentizace před dokončením stabilního čtecího rozhraní by byla předčasným rozhodnutím."
         ]
       }
     }

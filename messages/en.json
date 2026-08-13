@@ -255,16 +255,16 @@
     },
     "pixelverse": {
       "title": "PixelVerse",
-      "shortDescription": "AI-moderated pixel art community with artist profiles, feeds, and Sanity CMS.",
-      "description": "PixelVerse is a community platform where pixel artists share work, browse feeds, and connect with other artists. Uploads pass through AI moderation before they go live.",
+      "shortDescription": "Pixel art community with artist profiles, feeds, and Sanity CMS.",
+      "description": "PixelVerse is a community platform where pixel artists share work, browse feeds, and connect with other artists. Moderation relies on user-triggered reports evaluated by AI, alongside admin tools to maintain community guidelines.",
       "highlights": [
-        "AI content moderation",
         "Artist profiles and feeds",
         "Headless CMS with Sanity",
+        "User reports evaluated by AI",
         "Community discovery"
       ],
       "caseStudy": {
-        "motivation": "I wanted a social platform for pixel artists where AI could take on part of content moderation instead of relying on manual review alone.",
+        "motivation": "I wanted a social platform for pixel artists where AI could assist with content moderation of reported posts instead of relying solely on manual admin review.",
         "challenges": [
           "Balancing open community sharing with safe, moderated uploads",
           "Modeling artist profiles, posts, and feeds in a headless CMS",
@@ -274,24 +274,24 @@
         "architecture": [
           "Next.js frontend with TanStack Query for server state",
           "Sanity.io as headless CMS for content and metadata",
-          "OpenAI API or Gemini API for AI moderation"
+          "OpenAI API or Gemini API for report evaluation"
         ],
         "lessons": [
           "TanStack Query simplified cache invalidation across feed and profile views",
           "Infinite scroll kept the UI responsive while spreading data fetching over time",
           "Sanity schemas are worth defining early. Retrofitting content models is expensive",
-          "AI moderation token costs add up quickly, so batching and prompt design matter"
+          "Using AI to evaluate reported content rather than pre-filtering all uploads keeps token usage low and API costs manageable"
         ]
       }
     },
     "minimal-eshop": {
       "title": "Minimal E-Shop",
-      "shortDescription": "Full-stack e-commerce demo with Spring Boot, Stripe payments, and Docker deployment.",
-      "description": "A compact full-stack e-shop with a Spring Boot backend, Supabase PostgreSQL, Stripe payments, and a Vite + React + TypeScript frontend. Both services run in Docker for local development and deployment.",
+      "shortDescription": "Full-stack e-commerce demo with Spring Boot, Stripe payments, and a dockerized backend.",
+      "description": "A compact full-stack e-shop with a Spring Boot backend, Supabase PostgreSQL, Stripe payments, and a Vite + React + TypeScript frontend. The backend runs in Docker for seamless local development and deployment.",
       "highlights": [
         "Stripe checkout integration",
         "Spring Boot REST API",
-        "Dockerized deployment",
+        "Dockerized backend deployment",
         "Product catalog and cart"
       ],
       "caseStudy": {
@@ -299,16 +299,16 @@
         "challenges": [
           "Aligning API contracts between Spring Boot and the Vite frontend",
           "Handling Stripe webhooks and payment confirmation reliably",
-          "Packaging frontend and backend into a reproducible Docker setup"
+          "Packaging the Java backend into a reproducible Docker environment"
         ],
         "architecture": [
           "Spring Boot REST API with PostgreSQL on Supabase",
           "Vite + React SPA with TanStack Router",
           "Stripe for payment processing",
-          "Docker Compose for local development"
+          "Docker for containerizing the backend service"
         ],
         "lessons": [
-          "Docker made it easier to run the same stack locally and in deployment",
+          "Docker made it easier to run the backend and database locally and in deployment",
           "Clear API boundaries between frontend and backend reduced integration friction",
           "Stripe test mode and webhook forwarding were essential during development"
         ]
