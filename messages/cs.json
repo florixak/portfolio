@@ -251,7 +251,7 @@
     },
     "pixelverse": {
       "title": "PixelVerse",
-      "shortDescription": "Komunitní platforma pro pixel art s profily umělců, feedy a Sanity CMS.",
+      "shortDescription": "Komunitní platforma pro pixel art s AI moderací, profily umělců, feedy a Sanity CMS.",
       "description": "PixelVerse je komunitní platforma, kde mohou tvůrci pixel artu sdílet svá díla, sledovat příspěvky ostatních a propojovat se. Moderování obsahu funguje na bázi uživatelských nahlášení vyhodnocovaných pomocí AI, což doplňuje klasické administrátorské zásahy pro zachování přátelského prostředí.",
       "highlights": [
         "Profily uživatelů a feedy příspěvků",

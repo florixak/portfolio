@@ -91,11 +91,7 @@
       },
       "openTo": {
         "label": "Open to",
-        "items": [
-          "Internships",
-          "Collaboration",
-          "Part-time / temp work"
-        ]
+        "items": ["Internships", "Collaboration", "Part-time / temp work"]
       }
     },
     "outsideOfCode": [
@@ -255,7 +251,7 @@
     },
     "pixelverse": {
       "title": "PixelVerse",
-      "shortDescription": "Pixel art community with artist profiles, feeds, and Sanity CMS.",
+      "shortDescription": "Pixel art community with AI-powered moderation, artist profiles, feeds, and Sanity CMS.",
       "description": "PixelVerse is a community platform where pixel artists share work, browse feeds, and connect with other artists. Moderation relies on user-triggered reports evaluated by AI, alongside admin tools to maintain community guidelines.",
       "highlights": [
         "Artist profiles and feeds",
