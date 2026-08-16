@@ -251,16 +251,16 @@
     },
     "pixelverse": {
       "title": "PixelVerse",
-      "shortDescription": "Pixel art community with AI-powered moderation, artist profiles, feeds, and Sanity CMS.",
-      "description": "PixelVerse is a community platform where pixel artists share work, browse feeds, and connect with other artists. Moderation relies on user-triggered reports evaluated by AI, alongside admin tools to maintain community guidelines.",
+      "shortDescription": "Pixel art community with pre-publish word filtering and AI moderation, artist profiles, feeds, and Sanity CMS.",
+      "description": "PixelVerse is a community platform where pixel artists share work, browse feeds, and connect with other artists. Before a post goes live, a simple word filter checks for inappropriate language, then AI reviews whether the content follows the community rules.",
       "highlights": [
+        "Word filter before publish",
+        "AI review against community rules",
         "Artist profiles and feeds",
-        "Headless CMS with Sanity",
-        "User reports evaluated by AI",
-        "Community discovery"
+        "Headless CMS with Sanity"
       ],
       "caseStudy": {
-        "motivation": "I wanted a social platform for pixel artists where AI could assist with content moderation of reported posts instead of relying solely on manual admin review.",
+        "motivation": "I wanted a social platform for pixel artists where content moderation did not depend only on manual admin review. Posts are screened before publish so the community stays usable without constant human filtering.",
         "challenges": [
           "Balancing open community sharing with safe, moderated uploads",
           "Modeling artist profiles, posts, and feeds in a headless CMS",
@@ -270,13 +270,13 @@
         "architecture": [
           "Next.js frontend with TanStack Query for server state",
           "Sanity.io as headless CMS for content and metadata",
-          "OpenAI API or Gemini API for report evaluation"
+          "Pre-publish pipeline: word filter, then OpenAI or Gemini API check against community rules"
         ],
         "lessons": [
           "TanStack Query simplified cache invalidation across feed and profile views",
           "Infinite scroll kept the UI responsive while spreading data fetching over time",
           "Sanity schemas are worth defining early. Retrofitting content models is expensive",
-          "Using AI to evaluate reported content rather than pre-filtering all uploads keeps token usage low and API costs manageable"
+          "A cheap word filter before the AI call cuts noise early. AI review still raises token costs, so prompts and request size need deliberate limits"
         ]
       }
     },
