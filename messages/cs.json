@@ -251,16 +251,16 @@
     },
     "pixelverse": {
       "title": "PixelVerse",
-      "shortDescription": "Komunitní platforma pro pixel art s AI moderací, profily umělců, feedy a Sanity CMS.",
-      "description": "PixelVerse je komunitní platforma, kde mohou tvůrci pixel artu sdílet svá díla, sledovat příspěvky ostatních a propojovat se. Moderování obsahu funguje na bázi uživatelských nahlášení vyhodnocovaných pomocí AI, což doplňuje klasické administrátorské zásahy pro zachování přátelského prostředí.",
+      "shortDescription": "Komunitní platforma pro pixel art s filtrováním slov a AI moderací před zveřejněním, profily umělců, feedy a Sanity CMS.",
+      "description": "PixelVerse je komunitní platforma, kde mohou tvůrci pixel artu sdílet svá díla, sledovat příspěvky ostatních a propojovat se. Před zveřejněním příspěvek nejdřív projde jednoduchou kontrolou nevhodných slov a poté AI, která ověří, že je obsah v souladu s pravidly komunity.",
       "highlights": [
+        "Filtr nevhodných slov před zveřejněním",
+        "AI kontrola souladu s pravidly",
         "Profily uživatelů a feedy příspěvků",
-        "Headless CMS postavené na platformě Sanity",
-        "Uživatelská nahlášení vyhodnocovaná pomocí AI",
-        "Snadné objevování příspěvků v rámci komunity"
+        "Headless CMS postavené na platformě Sanity"
       ],
       "caseStudy": {
-        "motivation": "Mým cílem bylo vytvořit komunitní platformu pro tvůrce pixel artu, kde by s moderováním nahlášeného obsahu pomáhala umělá inteligence, abychom nemuseli spoléhat výhradně na manuální kontrolu administrátory.",
+        "motivation": "Chtěl jsem komunitní platformu pro tvůrce pixel artu, kde moderace nebude stát jen na manuální kontrole administrátorů. Příspěvky se proto kontrolují ještě před zveřejněním, aby komunita zůstala použitelná bez neustálého ručního filtrování.",
         "challenges": [
           "Hledání rovnováhy mezi volným sdílením v rámci komunity a bezpečností nahraného obsahu",
           "Návrh datového modelu pro profily autorů, příspěvky a feedy v rámci headless CMS",
@@ -270,13 +270,13 @@
         "architecture": [
           "Frontend v Next.js s využitím TanStack Query pro správu serverového stavu",
           "Sanity.io jako headless CMS pro správu obsahu a metadat",
-          "OpenAI nebo Gemini API pro vyhodnocování uživatelských nahlášení"
+          "Před zveřejněním: filtr nevhodných slov, poté kontrola přes OpenAI nebo Gemini API vůči pravidlům komunity"
         ],
         "lessons": [
           "TanStack Query výrazně zjednodušil invalidaci cache mezi příspěvky a profily uživatelů",
           "Implementace nekonečného scrollování (infinite scroll) zajistila plynulý chod rozhraní a rozložila síťové požadavky v čase",
           "Definici schémat v Sanity se vyplatí navrhnout co nejdříve. Pozdější úpravy datových modelů bývají nákladné",
-          "Využití AI k analýze uživatelských nahlášení namísto preventivního ověřování všech nahrávaných souborů pomáhá držet spotřebu tokenů a provozní náklady na minimu"
+          "Levný filtr slov před AI voláním odstraní část šumu hned na začátku. AI kontrola ale stále zvyšuje spotřebu tokenů, takže prompty a velikost requestů potřebují pevné limity"
         ]
       }
     },
