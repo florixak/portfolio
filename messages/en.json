@@ -408,7 +408,7 @@
     "school-buffet-reservation-system": {
       "title": "Reservation System for School Buffet",
       "shortDescription": "Frontend for a school buffet meal reservation system, including student ordering and admin tools.",
-      "description": "I built the frontend for a school buffet meal reservation system as part of my graduation project at SPŠE and VOŠ Plzeň (2024/2025). Students browse the menu, add items to a cart, and place orders. Administrators manage the menu and incoming orders. The frontend uses React with Tailwind CSS and talks to a PHP backend written by a classmate over a REST API.",
+      "description": "I built the frontend for a school buffet meal reservation system as part of my graduation project at SPŠE and VOŠ Plzeň (2024/2025). Students browse the menu, add items to a cart, and place orders. Administrators manage the menu and incoming orders. The frontend uses React with Tailwind CSS and talks to a PHP backend written by a classmate over a REST API. However, it was not possible to deploy it, because only one person ran the buffet, and she worked for a partner organization, which made operations and payments too hard to take on.",
       "highlights": [
         "Student interface",
         "Admin interface",

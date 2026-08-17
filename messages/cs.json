@@ -408,7 +408,7 @@
     "school-buffet-reservation-system": {
       "title": "Rezervační systém školního bufetu",
       "shortDescription": "Frontend rezervačního systému jídel školního bufetu, včetně studentského objednávání a admin nástrojů.",
-      "description": "Postavil jsem frontend rezervačního systému jídel školního bufetu jako součást maturitního projektu na SPŠE a VOŠ Plzeň (2024/2025). Studenti procházejí menu, přidávají položky do košíku a zadávají objednávky. Administrátoři spravují menu a příchozí objednávky. Frontend používá React s Tailwind CSS a přes REST API komunikuje s PHP backendem, který napsal spolužák.",
+      "description": "Postavil jsem frontend rezervačního systému jídel školního bufetu jako součást maturitního projektu na SPŠE a VOŠ Plzeň (2024/2025). Studenti procházejí menu, přidávají položky do košíku a zadávají objednávky. Administrátoři spravují menu a příchozí objednávky. Frontend používá React s Tailwind CSS a přes REST API komunikuje s PHP backendem, který napsal spolužák. Nicméně nebylo možné ho nasadit, protože bufet obsluhovala jedna osoba z partnerské organizace, takže provoz i platby byly na převzetí moc složité.",
       "highlights": [
         "Studentské rozhraní",
         "Admin rozhraní",
