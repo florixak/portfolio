@@ -9,41 +9,47 @@ type FeaturedProjectCardProps = {
 };
 
 const FeaturedProjectCard = ({ index, project }: FeaturedProjectCardProps) => {
+  const stack = project.stack.slice(0, 3);
+  const remainingStackCount = project.stack.length - stack.length;
+
   return (
     <Link
       href={{ pathname: "/projects/[slug]", params: { slug: project.slug } }}
       className="group flex h-full flex-col bg-background p-8 transition-colors duration-200 hover:bg-card hover:text-primary"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[28px_1fr_80px] gap-6 md:gap-10 items-start">
-        <span className="type-index pt-1">
+      <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-[28px_1fr_auto] md:gap-10">
+        <span className="type-index order-1 pt-1">
           {String(index + 1).padStart(2, "0")}
         </span>
 
-        <div>
-          <div className="flex items-center gap-3 mb-3">
-            <h3 className="type-title">{project.title}</h3>
-            <ProjectStatusBadge status={project.status} />
-          </div>
+        <div className="order-3 md:order-2">
+          <h3 className="type-title mb-3">{project.title}</h3>
           <p className="type-body mb-5 max-w-xl">{project.shortDescription}</p>
           <div className="flex flex-wrap gap-2">
-            {project.stack.map((tech) => (
+            {stack.map((tech) => (
               <span
                 key={tech}
-                className="type-label-xs text-muted-foreground/60 bg-muted px-2.5 py-1"
+                className="type-label-xs bg-muted px-2.5 py-1 text-muted-foreground/60"
               >
                 {tech}
               </span>
             ))}
+            {remainingStackCount > 0 && (
+              <span className="type-label-xs bg-muted px-2.5 py-1 text-muted-foreground/60">
+                +{remainingStackCount}
+              </span>
+            )}
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-muted-foreground/40 md:justify-end">
+        <div className="order-2 flex shrink-0 items-center gap-3 md:order-3 md:justify-end">
+          <ProjectStatusBadge status={project.status} />
           <span className="type-body text-muted-foreground/40">
             {project.year}
           </span>
           <ArrowUpRight
             size={13}
-            className={`transition-colors duration-200 group-hover:text-primary`}
+            className="text-muted-foreground/40 transition-colors duration-200 group-hover:text-primary"
           />
         </div>
       </div>
