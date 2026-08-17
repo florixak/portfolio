@@ -5,7 +5,7 @@ export const projects: ProjectMeta[] = [
     slug: "omori-wordle",
     featured: false,
     priority: 7,
-    status: "active",
+    status: "completed",
     year: 2026,
     stack: [
       "Next.js",
@@ -22,9 +22,7 @@ export const projects: ProjectMeta[] = [
     thumbnail: "/projects/omori-wordle/omori-wordle.webp",
     github: "https://github.com/florixak/omori-wordle",
     demo: "https://omori-wordle.vercel.app",
-    screenshots: [
-      "/projects/omori-wordle/omori-wordle.webp",
-    ],
+    screenshots: ["/projects/omori-wordle/omori-wordle.webp"],
   },
   {
     slug: "pixelverse",
@@ -44,9 +42,7 @@ export const projects: ProjectMeta[] = [
     thumbnail: "/projects/pixelverse/pixelverse.webp",
     github: "https://github.com/florixak/PixelVerse",
     demo: "https://pixel-verse-eta.vercel.app",
-    screenshots: [
-      "/projects/pixelverse/pixelverse.webp",
-    ],
+    screenshots: ["/projects/pixelverse/pixelverse.webp"],
   },
   {
     slug: "minimal-eshop",
@@ -69,9 +65,7 @@ export const projects: ProjectMeta[] = [
     thumbnail: "/projects/minimal-eshop/minimal-eshop.webp",
     github: "https://github.com/florixak/minimal-eshop",
     demo: "https://minimal-minieshop.vercel.app",
-    screenshots: [
-      "/projects/minimal-eshop/minimal-eshop.webp",
-    ],
+    screenshots: ["/projects/minimal-eshop/minimal-eshop.webp"],
   },
   {
     slug: "rtsoft-clothing-eshop",
@@ -93,9 +87,7 @@ export const projects: ProjectMeta[] = [
     thumbnail: "/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp",
     github: "https://github.com/florixak/rtsoft-clothing-eshop",
     demo: "https://rtsoft-clothing-eshop.vercel.app",
-    screenshots: [
-      "/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp",
-    ],
+    screenshots: ["/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp"],
   },
   {
     slug: "textforge",
@@ -117,9 +109,7 @@ export const projects: ProjectMeta[] = [
     thumbnail: "/projects/textforge/textforge.webp",
     github: "https://github.com/florixak/text-forge",
     demo: "https://text-forge-phi.vercel.app",
-    screenshots: [
-      "/projects/textforge/textforge.webp",
-    ],
+    screenshots: ["/projects/textforge/textforge.webp"],
   },
   {
     slug: "omori-headspace",
@@ -127,24 +117,17 @@ export const projects: ProjectMeta[] = [
     priority: 9,
     status: "completed",
     year: 2026,
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "GSAP",
-    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
     thumbnail: "/projects/omori-headspace/omori-headspace.webp",
     github: "https://github.com/florixak/omori-headspace",
     demo: "https://omori-headspace.vercel.app",
-    screenshots: [
-      "/projects/omori-headspace/omori-headspace.webp",
-    ],
+    screenshots: ["/projects/omori-headspace/omori-headspace.webp"],
   },
   {
     slug: "school-buffet-reservation-system",
     featured: false,
     priority: 8,
-    status: "completed",
+    status: "archived",
     year: 2025,
     stack: [
       "React",
@@ -160,9 +143,7 @@ export const projects: ProjectMeta[] = [
     thumbnail: "/projects/school-buffet/buffet.webp",
     github: "https://github.com/Web-Projekty/buffet-rezervace",
     demo: "https://buffet.vlastas.cc/",
-    screenshots: [
-      "/projects/school-buffet/buffet.webp",
-    ],
+    screenshots: ["/projects/school-buffet/buffet.webp"],
   },
   {
     slug: "brick-match",
@@ -198,7 +179,7 @@ export const projects: ProjectMeta[] = [
     slug: "spinjitzu-api",
     featured: false,
     priority: 4,
-    status: "completed",
+    status: "active",
     year: 2026,
     stack: [
       "NestJS",
@@ -216,9 +197,7 @@ export const projects: ProjectMeta[] = [
     thumbnail: "/projects/spinjitzu-api/docs.webp",
     github: "https://github.com/florixak/spinjitzu-api",
     demo: "https://spinjitzu-api.vercel.app/docs",
-    screenshots: [
-      "/projects/spinjitzu-api/docs.webp",
-    ],
+    screenshots: ["/projects/spinjitzu-api/docs.webp"],
   },
 ];
 
