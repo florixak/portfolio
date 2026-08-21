@@ -41,7 +41,7 @@ export const projects: ProjectMeta[] = [
     ],
     thumbnail: "/projects/pixelverse/pixelverse.webp",
     github: "https://github.com/florixak/PixelVerse",
-    demo: "https://pixel-verse-eta.vercel.app",
+    demo: "https://pixel-verse.ondrejptak.dev",
     screenshots: ["/projects/pixelverse/pixelverse.webp"],
   },
   {
@@ -86,7 +86,7 @@ export const projects: ProjectMeta[] = [
     ],
     thumbnail: "/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp",
     github: "https://github.com/florixak/rtsoft-clothing-eshop",
-    demo: "https://rtsoft-clothing-eshop.vercel.app",
+    demo: "https://rtsoft-clothing-eshop.ondrejptak.dev",
     screenshots: ["/projects/rtsoft-clothing-eshop/rtsoft-clothing-eshop.webp"],
   },
   {
@@ -108,7 +108,7 @@ export const projects: ProjectMeta[] = [
     ],
     thumbnail: "/projects/textforge/textforge.webp",
     github: "https://github.com/florixak/text-forge",
-    demo: "https://text-forge-phi.vercel.app",
+    demo: "https://text-forge.ondrejptak.dev",
     screenshots: ["/projects/textforge/textforge.webp"],
   },
   {
