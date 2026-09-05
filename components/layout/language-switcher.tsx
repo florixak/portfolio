@@ -73,7 +73,7 @@ const LanguageSwitcher = () => {
               language: t(`locales.${availableLocale}`),
             })}
             className={cn(
-              availableLocale === locale && "text-primary",
+              availableLocale === locale && "text-primary focus:text-primary",
             )}
           >
             {t(`locales.${availableLocale}`)}

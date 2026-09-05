@@ -18,9 +18,12 @@ const ThemeToggle = () => {
   const { theme: activeTheme, setTheme } = useTheme();
 
   const handleThemeChange = (theme: Theme) => {
+    const isActive = theme === activeTheme;
+
     return {
       onClick: () => setTheme(theme),
-      className: cn(theme === activeTheme && "text-primary"),
+      "aria-current": isActive,
+      className: cn(isActive && "text-primary focus:text-primary"),
     };
   };
 
