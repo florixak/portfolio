@@ -20,8 +20,10 @@ const OG_LOCALE_MAP: Record<Locale, string> = {
 
 export const localizedPath = (path: string, locale: Locale): string => {
   const normalized =
-    !path || path === "/" ? "" : path.startsWith("/") ? path : `/${path}`;
-  return `/${locale}${normalized}`;
+    !path || path === "/" ? "/" : path.startsWith("/") ? path : `/${path}`;
+  if (locale === routing.defaultLocale) return normalized;
+  const base = normalized === "/" ? "" : normalized;
+  return `/${locale}${base}`;
 };
 
 export const localizedUrl = (path: string, locale: Locale): string =>

@@ -12,11 +12,11 @@ export const routing = defineRouting({
   locales: ["en", "cs"],
   defaultLocale: "en",
 
-  // Every locale gets an explicit URL prefix ("/en/...", "/cs/...").
-  // Alternative: "as-needed" keeps the default locale unprefixed
-  // (e.g. "/about" for English, "/cs/about" for Czech) which is a common
-  // choice when you want to preserve existing, already-indexed URLs.
-  localePrefix: "always",
+  // The default locale ("en") is served without a URL prefix ("/about"),
+  // while non-default locales keep an explicit prefix ("/cs/about").
+  // This produces cleaner, more shareable URLs for the primary audience
+  // while still giving each locale a unique, crawlable path.
+  localePrefix: "as-needed",
 
   // Persist the resolved locale in a cookie so a returning visitor keeps
   // their choice even if their browser's `Accept-Language` changes.
