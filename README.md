@@ -10,7 +10,7 @@ Personal portfolio site showcasing projects, stack, and contact information. Bui
 - **Contact** — Social links, email copy, availability terminal
 - **Dark mode** — System-aware theme toggle
 - **Typed routes** — Next.js typed routes for type-safe navigation
-- **Internationalization** — English (default) and Czech via `next-intl`, with automatic locale detection, `/en` and `/cs` URL prefixes, and a language switcher
+- **Internationalization** — English (default, no URL prefix) and Czech (`/cs`) via `next-intl`, with automatic locale detection and a language switcher
 
 ## Tech stack
 
@@ -53,7 +53,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 app/
-  [locale]/           # Localized routes (/en, /cs, .../about, .../contact, .../projects, .../projects/[slug])
+  [locale]/           # Localized routes (/cs, .../about, .../contact, .../projects, .../projects/[slug]; English has no prefix)
   sitemap.ts          # Emits every route x locale with hreflang alternates
   robots.ts, manifest.ts, not-found.tsx  # Locale-independent root files
 i18n/                 # next-intl routing config, navigation helpers, request config
@@ -68,9 +68,9 @@ constants/            # Nav items, filters
 
 ## Internationalization
 
-The site is available in English (default, `/en`) and Czech (`/cs`), powered by [next-intl](https://next-intl.dev/).
+The site is available in English (default, no URL prefix) and Czech (`/cs`), powered by [next-intl](https://next-intl.dev/).
 
-- **Routing** — `i18n/routing.ts` declares the supported locales and every static pathname (used for typed, autocompleted `Link`/`useRouter` calls). `middleware.ts` detects the visitor's locale (URL prefix → `NEXT_LOCALE` cookie → `Accept-Language` header) and redirects to the prefixed URL.
+- **Routing** — `i18n/routing.ts` declares the supported locales and every static pathname (used for typed, autocompleted `Link`/`useRouter` calls). `proxy.ts` detects the visitor's locale (URL prefix → `NEXT_LOCALE` cookie → `Accept-Language` header) and redirects non-default-locale visitors to their prefixed URL (e.g. `/cs/about`).
 - **Translations** — UI copy for the header/footer, hero, about, projects chrome, and contact sections lives in `messages/en.json` and `messages/cs.json`. Project prose (titles, descriptions, highlights, case studies) lives under the `projectEntries` namespace in those catalogs. Locale-invariant project meta stays in `data/projects.ts`.
 - **Usage** — Server Components use `useTranslations`/`getTranslations` from `next-intl` / `next-intl/server` (e.g. `components/hero/hero.tsx`, `app/[locale]/about/page.tsx`); Client Components use the same `useTranslations` hook (e.g. `components/hero/hero-cta.tsx`, `components/layout/language-switcher.tsx`).
 - **Language switcher** — `components/layout/language-switcher.tsx` is a small client component in the header that re-navigates to the current page under the other locale.
