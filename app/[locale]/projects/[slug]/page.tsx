@@ -51,7 +51,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
   return (
     <>
       <JsonLd
-        data={[projectSchema(project), projectBreadcrumbSchema(project)]}
+        data={[projectSchema(project, locale), projectBreadcrumbSchema(project, locale)]}
       />
       <ProjectDetail project={project} />
     </>

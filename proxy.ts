@@ -6,8 +6,9 @@ import { routing } from "./i18n/routing";
  * - Detects the visitor's preferred locale from, in order of priority,
  *   the URL prefix, the `NEXT_LOCALE` cookie, then the `Accept-Language`
  *   header (browser language).
- * - Redirects `/` (and any un-prefixed path) to the resolved locale,
- *   e.g. `/about` -> `/en/about` or `/cs/about`.
+ * - Redirects non-default-locale visitors to their prefixed URL,
+ *   e.g. Czech visitors hitting `/about` are sent to `/cs/about`.
+ *   English (default locale) is served without a prefix (`/about`).
  * - Persists the resolved locale in a cookie so it "sticks" across visits.
  */
 export default createMiddleware(routing);
