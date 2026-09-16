@@ -1,5 +1,6 @@
 import { profile } from "@/data/profile";
-import { absoluteUrl, sameAs, siteUrl } from "@/lib/seo";
+import { routing, type Locale } from "@/i18n/routing";
+import { localizedUrl, sameAs, siteUrl } from "@/lib/seo";
 import type { Project } from "@/types";
 
 type LocalizedProfileCopy = {
@@ -43,12 +44,15 @@ export const websiteSchema = ({
   },
 });
 
-export const projectSchema = (project: Project) => ({
+export const projectSchema = (
+  project: Project,
+  locale: Locale = routing.defaultLocale,
+) => ({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: project.title,
   description: project.shortDescription,
-  url: absoluteUrl(`/projects/${project.slug}`),
+  url: localizedUrl(`/projects/${project.slug}`, locale),
   applicationCategory: "WebApplication",
   operatingSystem: "Web",
   ...(project.demo ? { downloadUrl: project.demo } : {}),
@@ -61,7 +65,10 @@ export const projectSchema = (project: Project) => ({
   },
 });
 
-export const projectBreadcrumbSchema = (project: Project) => ({
+export const projectBreadcrumbSchema = (
+  project: Project,
+  locale: Locale = routing.defaultLocale,
+) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
@@ -69,19 +76,19 @@ export const projectBreadcrumbSchema = (project: Project) => ({
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: siteUrl,
+      item: localizedUrl("/", locale),
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Projects",
-      item: absoluteUrl("/projects"),
+      item: localizedUrl("/projects", locale),
     },
     {
       "@type": "ListItem",
       position: 3,
       name: project.title,
-      item: absoluteUrl(`/projects/${project.slug}`),
+      item: localizedUrl(`/projects/${project.slug}`, locale),
     },
   ],
 });
